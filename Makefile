@@ -18,8 +18,8 @@ ROM      := mariovsdk.gba
 ELF      := $(ROM:.gba=.elf)
 MAP      := $(ROM:.gba=.map)
 LDSCRIPT := ldscript.txt
-CFILES   := src/main.c
-SFILES   := asm/rom.s asm/rom_800023C.s asm/rom_80066FC.s asm/main.s asm/rom1.s asm/rom_8033C38.s
+CFILES   := src/main.c src/rom_8033C38.c
+SFILES   := asm/rom.s asm/rom_800023C.s asm/rom_80066FC.s asm/main.s asm/rom1.s asm/rom_8032FB0.s asm/rom_8033D80.s
 OFILES   := $(SFILES:.s=.o) $(CFILES:.c=.o)
 
 

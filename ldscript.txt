@@ -11,7 +11,9 @@ SECTIONS
 		src/main.o(.text);
 		asm/main.o(.text);
 		asm/rom1.o(.text);
-		asm/rom_8033C38.o(.text);
+		asm/rom_8032FB0.o(.text);
+		src/rom_8033C38.o(.text);
+		asm/rom_8033D80.o(.text);
 	} = 0
 	
 	. = 0x03000000;
@@ -30,5 +32,9 @@ SECTIONS
 		gUnknown_03000B78 = .;
 		. = 0x12E0;
 		gUnknown_030012E0 = .;
+		. = 0x1714;
+		gUnknown_03001714 = .;
+		. = 0x1718;
+		gUnknown_03001718 = .;
 	} = 0
 }
