@@ -1,0 +1,11 @@
+# Output files
+src/*.s
+*.o
+*.elf
+*.gba
+*.map
+*.dump
+
+# Tools
+tools/agbcc/
+*.exe
