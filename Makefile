@@ -19,7 +19,7 @@ ELF      := $(ROM:.gba=.elf)
 MAP      := $(ROM:.gba=.map)
 LDSCRIPT := ldscript.txt
 CFILES   := src/main.c src/rom_8033C38.c
-SFILES   := asm/rom.s asm/rom_800023C.s asm/rom_80066FC.s asm/main.s asm/rom1.s asm/rom_8032FB0.s asm/rom_8033D80.s
+SFILES   := asm/rom.s asm/rom_800023C.s asm/rom_80066FC.s asm/main.s asm/rom1.s asm/rom_8032FB0.s asm/rom_8033D80.s asm/rom_8074814.s
 OFILES   := $(SFILES:.s=.o) $(CFILES:.c=.o)
 
 
@@ -35,7 +35,7 @@ clean:
 #### Recipes ####
 
 $(ELF): $(OFILES)
-	$(LD) $(LDFLAGS) -T $(LDSCRIPT) -Map $(MAP) $^ -o $@
+	$(LD) $(LDFLAGS) -T $(LDSCRIPT) -Map $(MAP) $^ tools/agbcc/lib/libgcc.a -o $@
 
 %.gba: %.elf
 	$(OBJCOPY) -O binary --pad-to 0x9000000 $< $@

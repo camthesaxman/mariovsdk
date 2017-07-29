@@ -14,6 +14,8 @@ SECTIONS
 		asm/rom_8032FB0.o(.text);
 		src/rom_8033C38.o(.text);
 		asm/rom_8033D80.o(.text);
+		tools/agbcc/lib/libgcc.a:_call_via_rX.o(.text);
+		asm/rom_8074814.o(.text);
 	} = 0
 	
 	. = 0x03000000;
@@ -37,4 +39,10 @@ SECTIONS
 		. = 0x1718;
 		gUnknown_03001718 = .;
 	} = 0
+
+    /* Discard everything not specifically mentioned above. */
+    /DISCARD/ :
+    {
+        *(*);
+    }
 }
