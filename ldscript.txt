@@ -7,6 +7,7 @@ SECTIONS
 	{
 		asm/rom.o(.text);
 		asm/rom_800023C.o(.text);
+		src/rom_80066FC.o(.text);
 		asm/rom_80066FC.o(.text);
 		src/main.o(.text);
 		asm/main.o(.text);
@@ -14,6 +15,8 @@ SECTIONS
 		asm/rom_8032FB0.o(.text);
 		src/rom_8033C38.o(.text);
 		asm/rom_8033D80.o(.text);
+		asm/syscall.o(.text);
+		asm/rom_8073E48.o(.text);
 		tools/agbcc/lib/libgcc.a:_call_via_rX.o(.text);
 		asm/rom_8074814.o(.text);
 	} = 0
@@ -24,6 +27,8 @@ SECTIONS
 	{
 		. = 0x0;
 		gUnknown_03000000 = .;
+		. = 0x964;
+		gUnknown_03000964 = .;
 		. = 0x9B0;
 		gUnknown_030009B0 = .;
 		. = 0x9C4;

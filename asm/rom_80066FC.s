@@ -1,18 +1,5 @@
 	.INCLUDE "macro.inc"
 
-	THUMB_FUNC_START sub_080066FC
-sub_080066FC: @ 0x080066FC
-	push {r4,lr}
-	ldr r4, _0800670C  @ =0x03000964
-	ldr r4, [r4]
-	bl _call_via_r4
-	pop {r4}
-	pop {r1}
-	bx r1
-_0800670C:
-	.4byte 0x03000964
-	THUMB_FUNC_END sub_080066FC
-
 	THUMB_FUNC_START sub_08006710
 sub_08006710: @ 0x08006710
 	push {r4-r7,lr}

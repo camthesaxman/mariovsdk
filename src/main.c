@@ -1,4 +1,5 @@
 #include "gba/gba.h"
+#include "global.h"
 
 struct Struct30009B0
 {

@@ -6,7 +6,7 @@ AS       := $(DEVKITARM)/bin/arm-none-eabi-as
 LD       := $(DEVKITARM)/bin/arm-none-eabi-ld
 OBJCOPY  := $(DEVKITARM)/bin/arm-none-eabi-objcopy
 
-CC1FLAGS := -mthumb-interwork -Wimplicit -Wparentheses -O2
+CC1FLAGS := -mthumb-interwork -Wimplicit -Wparentheses -O2 -fhex-asm
 CPPFLAGS := -I tools/agbcc/include -iquote include -nostdinc -undef
 ASFLAGS  := -mcpu=arm7tdmi -I asminclude
 LDFLAGS  := --no-gc-sections
@@ -18,8 +18,18 @@ ROM      := mariovsdk.gba
 ELF      := $(ROM:.gba=.elf)
 MAP      := $(ROM:.gba=.map)
 LDSCRIPT := ldscript.txt
-CFILES   := src/main.c src/rom_8033C38.c
-SFILES   := asm/rom.s asm/rom_800023C.s asm/rom_80066FC.s asm/main.s asm/rom1.s asm/rom_8032FB0.s asm/rom_8033D80.s asm/rom_8074814.s
+CFILES   := src/rom_80066FC.c src/main.c src/rom_8033C38.c
+SFILES   := \
+	asm/rom.s \
+	asm/rom_800023C.s \
+	asm/rom_80066FC.s \
+	asm/main.s \
+	asm/rom1.s \
+	asm/rom_8032FB0.s \
+	asm/rom_8033D80.s \
+	asm/syscall.s \
+	asm/rom_8073E48.s \
+	asm/rom_8074814.s
 OFILES   := $(SFILES:.s=.o) $(CFILES:.c=.o)
 
 
