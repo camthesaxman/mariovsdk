@@ -10,11 +10,29 @@ struct Struct30009B0
     s16 unk12;
 };
 
+struct Struct3000EA0
+{
+    u8 unk0;
+    //u8 unk1;
+    u8 unk1_0:2;
+    u8 unk1_2:6;
+    //u16 unk2;
+    //u16 unk4;
+    u16 unk2_0:9;
+    u16 unk2_9:7;
+    //u16 unk4;
+    u16 unk4_0:10;
+    u16 unk4_10:6;
+};
+
 extern u8 gUnknown_03000B64;
 extern u8 gUnknown_03000B78;
 extern struct Struct30009B0 gUnknown_030009B0;
 extern u32 gUnknown_030009C4;
+extern struct Struct3000EA0 gUnknown_03000EA0;
 extern u16 gUnknown_030012E0;
+extern u8 gUnknown_030012F4;
+extern s16 gUnknown_03001724;
 
 extern void sub_08033C38(void);
 extern void sub_08033CE0(void);
@@ -94,4 +112,22 @@ void sub_08006E28(void)
         gUnknown_030009B0.unk4 = 0;
         gUnknown_030009B0.unk10 = 0;
     }
+}
+
+void sub_08006F5C(u32 a, u32 b)
+{
+    CpuFill16(0, &gUnknown_030009B0, 4);
+    gUnknown_030009B0.unk0 = a << 8;
+    gUnknown_030009B0.unk4 = b << 8;
+}
+
+void sub_08006F90(void)
+{
+    struct Struct3000EA0 *ptr = &gUnknown_03000EA0;
+    s32 var = ((gUnknown_030009B0.unk0 >> 8) - gUnknown_03001724 - 4) & 0xFF;
+    
+    ptr->unk2_0 = var;
+    ptr->unk0 = (gUnknown_030009B0.unk4 >> 8) - gUnknown_030012F4;
+    ptr->unk1_0 = 0;
+    ptr->unk4_0 = 0;
 }

@@ -62,10 +62,14 @@ SECTIONS
 		gUnknown_03000EA0 = .;
 		. = 0x12E0;
 		gUnknown_030012E0 = .;
+		. = 0x12F4;
+		gUnknown_030012F4 = .;
 		. = 0x1714;
 		gUnknown_03001714 = .;
 		. = 0x1718;
 		gUnknown_03001718 = .;
+		. = 0x1724;
+		gUnknown_03001724 = .;
 		. = 0x1F2C;
 		gFlashTimeoutFlag = .;
 		. = 0x1F30;

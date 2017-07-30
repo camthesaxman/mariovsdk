@@ -1,88 +1,5 @@
 	.INCLUDE "macro.inc"
 
-THUMB_FUNC_START sub_08006F5C
-sub_08006F5C:
-	push {r4-r6,lr}
-	sub sp, sp, #4
-	add r5, r0, #0
-	add r6, r1, #0
-	mov r1, sp
-	mov r0, #0
-	strh r0, [r1]
-	ldr r4, _08006F88  @ =0x030009B0
-	ldr r2, _08006F8C  @ =0x01000002
-	mov r0, sp
-	add r1, r4, #0
-	bl 0x08073E3C
-	lsl r5, r5, #8
-	str r5, [r4]
-	lsl r6, r6, #8
-	str r6, [r4, #4]
-	add sp, sp, #4
-	pop {r4-r6}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-_08006F88:
-	.4byte 0x030009B0
-_08006F8C:
-	.4byte 0x01000002
-THUMB_FUNC_END sub_08006F5C
-
-THUMB_FUNC_START sub_08006F90
-sub_08006F90:
-	push {r4,lr}
-	ldr r3, _08006FD8  @ =0x03000EA0
-	ldr r4, _08006FDC  @ =0x030009B0
-	ldr r1, [r4]
-	asr r1, r1, #8
-	ldr r0, _08006FE0  @ =0x03001724
-	mov r2, #0
-	ldrsh r0, [r0, r2]
-	sub r1, r1, r0
-	sub r1, r1, #4
-	mov r0, #255
-	and r1, r1, r0
-	ldrh r2, [r3, #2]
-	ldr r0, _08006FE4  @ =0xFFFFFE00
-	and r0, r0, r2
-	orr r0, r0, r1
-	strh r0, [r3, #2]
-	ldr r0, [r4, #4]
-	asr r0, r0, #8
-	ldr r1, _08006FE8  @ =0x030012F4
-	ldrb r1, [r1]
-	sub r0, r0, r1
-	strb r0, [r3]
-	ldrb r1, [r3, #1]
-	mov r0, #4
-	neg r0, r0
-	and r0, r0, r1
-	strb r0, [r3, #1]
-	ldrh r1, [r3, #4]
-	ldr r0, _08006FEC  @ =0xFFFFFC00
-	and r0, r0, r1
-	strh r0, [r3, #4]
-	pop {r4}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-_08006FD8:
-	.4byte 0x03000EA0
-_08006FDC:
-	.4byte 0x030009B0
-_08006FE0:
-	.4byte 0x03001724
-_08006FE4:
-	.4byte 0xFFFFFE00
-_08006FE8:
-	.4byte 0x030012F4
-_08006FEC:
-	.4byte 0xFFFFFC00
-THUMB_FUNC_END sub_08006F90
-
 THUMB_FUNC_START sub_08006FF0
 sub_08006FF0:
 	push {r4-r7,lr}
@@ -111,7 +28,7 @@ _08007010:
 	ldr r0, [r0]
 	cmp r0, #0
 	beq _08007026
-	bl 0x080747D8
+	bl _call_via_r0
 _08007026:
 	mov r1, r8
 	ldr r0, [r1]
