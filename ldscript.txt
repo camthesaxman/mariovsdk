@@ -22,7 +22,16 @@ SECTIONS
 		src/agb_flash_mx.o(.text);
 		asm/rom_80747B8.o(.text);
 		tools/agbcc/lib/libgcc.a:_call_via_rX.o(.text);
-		asm/rom_8074814.o(.text);
+		tools/agbcc/lib/libgcc.a:_divsi3.o(.text);
+		tools/agbcc/lib/libgcc.a:_dvmd_tls.o(.text);
+		tools/agbcc/lib/libgcc.a:_modsi3.o(.text);
+		tools/agbcc/lib/libgcc.a:_udivsi3.o(.text);
+		tools/agbcc/lib/libgcc.a:_umodsi3.o(.text);
+		tools/agbcc/lib/libgcc.a:dp-bit.o(.text);
+		tools/agbcc/lib/libgcc.a:fp-bit.o(.text);
+		tools/agbcc/lib/libgcc.a:_lshrdi3.o(.text);
+		tools/agbcc/lib/libgcc.a:_muldi3.o(.text);
+		tools/agbcc/lib/libgcc.a:_negdi2.o(.text);
 		src/libc.o(.text);
 	} = 0
 	
@@ -48,6 +57,9 @@ SECTIONS
 		gUnknown_03000000 = .;
 		. = 0x880;
 		src/agb_flash.o(.bss);
+		tools/agbcc/lib/libgcc.a:dp-bit.o(.bss);
+		tools/agbcc/lib/libgcc.a:fp-bit.o(.bss);
+		
 		. = 0x964;
 		gUnknown_03000964 = .;
 		. = 0x9B0;
@@ -88,6 +100,7 @@ SECTIONS
 		EraseFlashSector = .;
 		. = 0x1F4C;
 		gFlashMaxTime = .;
+		
 	} = 0
 
     /* Discard everything not specifically mentioned above. */

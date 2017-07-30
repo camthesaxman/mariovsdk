@@ -10,7 +10,7 @@ OBJCOPY  := $(DEVKITARM)/bin/arm-none-eabi-objcopy
 CC1FLAGS := -mthumb-interwork -Wimplicit -Wparentheses -O2 -fhex-asm
 CPPFLAGS := -I tools/agbcc/include -iquote include -nostdinc -undef
 ASFLAGS  := -mcpu=arm7tdmi -I asminclude
-LDFLAGS  := --no-gc-sections
+LDFLAGS  := --no-gc-sections -u __pack_d
 
 
 #### Files ####
@@ -38,7 +38,6 @@ SFILES   := \
 	asm/rom_8033D80.s \
 	asm/syscall.s \
 	asm/rom_80747B8.s \
-	asm/rom_8074814.s \
 	data/data.s
 OFILES   := $(SFILES:.s=.o) $(CFILES:.c=.o)
 
