@@ -1,4 +1,5 @@
 #include "gba/gba.h"
+#include "global.h"
 
 /*
 struct Struct807DD94
@@ -9,7 +10,6 @@ struct Struct807DD94
 
 extern u16 *const gUnknown_0807DD94[];
 
-extern u16 gUnknown_03000EA0[];
 extern s16 gUnknown_030012E0;
 extern u16 gUnknown_030012E8;
 extern s16 gUnknown_030012F8;
@@ -21,8 +21,8 @@ extern u32 gUnknown_03001A1C;
 void sub_08032FB0(void)
 {
     int i;
-    u16 *ptr2 = gUnknown_03000EA0;
-    u16 *ptr = ptr2;
+    struct OamData *oam = &gUnknown_03000EA0;
+    u16 *ptr = (u16 *)oam;
     
     for (i = 0; i < 32; i++)
     {
@@ -43,7 +43,7 @@ void sub_08032FB0(void)
         *ptr++ = 0;
         *ptr++ = 0x100;
     }
-    CpuCopy16(ptr2, (void *)OAM, 0x400);
+    CpuCopy16(oam, (void *)OAM, 0x400);
 }
 
 /*

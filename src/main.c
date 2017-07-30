@@ -10,35 +10,32 @@ struct Struct30009B0
     s16 unk12;
 };
 
-struct Struct3000EA0
-{
-    u8 unk0;
-    //u8 unk1;
-    u8 unk1_0:2;
-    u8 unk1_2:6;
-    //u16 unk2;
-    //u16 unk4;
-    u16 unk2_0:9;
-    u16 unk2_9:7;
-    //u16 unk4;
-    u16 unk4_0:10;
-    u16 unk4_10:6;
-};
-
+extern u32 gUnknown_03000020;
+extern u32 gUnknown_03000024;
 extern u8 gUnknown_03000B64;
+extern u32 gUnknown_03000B70;
 extern u8 gUnknown_03000B78;
 extern struct Struct30009B0 gUnknown_030009B0;
+extern u32 gUnknown_030009C0;
 extern u32 gUnknown_030009C4;
-extern struct Struct3000EA0 gUnknown_03000EA0;
 extern u16 gUnknown_030012E0;
 extern u8 gUnknown_030012F4;
 extern s16 gUnknown_03001724;
 
+extern void (*const gUnknown_0807823C[])(void);
+extern const u32 gUnknown_0807846C[];
+extern const u32 gUnknown_08078354[];
+extern void (*const gUnknown_080782C8[])(void);
+extern void (*const gUnknown_080783E0[])(void);
+
+extern void sub_0801500C();
 extern void sub_08033C38(void);
 extern void sub_08033CE0(void);
+extern void sub_08033EA0();
+extern void sub_08033EE0(void);
 
 int sub_080066FC();
-void sub_08006FF0(void);
+void main_loop(void);
 
 // 0x08006DF8
 void AgbMain(void)
@@ -48,7 +45,7 @@ void AgbMain(void)
     gUnknown_03000B78 = 0;
     gUnknown_030009C4 = 34;
     sub_08033C38();
-    sub_08006FF0();
+    main_loop();
 }
 
 void sub_08006E28(void)
@@ -123,11 +120,53 @@ void sub_08006F5C(u32 a, u32 b)
 
 void sub_08006F90(void)
 {
-    struct Struct3000EA0 *ptr = &gUnknown_03000EA0;
-    s32 var = ((gUnknown_030009B0.unk0 >> 8) - gUnknown_03001724 - 4) & 0xFF;
+    struct OamData *oam = &gUnknown_03000EA0;
+    s32 x;
+    s32 y;
     
-    ptr->unk2_0 = var;
-    ptr->unk0 = (gUnknown_030009B0.unk4 >> 8) - gUnknown_030012F4;
-    ptr->unk1_0 = 0;
-    ptr->unk4_0 = 0;
+    x = ((gUnknown_030009B0.unk0 >> 8) - gUnknown_03001724 - 4) & 0xFF;
+    oam->x = x;
+    y = (gUnknown_030009B0.unk4 >> 8) - gUnknown_030012F4;
+    oam->y = y;
+    oam->affineMode = 0;
+    oam->tileNum = 0;
+}
+
+// 0x08006FF0
+void main_loop(void)
+{
+    gUnknown_030009C0 = gUnknown_030009C4;
+    gUnknown_03000B70 = 0;
+    
+    while (1)
+    {
+        gUnknown_03000020 = gUnknown_030009C0;
+        if (gUnknown_0807823C[gUnknown_03000020] != NULL)
+            gUnknown_0807823C[gUnknown_03000020]();
+        if (gUnknown_030009C0 == 19 || gUnknown_030009C0 == 15)
+        {
+            gUnknown_030009C0 = 13;
+            gUnknown_03000020 = 13;
+            gUnknown_030009C4 = 13;
+        }
+        else if (gUnknown_030009C0 == 6)
+        {
+            gUnknown_030009C0 = 5;
+            gUnknown_03000020 = 5;
+            gUnknown_030009C4 = 5;
+        }
+        sub_0801500C(gUnknown_0807846C[gUnknown_03000020]);
+        sub_08033EA0(gUnknown_08078354[gUnknown_03000020]);
+        
+        while (gUnknown_030009C4 == gUnknown_03000020 && gUnknown_03000024 == 0)
+        {
+            if (gUnknown_080782C8[gUnknown_03000020] != NULL)
+                gUnknown_080782C8[gUnknown_03000020]();
+            sub_08033EE0();
+        }
+        gUnknown_03000024 = 0;
+        if (gUnknown_080783E0[gUnknown_03000020] != NULL)
+            gUnknown_080783E0[gUnknown_03000020]();
+        gUnknown_030009C0 = gUnknown_030009C4;
+    }
 }

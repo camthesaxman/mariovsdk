@@ -47,6 +47,17 @@ SECTIONS
 	{
 		. = 0x77FAC;
 		sSetupInfos = .;
+		. = 0x7823C;
+		gUnknown_0807823C = .;
+		. = 0x782C8;
+		gUnknown_080782C8 = .;
+		. = 0x78354;
+		gUnknown_08078354 = .;
+		. = 0x783E0;
+		gUnknown_080783E0 = .;
+		. = 0x7846C;
+		gUnknown_0807846C = .;
+		
 	}
 
 	. = 0x03000000;
@@ -55,6 +66,10 @@ SECTIONS
 	{
 		. = 0x0;
 		gUnknown_03000000 = .;
+		. = 0x20;
+		gUnknown_03000020 = .;
+		. = 0x24;
+		gUnknown_03000024 = .;
 		. = 0x880;
 		src/agb_flash.o(.bss);
 		tools/agbcc/lib/libgcc.a:dp-bit.o(.bss);
@@ -64,10 +79,14 @@ SECTIONS
 		gUnknown_03000964 = .;
 		. = 0x9B0;
 		gUnknown_030009B0 = .;
+		. = 0x9C0;
+		gUnknown_030009C0 = .;
 		. = 0x9C4;
 		gUnknown_030009C4 = .;
 		. = 0xB64;
 		gUnknown_03000B64 = .;
+		. = 0xB70;
+		gUnknown_03000B70 = .;
 		. = 0xB78;
 		gUnknown_03000B78 = .;
 		. = 0xEA0;

@@ -1,4 +1,5 @@
 #include "gba/gba.h"
+#include "global.h"
 
 #define EWRAM 0x02000000
 #define IWRAM 0x03000000
