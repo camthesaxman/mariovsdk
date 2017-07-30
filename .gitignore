@@ -7,7 +7,7 @@ src/*.s
 *.dump
 
 # Tools
-tools/agbcc/
+tools/*
 *.exe
 
 # Emulator save files
