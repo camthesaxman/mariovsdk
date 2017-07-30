@@ -9,3 +9,6 @@ src/*.s
 # Tools
 tools/agbcc/
 *.exe
+
+# Emulator save files
+*.sav

@@ -1,68 +1,7 @@
 	.INCLUDE "macro.inc"
 
-THUMB_FUNC_START sub_08032FB0
-sub_08032FB0:
-	push {r4,r5,lr}
-	ldr r5, _08033020  @ =0x03000EA0
-	add r1, r5, #0
-	mov r0, #128
-	lsl r0, r0, #2
-	add r3, r0, #0
-	mov r2, #0
-	mov r0, #128
-	lsl r0, r0, #1
-	add r4, r0, #0
-	mov r0, #31
-_08032FC6:
-	strh r3, [r1]
-	add r1, r1, #2
-	strh r2, [r1]
-	add r1, r1, #2
-	strh r2, [r1]
-	add r1, r1, #2
-	strh r4, [r1]
-	add r1, r1, #2
-	strh r3, [r1]
-	add r1, r1, #2
-	strh r2, [r1]
-	add r1, r1, #2
-	strh r2, [r1]
-	add r1, r1, #2
-	strh r2, [r1]
-	add r1, r1, #2
-	strh r3, [r1]
-	add r1, r1, #2
-	strh r2, [r1]
-	add r1, r1, #2
-	strh r2, [r1]
-	add r1, r1, #2
-	strh r2, [r1]
-	add r1, r1, #2
-	strh r3, [r1]
-	add r1, r1, #2
-	strh r2, [r1]
-	add r1, r1, #2
-	strh r2, [r1]
-	add r1, r1, #2
-	strh r4, [r1]
-	add r1, r1, #2
-	sub r0, r0, #1
-	cmp r0, #0
-	bge _08032FC6
-	mov r1, #224
-	lsl r1, r1, #19
-	mov r2, #128
-	lsl r2, r2, #2
-	add r0, r5, #0
-	bl 0x08073E3C
-	pop {r4,r5}
-	pop {r0}
-	bx r0
-_08033020:
-	.4byte 0x03000EA0
-THUMB_FUNC_END sub_08032FB0
-
-_08033024:
+THUMB_FUNC_START sub_08033024
+sub_08033024:
 	push {r4-r7,lr}
 	sub sp, sp, #12
 	ldr r6, _08033064  @ =0x030012E8
@@ -209,6 +148,8 @@ _0803313A:
 	pop {r4-r7}
 	pop {r0}
 	bx r0
+THUMB_FUNC_END sub_08033024
+
 	.byte 0x00
 	.byte 0x00
 _08033144:
@@ -614,9 +555,9 @@ _08033438:
 	pop {r4-r7}
 	pop {r0}
 	bx r0
-	.byte 0x00
-	.byte 0x00
-_08033440:
+
+	THUMB_FUNC_START sub_08033440
+sub_08033440:
 	push {r4,r5,lr}
 	ldr r4, _080334AC  @ =0x030012A0
 	mov r1, #0
@@ -687,5 +628,6 @@ _080334BC:
 	.4byte 0x03001724
 _080334C0:
 	.4byte 0x030012F4
+THUMB_FUNC_END sub_08033440
 
 	.INCBIN "baserom.gba", 0x334C4, 0x33C38-0x334C4

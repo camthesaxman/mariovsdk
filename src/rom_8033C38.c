@@ -3,8 +3,14 @@
 #define EWRAM 0x02000000
 #define IWRAM 0x03000000
 
+extern s16 gUnknown_030012A0;
+extern s16 gUnknown_030012F4;
+extern s16 gUnknown_0300170C;
+extern s16 gUnknown_03001710;
 extern u32 gUnknown_03001714;
 extern u32 gUnknown_03001718;
+extern s16 gUnknown_03001720;
+extern s16 gUnknown_03001724;
 
 extern void sub_08032FB0(void);
 

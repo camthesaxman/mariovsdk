@@ -5,28 +5,49 @@ SECTIONS
 	.text :
 	ALIGN(4)
 	{
-		asm/rom.o(.text);
+		asm/crt0.o(.text);
 		asm/rom_800023C.o(.text);
 		src/rom_80066FC.o(.text);
 		asm/rom_80066FC.o(.text);
 		src/main.o(.text);
 		asm/main.o(.text);
 		asm/rom1.o(.text);
+		src/rom_8032FB0.o(.text);
 		asm/rom_8032FB0.o(.text);
 		src/rom_8033C38.o(.text);
 		asm/rom_8033D80.o(.text);
 		asm/syscall.o(.text);
-		asm/rom_8073E48.o(.text);
+		src/agb_flash.o(.text);
+		src/agb_flash_1m.o(.text);
+		src/agb_flash_mx.o(.text);
+		asm/rom_80747B8.o(.text);
 		tools/agbcc/lib/libgcc.a:_call_via_rX.o(.text);
 		asm/rom_8074814.o(.text);
+		src/libc.o(.text);
 	} = 0
 	
+	.data :
+	ALIGN(4)
+	{
+		data/data.o(.data);
+	}
+	
+	. = 0x08000000;
+	.rodata :
+	ALIGN(4)
+	{
+		. = 0x77FAC;
+		sSetupInfos = .;
+	}
+
 	. = 0x03000000;
 	.bss :
 	ALIGN(4)
 	{
 		. = 0x0;
 		gUnknown_03000000 = .;
+		. = 0x880;
+		src/agb_flash.o(.bss);
 		. = 0x964;
 		gUnknown_03000964 = .;
 		. = 0x9B0;
@@ -37,12 +58,32 @@ SECTIONS
 		gUnknown_03000B64 = .;
 		. = 0xB78;
 		gUnknown_03000B78 = .;
+		. = 0xEA0;
+		gUnknown_03000EA0 = .;
 		. = 0x12E0;
 		gUnknown_030012E0 = .;
 		. = 0x1714;
 		gUnknown_03001714 = .;
 		. = 0x1718;
 		gUnknown_03001718 = .;
+		. = 0x1F2C;
+		gFlashTimeoutFlag = .;
+		. = 0x1F30;
+		PollFlashStatus = .;
+		. = 0x1F34;
+		WaitForFlashWrite = .;
+		. = 0x1F38;
+		ProgramFlashSector = .;
+		. = 0x1F3C;
+		gFlash = .;
+		. = 0x1F40;
+		gFlashNumRemainingBytes = .;
+		. = 0x1F44;
+		EraseFlashChip = .;
+		. = 0x1F48;
+		EraseFlashSector = .;
+		. = 0x1F4C;
+		gFlashMaxTime = .;
 	} = 0
 
     /* Discard everything not specifically mentioned above. */
