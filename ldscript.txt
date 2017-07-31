@@ -33,6 +33,7 @@ SECTIONS
 		tools/agbcc/lib/libgcc.a:_muldi3.o(.text);
 		tools/agbcc/lib/libgcc.a:_negdi2.o(.text);
 		src/libc.o(.text);
+		*(.glue_7t);
 	} = 0
 	
 	.data :

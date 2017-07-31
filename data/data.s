@@ -2,4 +2,4 @@
 
 	.data
 
-	.INCBIN "baserom.gba", 0x76354
+	.INCBIN "baserom.gba", 0x76360

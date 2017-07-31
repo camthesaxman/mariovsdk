@@ -132,9 +132,5 @@ size_t strlen(const char *str)
     return str - start;
 }
 
-// XXX: What is this?
-__attribute__((naked))
-void unknown_bx_pc()
-{
-    asm("bx pc");
-}
+// HACK: Force assembler to pad with 0 instead of nop
+asm(".align 2, 0");

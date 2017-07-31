@@ -1,11 +1,11 @@
 	.INCLUDE "gba.inc"
+	.INCLUDE "macro.inc"
 
+	.SECTION .text
 	.GLOBAL _start
-
-	.text
-
-_start:
-	b init
+	.CODE 32
+_start:					@ Entry point of the ROM on startup
+	b init				@ Skip over the header information
 
 	.INCLUDE "asm/rom_header.s"
 
@@ -24,28 +24,39 @@ init:
 	bx r1
 	b init
 
-	.ALIGN 2
+	.ALIGN 2, 0
 sp_usr: .4byte IWRAM_END - 0x100
 sp_irq: .4byte IWRAM_END - 0x60
 
 
-
+	.GLOBAL sub_080000FC
+	.ALIGN 2, 0
+	.CODE 32
+sub_080000FC:
 	stmfd sp!, {r0}
 	mrs r0, cpsr
 	bic r0, r0, #128
 	msr cpsr, r0
 	ldmia sp!, {r0}
 	bx lr
+THUMB_INTERWORK_VENEER sub_080000FC
 
 
+	.GLOBAL sub_08000114
+	.ALIGN 2, 0
+	.CODE 32
+sub_08000114:
 	stmfd sp!, {r0}
 	mrs r0, cpsr
 	orr r0, r0, #128
 	msr cpsr, r0
 	ldmia sp!, {r0}
 	bx lr
+THUMB_INTERWORK_VENEER sub_08000114
 
-	.ALIGN 2
+
+	.ALIGN 2, 0
+	.CODE 32
 interrupt_main:
 	stmdb sp!, {lr}
 	mrs r0, spsr
@@ -108,7 +119,10 @@ interrupt_main:
 	bx r0
 
 
-
+	.GLOBAL sub_08000214
+	.ALIGN 2, 0
+	.CODE 32
+sub_08000214:
 	pop {r0, lr}
 	msr cpsr, r0
 	ldmia sp!, {r0}
