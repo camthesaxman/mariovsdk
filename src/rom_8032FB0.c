@@ -1,18 +1,35 @@
 #include "gba/gba.h"
 #include "global.h"
 
-/*
-struct Struct807DD94
-{
-    u16 *unk0;
-};
-*/
-
 extern u16 *const gUnknown_0807DD94;
 
+struct Struct30002B8
+{
+    s32 unk0;
+    s32 unk4;
+};
+
+/*
+extern s32 gUnknown_030002B0[];
+extern s32 gUnknown_030002B8[];
+extern s32 gUnknown_030002C0[];
+extern s32 gUnknown_030002C8[];
+*/
+
+extern struct Struct30002B8 gUnknown_030002B0;
+extern struct Struct30002B8 gUnknown_030002B8;
+extern struct Struct30002B8 gUnknown_030002C0;
+extern struct Struct30002B8 gUnknown_030002C8;
+
+extern s16 gUnknown_030012A0;
 extern s16 gUnknown_030012E0;
 extern u16 gUnknown_030012E8;
+extern s16 gUnknown_030012F4;
 extern s16 gUnknown_030012F8;
+extern s16 gUnknown_0300170C;
+extern s16 gUnknown_03001710;
+extern s16 gUnknown_03001720;
+extern s16 gUnknown_03001724;
 extern u8 gUnknown_03001744;
 extern u32 gUnknown_03001938;
 extern u32 gUnknown_030019A0;
@@ -272,5 +289,169 @@ void sub_080331FC(void)
         }
     }
 }
+
+void sub_08033440(void)
+{
+    if (gUnknown_030012A0 < 0)
+        gUnknown_030012A0 = 0;
+    if ((gUnknown_030012A0 >> 1) + 240 >= gUnknown_03001720)
+        gUnknown_030012A0 = ((u16)gUnknown_03001720 - 240) * 2;
+    
+    if (gUnknown_03001710 < 0)
+        gUnknown_03001710 = 0;
+    if ((gUnknown_03001710 >> 1) + 160 >= gUnknown_0300170C)
+        gUnknown_03001710 = ((u16)gUnknown_0300170C - 160) * 2;
+    
+    gUnknown_03001724 = gUnknown_030012A0 >> 1;
+    gUnknown_030012F4 = gUnknown_03001710 >> 1;
+}
+
+#ifdef NONMATCHING
+void sub_080334C4(s32 a)
+{
+    s32 r1 = gUnknown_030002C0.unk0;
+    s32 r5 = gUnknown_030002C0.unk4;
+    
+    if (gUnknown_030002B0.unk0 == r1)
+    {
+        gUnknown_030002C8.unk0 = 0;
+    }
+    else
+    {
+        gUnknown_030002B8.unk0 = r1;
+        if (gUnknown_030002B8.unk0 < 0)
+            gUnknown_030002B8.unk0 = 0;
+        if ((gUnknown_030002B8.unk0 >> 8) + 240 >= gUnknown_03001720)
+            gUnknown_030002B8.unk0 = (gUnknown_03001720 - 240) << 8;
+        gUnknown_030002C8.unk0 = (gUnknown_030002B8.unk0 - gUnknown_030002B0.unk0) / a;
+        asm("");
+    }
+    
+    if (gUnknown_030002B0.unk4 == r5)
+    {
+        gUnknown_030002C8.unk4 = 0;
+    }
+    else
+    {
+        gUnknown_030002B8.unk4 = r5;
+        if (gUnknown_030002B8.unk4 < 0)
+            gUnknown_030002B8.unk4 = 0;
+        if ((gUnknown_030002B8.unk4 >> 8) + 160 >= gUnknown_0300170C)
+            gUnknown_030002B8.unk4 = (gUnknown_0300170C - 160) << 8;
+        gUnknown_030002C8.unk4 = (gUnknown_030002B8.unk4 - gUnknown_030002B0.unk4) / a;
+    }
+}
+#else
+__attribute__((naked))
+void sub_080334C4(s32 a)
+{
+    asm("push {r4-r6,lr}\n\
+	add r6, r0, #0\n\
+	ldr r0, _080334E0  @ =gUnknown_030002C0\n\
+	ldr r1, [r0]\n\
+	ldr r5, [r0, #4]\n\
+	ldr r3, _080334E4  @ =gUnknown_030002B0\n\
+	ldr r0, [r3]\n\
+	cmp r0, r1\n\
+	bne _080334EC\n\
+	ldr r1, _080334E8  @ =gUnknown_030002C8\n\
+	mov r0, #0\n\
+	str r0, [r1]\n\
+	b _08033520\n\
+	.byte 0x00\n\
+	.byte 0x00\n\
+_080334E0:\n\
+	.4byte gUnknown_030002C0\n\
+_080334E4:\n\
+	.4byte gUnknown_030002B0\n\
+_080334E8:\n\
+	.4byte gUnknown_030002C8\n\
+_080334EC:\n\
+	ldr r2, _08033530  @ =gUnknown_030002B8\n\
+	str r1, [r2]\n\
+	cmp r1, #0\n\
+	bge _080334F8\n\
+	mov r0, #0\n\
+	str r0, [r2]\n\
+_080334F8:\n\
+	ldr r0, [r2]\n\
+	asr r0, r0, #8\n\
+	add r0, r0, #240\n\
+	ldr r1, _08033534  @ =gUnknown_03001720\n\
+	mov r4, #0\n\
+	ldrsh r1, [r1, r4]\n\
+	cmp r0, r1\n\
+	blt _08033510\n\
+	add r0, r1, #0\n\
+	sub r0, r0, #240\n\
+	lsl r0, r0, #8\n\
+	str r0, [r2]\n\
+_08033510:\n\
+	ldr r4, _08033538  @ =gUnknown_030002C8\n\
+	ldr r0, [r2]\n\
+	ldr r1, [r3]\n\
+	sub r0, r0, r1\n\
+	add r1, r6, #0\n\
+	bl __divsi3\n\
+	str r0, [r4]\n\
+_08033520:\n\
+	ldr r3, _0803353C  @ =gUnknown_030002B0\n\
+	ldr r0, [r3, #4]\n\
+	cmp r0, r5\n\
+	bne _08033540\n\
+	ldr r1, _08033538  @ =gUnknown_030002C8\n\
+	mov r0, #0\n\
+	str r0, [r1, #4]\n\
+	b _08033574\n\
+_08033530:\n\
+	.4byte gUnknown_030002B8\n\
+_08033534:\n\
+	.4byte gUnknown_03001720\n\
+_08033538:\n\
+	.4byte gUnknown_030002C8\n\
+_0803353C:\n\
+	.4byte gUnknown_030002B0\n\
+_08033540:\n\
+	ldr r2, _0803357C  @ =gUnknown_030002B8\n\
+	str r5, [r2, #4]\n\
+	cmp r5, #0\n\
+	bge _0803354C\n\
+	mov r0, #0\n\
+	str r0, [r2, #4]\n\
+_0803354C:\n\
+	ldr r0, [r2, #4]\n\
+	asr r0, r0, #8\n\
+	add r0, r0, #160\n\
+	ldr r1, _08033580  @ =gUnknown_0300170C\n\
+	mov r4, #0\n\
+	ldrsh r1, [r1, r4]\n\
+	cmp r0, r1\n\
+	blt _08033564\n\
+	add r0, r1, #0\n\
+	sub r0, r0, #160\n\
+	lsl r0, r0, #8\n\
+	str r0, [r2, #4]\n\
+_08033564:\n\
+	ldr r4, _08033584  @ =gUnknown_030002C8\n\
+	ldr r0, [r2, #4]\n\
+	ldr r1, [r3, #4]\n\
+	sub r0, r0, r1\n\
+	add r1, r6, #0\n\
+	bl __divsi3\n\
+	str r0, [r4, #4]\n\
+_08033574:\n\
+	pop {r4-r6}\n\
+	pop {r0}\n\
+	bx r0\n\
+	.byte 0x00\n\
+	.byte 0x00\n\
+_0803357C:\n\
+	.4byte gUnknown_030002B8\n\
+_08033580:\n\
+	.4byte gUnknown_0300170C\n\
+_08033584:\n\
+	.4byte gUnknown_030002C8\n");
+}
+#endif
 
 asm(".align 2, 0");
