@@ -1,41 +1,7 @@
 #include "gba/gba.h"
 #include "global.h"
 
-struct Struct30009B0
-{
-    s32 unk0;
-    s32 unk4;
-    u8 unk8;
-    s16 unk10;
-    s16 unk12;
-};
-
-extern u32 gUnknown_03000020;
-extern u32 gUnknown_03000024;
-extern u8 gUnknown_03000B64;
-extern u32 gUnknown_03000B70;
-extern u8 gUnknown_03000B78;
-extern struct Struct30009B0 gUnknown_030009B0;
-extern u32 gUnknown_030009C0;
-extern u32 gUnknown_030009C4;
-extern u16 gUnknown_030012E0;
-extern u8 gUnknown_030012F4;
-extern s16 gUnknown_03001724;
-
-extern void (*const gUnknown_0807823C[])(void);
-extern const u32 gUnknown_0807846C[];
-extern const u32 gUnknown_08078354[];
-extern void (*const gUnknown_080782C8[])(void);
-extern void (*const gUnknown_080783E0[])(void);
-
-extern void sub_0801500C();
-extern void sub_08033C38(void);
-extern void sub_08033CE0(void);
-extern void sub_08033EA0();
-extern void sub_08033EE0(void);
-
-int sub_080066FC();
-void main_loop(void);
+static void main_loop(void);
 
 // 0x08006DF8
 void AgbMain(void)
@@ -126,14 +92,14 @@ void sub_08006F90(void)
     
     x = ((gUnknown_030009B0.unk0 >> 8) - gUnknown_03001724 - 4) & 0xFF;
     oam->x = x;
-    y = (gUnknown_030009B0.unk4 >> 8) - gUnknown_030012F4;
+    y = (gUnknown_030009B0.unk4 >> 8) - (u8)gUnknown_030012F4;
     oam->y = y;
     oam->affineMode = 0;
     oam->tileNum = 0;
 }
 
 // 0x08006FF0
-void main_loop(void)
+static void main_loop(void)
 {
     gUnknown_030009C0 = gUnknown_030009C4;
     gUnknown_03000B70 = 0;
@@ -170,12 +136,6 @@ void main_loop(void)
         gUnknown_030009C0 = gUnknown_030009C4;
     }
 }
-
-extern s8 gUnknown_03000BB4;
-extern u16 gUnknown_03001708;
-extern u16 gUnknown_030012E8;
-extern u32 gUnknown_030009CC;
-extern u32 gUnknown_030009C8;
 
 void sub_080070E8(s32 a, s32 b)
 {

@@ -4,22 +4,6 @@
 #define EWRAM 0x02000000
 #define IWRAM 0x03000000
 
-extern s16 gUnknown_030012A0;
-extern s16 gUnknown_030012F4;
-extern s16 gUnknown_0300170C;
-extern s16 gUnknown_03001710;
-extern u32 gUnknown_03001714;
-extern u32 gUnknown_03001718;
-extern s16 gUnknown_03001720;
-extern s16 gUnknown_03001724;
-
-extern void sub_08032FB0(void);
-
-void sub_08033CE0(void);
-void sub_08033D1C(void);
-void sub_08033D30(void);
-void sub_08033D58(void);
-
 void sub_08033C38(void)
 {
     REG_IME = 0;
@@ -103,38 +87,6 @@ s16 sub_08033DB4(s16 a)
     
     return var / a;
 }
-
-
-struct Struct30012D0
-{
-    u8 filler0[6];
-    u16 unk6;
-};
-
-extern void (*gUnknown_030012A8)(void);
-extern void (*gUnknown_030012C0)(void);
-extern struct Struct30012D0 gUnknown_030012D0;
-extern void (*gUnknown_030012FC)(void);
-extern u8 gUnknown_03001300[];
-extern volatile u16 gUnknown_03001700;  // frame counter, to run at 30 FPS?
-extern u16 gUnknown_0300171C;
-extern struct Struct30012D0 gUnknown_03001730;  // no idea what type this is
-extern u16 gUnknown_03001748;
-extern void *gUnknown_03007FFC;
-
-extern void interrupt_main(void);
-extern void sub_0802BEEC();
-extern void sub_0802BFA4(void);
-extern void sub_0802C144();
-extern void sub_0802C058(void);
-extern void sub_0807194C(void);
-extern void sub_080000FC_t(void);
-extern void sub_0802BE74(void);
-extern void sub_08033EC8(void);
-extern void sub_08000114_t(void);
-extern void sub_08071800(void);
-extern void sub_08033EBC(void);
-extern void sub_08034138(void);
 
 void sub_08033DCC(void)
 {
@@ -236,8 +188,6 @@ void sub_08033F6C(void)
     gUnknown_0300171C = INTR_FLAG_VCOUNT;
 }
 
-extern void sub_08033440(void);
-
 void sub_08033F80(s16 a, s16 b)
 {
     gUnknown_030012A0 += a;
@@ -251,13 +201,6 @@ void sub_08033FAC(s16 a, s16 b)
     gUnknown_03001710 = b;
     sub_08033440();
 }
-
-extern u8 gUnknown_030002A0[];
-extern u8 gUnknown_030012B0[];
-extern u16 gUnknown_030012E0;
-extern u16 gUnknown_030012E8;
-extern u16 gUnknown_03001708;
-extern u8 gUnknown_03001740;
 
 void sub_08033FC8(void)
 {
@@ -364,19 +307,6 @@ void sub_0803413C(void)
     REG_IF = INTR_FLAG_TIMER2;
     gUnknown_03001714++;
 }
-
-extern s8 gUnknown_03000B80;
-extern u32 gUnknown_030009C0;
-extern u16 gUnknown_030012E0;
-extern u8 gUnknown_03000B58;
-extern u8 gUnknown_03000B74;
-extern u8 gUnknown_03000BB4;
-
-extern void sub_080070E8();
-extern void sub_08071990();
-extern u16 sub_0806C2C4(void);
-extern void sub_080720AC(void);
-extern void sub_08071C24(void);
 
 // probably an inline function
 u16 sub_08034154(void)

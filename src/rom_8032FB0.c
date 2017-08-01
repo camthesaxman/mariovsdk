@@ -1,40 +1,6 @@
 #include "gba/gba.h"
 #include "global.h"
 
-extern u16 *const gUnknown_0807DD94;
-
-struct Struct30002B8
-{
-    s32 unk0;
-    s32 unk4;
-};
-
-/*
-extern s32 gUnknown_030002B0[];
-extern s32 gUnknown_030002B8[];
-extern s32 gUnknown_030002C0[];
-extern s32 gUnknown_030002C8[];
-*/
-
-extern struct Struct30002B8 gUnknown_030002B0;
-extern struct Struct30002B8 gUnknown_030002B8;
-extern struct Struct30002B8 gUnknown_030002C0;
-extern struct Struct30002B8 gUnknown_030002C8;
-
-extern s16 gUnknown_030012A0;
-extern s16 gUnknown_030012E0;
-extern u16 gUnknown_030012E8;
-extern s16 gUnknown_030012F4;
-extern s16 gUnknown_030012F8;
-extern s16 gUnknown_0300170C;
-extern s16 gUnknown_03001710;
-extern s16 gUnknown_03001720;
-extern s16 gUnknown_03001724;
-extern u8 gUnknown_03001744;
-extern u32 gUnknown_03001938;
-extern u32 gUnknown_030019A0;
-extern u32 gUnknown_03001A1C;
-
 void sub_08032FB0(void)
 {
     int i;
@@ -62,11 +28,6 @@ void sub_08032FB0(void)
     }
     CpuCopy16(oam, (void *)OAM, 0x400);
 }
-
-extern void sub_0806D1AC(u16, u16);
-extern void sub_080070E8();
-extern void sub_08071990();
-extern void sub_0800EE70(void);
 
 void sub_08033024(void)
 {
@@ -148,31 +109,6 @@ void sub_08033148(void)
     }
 
 }
-
-extern u32 gUnknown_030009C0;
-extern u16 gUnknown_030002AA;
-extern s8 gUnknown_03000B80;
-extern u8 gUnknown_03000B58;
-extern u8 gUnknown_03000B74;
-extern u8 gUnknown_03000BB4;
-extern u8 gUnknown_03001740;
-extern s32 gUnknown_03000B54;
-extern u8 gUnknown_030012B0[];
-extern u8 gUnknown_03000C28;
-extern u16 gUnknown_03001708;
-
-extern u16 sub_0806C2C4(void);
-extern void sub_080720AC(void);
-extern void sub_08071C24(void);
-
-
-struct KeyInput
-{
-    u16 keys:10;
-    u16 dummy:6;
-};
-
-// Using inline functions seems to be the only way I can get this to match.
 
 // possibly sub_08034154
 static inline u16 inline_1(void)

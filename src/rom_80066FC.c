@@ -1,9 +1,6 @@
 #include "gba/gba.h"
 #include "global.h"
 
-extern int (*gUnknown_03000964)(u32 *, int, int, int);
-extern u16 *gUnknown_0807820C;
-
 int sub_080066FC(u32 *a, int b, int c, int d)
 {
     return gUnknown_03000964(a, b, c, d);
