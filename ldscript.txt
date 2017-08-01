@@ -62,6 +62,7 @@ SECTIONS
 		. = 0x0; 		gUnknown_03000000 = .;
 		. = 0x20;		gUnknown_03000020 = .;
 		. = 0x24;		gUnknown_03000024 = .;
+		. = 0x2A0;		gUnknown_030002A0 = .;
 		. = 0x2AA;		gUnknown_030002AA = .;
 		. = 0x2B0;		gUnknown_030002B0 = .;
 		. = 0x2B8;		gUnknown_030002B8 = .;
@@ -90,20 +91,29 @@ SECTIONS
 		. = 0xC28;		gUnknown_03000C28 = .;
 		. = 0xEA0;		gUnknown_03000EA0 = .;
 		. = 0x12A0;		gUnknown_030012A0 = .;
+		. = 0x12A8;		gUnknown_030012A8 = .;
 		. = 0x12B0;		gUnknown_030012B0 = .;
+		. = 0x12C0;		gUnknown_030012C0 = .;
+		. = 0x12D0;		gUnknown_030012D0 = .;
 		. = 0x12E0;		gUnknown_030012E0 = .;
 		. = 0x12E8;		gUnknown_030012E8 = .;
 		. = 0x12F4;		gUnknown_030012F4 = .;
 		. = 0x12F8;		gUnknown_030012F8 = .;
+		. = 0x12FC;		gUnknown_030012FC = .;
+		. = 0x1300;		gUnknown_03001300 = .;
+		. = 0x1700;		gUnknown_03001700 = .;
 		. = 0x1708;		gUnknown_03001708 = .;
 		. = 0x170C;		gUnknown_0300170C = .;
 		. = 0x1710;		gUnknown_03001710 = .;
 		. = 0x1714;		gUnknown_03001714 = .;
 		. = 0x1718;		gUnknown_03001718 = .;
+		. = 0x171C;		gUnknown_0300171C = .;
 		. = 0x1720;		gUnknown_03001720 = .;
 		. = 0x1724;		gUnknown_03001724 = .;
+		. = 0x1730;		gUnknown_03001730 = .;
 		. = 0x1740;		gUnknown_03001740 = .;
 		. = 0x1744;		gUnknown_03001744 = .;
+		. = 0x1748;		gUnknown_03001748 = .;
 		. = 0x1938;		gUnknown_03001938 = .;
 		. = 0x19A0;		gUnknown_030019A0 = .;
 		. = 0x1A1C;		gUnknown_03001A1C = .;
@@ -116,6 +126,7 @@ SECTIONS
 		. = 0x1F44;		EraseFlashChip = .;
 		. = 0x1F48;		EraseFlashSector = .;
 		. = 0x1F4C;		gFlashMaxTime = .;
+		. = 0x7FFC;		gUnknown_03007FFC = .;
 	} = 0
 
     /* Discard everything not specifically mentioned above. */

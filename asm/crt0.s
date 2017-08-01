@@ -16,7 +16,7 @@ init:
 	mov r0, #31
 	msr cpsr, r0
 	ldr sp, sp_usr		@ set USR mode stack pointer
-	ldr r1, _08000230 @=0x03007FFC
+	ldr r1, _08000230 @=gUnknown_03007FFC
 	adr r0, interrupt_main
 	str r0, [r1]
 	ldr r1, _08000234 @=AgbMain+1
@@ -55,6 +55,7 @@ sub_08000114:
 THUMB_INTERWORK_VENEER sub_08000114
 
 
+	.GLOBAL interrupt_main
 	.ALIGN 2, 0
 	.CODE 32
 interrupt_main:
@@ -133,7 +134,7 @@ sub_08000214:
 _0800022C:
 	.4byte 0x04000200
 _08000230:
-	.4byte 0x03007FFC
+	.4byte gUnknown_03007FFC
 _08000234:
 	.4byte AgbMain+1
 _08000238:
