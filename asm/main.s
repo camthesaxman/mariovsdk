@@ -10,7 +10,7 @@ sub_080070E8:
 	add r3, r0, #0
 	cmp r1, #31
 	beq _0800713A
-	ldr r0, _08007118  @ =0x03000BB4
+	ldr r0, _08007118  @ =gUnknown_03000BB4
 	ldrb r0, [r0]
 	lsl r0, r0, #24
 	asr r0, r0, #24
@@ -29,7 +29,7 @@ _0800710A:
 _08007114:
 	.4byte gUnknown_030009C4
 _08007118:
-	.4byte 0x03000BB4
+	.4byte gUnknown_03000BB4
 _0800711C:
 	ldr r0, _08007140  @ =0x030009CC
 	str r2, [r0]
@@ -42,8 +42,8 @@ _0800712A:
 	ldr r1, _08007148  @ =gUnknown_03000024
 	mov r0, #1
 	str r0, [r1]
-	ldr r2, _0800714C  @ =0x030012E8
-	ldr r1, _08007150  @ =0x03001708
+	ldr r2, _0800714C  @ =gUnknown_030012E8
+	ldr r1, _08007150  @ =gUnknown_03001708
 	mov r0, #0
 	strh r0, [r1]
 	strh r0, [r2]
@@ -58,7 +58,7 @@ _08007144:
 _08007148:
 	.4byte gUnknown_03000024
 _0800714C:
-	.4byte 0x030012E8
+	.4byte gUnknown_030012E8
 _08007150:
-	.4byte 0x03001708
+	.4byte gUnknown_03001708
 THUMB_FUNC_END sub_080070E8

@@ -46,81 +46,66 @@ SECTIONS
 	.rodata :
 	ALIGN(4)
 	{
-		. = 0x77FAC;
-		sSetupInfos = .;
-		. = 0x7823C;
-		gUnknown_0807823C = .;
-		. = 0x782C8;
-		gUnknown_080782C8 = .;
-		. = 0x78354;
-		gUnknown_08078354 = .;
-		. = 0x783E0;
-		gUnknown_080783E0 = .;
-		. = 0x7846C;
-		gUnknown_0807846C = .;
-		
+		. = 0x77FAC;	sSetupInfos = .;
+		. = 0x7823C;	gUnknown_0807823C = .;
+		. = 0x782C8;	gUnknown_080782C8 = .;
+		. = 0x78354;	gUnknown_08078354 = .;
+		. = 0x783E0;	gUnknown_080783E0 = .;
+		. = 0x7846C;	gUnknown_0807846C = .;
+		. = 0x7DD94;	gUnknown_0807DD94 = .;
 	}
 
 	. = 0x03000000;
 	.bss :
 	ALIGN(4)
 	{
-		. = 0x0;
-		gUnknown_03000000 = .;
-		. = 0x20;
-		gUnknown_03000020 = .;
-		. = 0x24;
-		gUnknown_03000024 = .;
+		. = 0x0; 		gUnknown_03000000 = .;
+		. = 0x20;		gUnknown_03000020 = .;
+		. = 0x24;		gUnknown_03000024 = .;
+		. = 0x2AA;		gUnknown_030002AA = .;
+		
 		. = 0x880;
 		src/agb_flash.o(.bss);
 		tools/agbcc/lib/libgcc.a:dp-bit.o(.bss);
 		tools/agbcc/lib/libgcc.a:fp-bit.o(.bss);
 		
-		. = 0x964;
-		gUnknown_03000964 = .;
-		. = 0x9B0;
-		gUnknown_030009B0 = .;
-		. = 0x9C0;
-		gUnknown_030009C0 = .;
-		. = 0x9C4;
-		gUnknown_030009C4 = .;
-		. = 0xB64;
-		gUnknown_03000B64 = .;
-		. = 0xB70;
-		gUnknown_03000B70 = .;
-		. = 0xB78;
-		gUnknown_03000B78 = .;
-		. = 0xEA0;
-		gUnknown_03000EA0 = .;
-		. = 0x12E0;
-		gUnknown_030012E0 = .;
-		. = 0x12F4;
-		gUnknown_030012F4 = .;
-		. = 0x1714;
-		gUnknown_03001714 = .;
-		. = 0x1718;
-		gUnknown_03001718 = .;
-		. = 0x1724;
-		gUnknown_03001724 = .;
-		. = 0x1F2C;
-		gFlashTimeoutFlag = .;
-		. = 0x1F30;
-		PollFlashStatus = .;
-		. = 0x1F34;
-		WaitForFlashWrite = .;
-		. = 0x1F38;
-		ProgramFlashSector = .;
-		. = 0x1F3C;
-		gFlash = .;
-		. = 0x1F40;
-		gFlashNumRemainingBytes = .;
-		. = 0x1F44;
-		EraseFlashChip = .;
-		. = 0x1F48;
-		EraseFlashSector = .;
-		. = 0x1F4C;
-		gFlashMaxTime = .;
-		
+		. = 0x964;		gUnknown_03000964 = .;
+		. = 0x9B0;		gUnknown_030009B0 = .;
+		. = 0x9C0;		gUnknown_030009C0 = .;
+		. = 0x9C4;		gUnknown_030009C4 = .;
+		. = 0xB54;		gUnknown_03000B54 = .;
+		. = 0xB58;		gUnknown_03000B58 = .;
+		. = 0xB64;		gUnknown_03000B64 = .;
+		. = 0xB70;		gUnknown_03000B70 = .;
+		. = 0xB74;		gUnknown_03000B74 = .;
+		. = 0xB78;		gUnknown_03000B78 = .;
+		. = 0xB80;		gUnknown_03000B80 = .;
+		. = 0xBB4;		gUnknown_03000BB4 = .;
+		. = 0xC28;		gUnknown_03000C28 = .;
+		. = 0xEA0;		gUnknown_03000EA0 = .;
+		. = 0x12B0;		gUnknown_030012B0 = .;
+		. = 0x12E0;		gUnknown_030012E0 = .;
+		. = 0x12E8;		gUnknown_030012E8 = .;
+		. = 0x12F4;		gUnknown_030012F4 = .;
+		. = 0x12F8;		gUnknown_030012F8 = .;
+		. = 0x1708;		gUnknown_03001708 = .;
+		. = 0x1714;		gUnknown_03001714 = .;
+		. = 0x1718;		gUnknown_03001718 = .;
+		. = 0x1724;		gUnknown_03001724 = .;
+		. = 0x1740;		gUnknown_03001740 = .;
+		. = 0x1744;		gUnknown_03001744 = .;
+		. = 0x1938;		gUnknown_03001938 = .;
+		. = 0x19A0;		gUnknown_030019A0 = .;
+		. = 0x1A1C;		gUnknown_03001A1C = .;
+		. = 0x1F2C;		gFlashTimeoutFlag = .;
+		. = 0x1F30;		PollFlashStatus = .;
+		. = 0x1F34;		WaitForFlashWrite = .;
+		. = 0x1F38;		ProgramFlashSector = .;
+		. = 0x1F3C;		gFlash = .;
+		. = 0x1F40;		gFlashNumRemainingBytes = .;
+		. = 0x1F44;		EraseFlashChip = .;
+		. = 0x1F48;		EraseFlashSector = .;
+		. = 0x1F4C;		gFlashMaxTime = .;
 	} = 0
 
     /* Discard everything not specifically mentioned above. */
