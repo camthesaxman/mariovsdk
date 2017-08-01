@@ -21,8 +21,9 @@ MAP      := $(ROM:.gba=.map)
 LDSCRIPT := ldscript.txt
 CFILES   := \
 	src/rom_80066FC.c \
-	src/rom_8032FB0.c \
 	src/main.c \
+	src/rom1.c \
+	src/rom_8032FB0.c \
 	src/rom_8033C38.c \
 	src/agb_flash.c \
 	src/agb_flash_1m.c \

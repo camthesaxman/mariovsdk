@@ -1018,7 +1018,7 @@ sub_08006DD8: @ 0x08006DD8
 	strb r1, [r0]
 	ldr r0, _08006DF0  @ =0x03000B78
 	strb r1, [r0]
-	ldr r1, _08006DF4  @ =0x030009C4
+	ldr r1, _08006DF4  @ =gUnknown_030009C4
 	mov r0, #34
 	str r0, [r1]
 	bx lr
@@ -1029,5 +1029,5 @@ _08006DEC:
 _08006DF0:
 	.4byte 0x03000B78
 _08006DF4:
-	.4byte 0x030009C4
+	.4byte gUnknown_030009C4
 	THUMB_FUNC_END sub_08006DD8
