@@ -392,4 +392,43 @@ _08033584:\n\
 }
 #endif
 
+void sub_08033588(int a, int b, int c)
+{
+    if (gUnknown_030002B0.unk0 == a)
+    {
+        gUnknown_030002C8.unk0 = 0;
+        gUnknown_030002B8.unk0 = a;
+    }
+    else
+    {
+        gUnknown_030002B8.unk0 = a;
+        if (gUnknown_030002B8.unk0 < 0)
+            gUnknown_030002B8.unk0 = 0;
+        if ((gUnknown_030002B8.unk0 >> 8) + DISPLAY_WIDTH >= gUnknown_03001720)
+            gUnknown_030002B8.unk0 = (gUnknown_03001720 - DISPLAY_WIDTH) << 8;
+        if (gUnknown_030002B8.unk0 - gUnknown_030002B0.unk0 > 0)
+            gUnknown_030002C8.unk0 = c;
+        else
+            gUnknown_030002C8.unk0 = -c;
+    }
+    
+    if (gUnknown_030002B0.unk4 == b)
+    {
+        gUnknown_030002C8.unk4 = 0;
+        gUnknown_030002B8.unk4 = b;
+    }
+    else
+    {
+        gUnknown_030002B8.unk4 = b;
+        if (gUnknown_030002B8.unk4 < 0)
+            gUnknown_030002B8.unk4 = 0;
+        if ((gUnknown_030002B8.unk4 >> 8) + DISPLAY_HEIGHT >= gUnknown_0300170C)
+            gUnknown_030002B8.unk4 = (gUnknown_0300170C - DISPLAY_HEIGHT) << 8;
+        if (gUnknown_030002B8.unk4 - gUnknown_030002B0.unk4 > 0)
+            gUnknown_030002C8.unk4 = c;
+        else
+            gUnknown_030002C8.unk4 = -c;
+    }
+}
+
 asm(".align 2, 0");

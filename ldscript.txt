@@ -114,6 +114,7 @@ SECTIONS
 		. = 0x1740;		gUnknown_03001740 = .;
 		. = 0x1744;		gUnknown_03001744 = .;
 		. = 0x1748;		gUnknown_03001748 = .;
+		. = 0x1750;		gUnknown_03001750 = .;
 		. = 0x1938;		gUnknown_03001938 = .;
 		. = 0x19A0;		gUnknown_030019A0 = .;
 		. = 0x1A1C;		gUnknown_03001A1C = .;

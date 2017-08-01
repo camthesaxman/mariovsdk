@@ -1,6 +1,14 @@
 #ifndef GUARD_GLOBAL_H
 #define GUARD_GLOBAL_H
 
+//------------------------------------------------------------------------------
+// Macros
+//------------------------------------------------------------------------------
+
+// Both of these match so far
+#define ABS(n) ((n) >= 0 ? (n) : -(n))
+//#define ABS(n) ((n) < 0 ? -(n) : (n))
+
 
 //------------------------------------------------------------------------------
 // Types
@@ -31,6 +39,28 @@ struct Struct30009B0
     u8 unk8;
     s16 unk10;
     s16 unk12;
+};
+
+struct UnknownStruct3
+{
+    u32 unk0;
+    u32 unk4;
+    u32 unk8;
+    u32 unkC;
+    u32 unk10[4];
+};
+
+struct CompressionHeader
+{
+    u32 unk0_0:4;
+    u32 compressionType:4;
+    u32 size:24;
+};
+
+struct UnknownStruct2
+{
+    struct CompressionHeader header;
+    u8 data[0];
 };
 
 
@@ -86,6 +116,7 @@ extern struct Struct30012D0 gUnknown_03001730;  // no idea what type this is
 extern u8 gUnknown_03001740;
 extern u8 gUnknown_03001744;
 extern u16 gUnknown_03001748;
+extern struct UnknownStruct3 gUnknown_03001750;
 extern u32 gUnknown_03001938;
 extern u32 gUnknown_030019A0;
 extern u32 gUnknown_03001A1C;
@@ -109,13 +140,15 @@ void sub_080000FC_t(void);
 void sub_08000114_t(void);
 void interrupt_main(void);
 
-void sub_0801500C();
 int sub_080066FC(u32 *, int, int, int);
+void sub_080070E8(s32, s32);
+void sub_0801500C();
 void sub_0802BE74(void);
 void sub_0802BEEC();
 void sub_0802BFA4(void);
 void sub_0802C058(void);
 void sub_0802C144();
+void sub_0802D468();
 void sub_08032FB0(void);
 void sub_08033440(void);
 void sub_08033C38(void);
@@ -128,6 +161,7 @@ void sub_08033EBC(void);
 void sub_08033EC8(void);
 void sub_08033EE0(void);
 void sub_08034138(void);
+void sub_08034898();
 u16 sub_0806C2C4(void);
 void sub_0806D1AC(u16, u16);
 void sub_080070E8();
@@ -137,6 +171,5 @@ void sub_0807194C(void);
 void sub_08071990();
 void sub_08071C24(void);
 void sub_080720AC(void);
-
 
 #endif  // GUARD_GLOBAL_H
