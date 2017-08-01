@@ -174,6 +174,7 @@ struct KeyInput
 
 // Using inline functions seems to be the only way I can get this to match.
 
+// possibly sub_08034154
 static inline u16 inline_1(void)
 {
     if (gUnknown_03000B80 == 5)
@@ -182,6 +183,7 @@ static inline u16 inline_1(void)
         return 0;
 }
 
+// possibly sub_08034178
 static inline bool32 inline_2(void)
 {
     if ((gUnknown_030012E0 & START_BUTTON) &&  (gUnknown_030012E0 & SELECT_BUTTON) && (gUnknown_030012E0 & A_BUTTON) && (gUnknown_030012E0 & B_BUTTON)

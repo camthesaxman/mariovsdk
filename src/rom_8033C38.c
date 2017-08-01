@@ -304,4 +304,108 @@ u8 *sub_08034030(u32 num, char *str, u32 digits)
     return str;
 }
 
+// TODO: Get this matching in a better way
+void sub_080340A0(int unused, void *b, void *c, u32 d)
+{
+    if (d & 0xFFFF)
+    {
+        u32 r12 = d & 0x1000000;
+        u32 r7 = d & 0x4000000;
+        u16 *r1 = b;
+        register u32 *r4 asm("r4") = b;
+        u16 *r2 = c;
+        register u32 *r3 asm("r3") = c;
+        
+        u32 r5;
+        for (r5 = d & 0xFFFF; r5 != 0; r5--)
+        {
+            if (r12 != 0)
+            {
+                if (r7 != 0)
+                    *r3 = *(u32 *)b;
+                else
+                    *r2 = *(u16 *)b;
+            }
+            else
+            {
+                if (r7 != 0)
+                    *r3 = *r4;
+                else
+                    *r2 = *r1;
+            }
+            r1++;
+            r2++;
+            r4++;
+            r3++;
+        }
+    }
+}
+
+void sub_08034100(void)
+{
+    if (gUnknown_030012FC != NULL)
+        gUnknown_030012FC();
+    sub_08033F28();
+}
+
+void sub_0803411C(void)
+{
+    if (gUnknown_030012A8 != NULL)
+        gUnknown_030012A8();
+    sub_08033F6C();
+}
+
+void sub_08034138(void)
+{
+}
+
+void sub_0803413C(void)
+{
+    REG_IF = INTR_FLAG_TIMER2;
+    gUnknown_03001714++;
+}
+
+extern s8 gUnknown_03000B80;
+extern u32 gUnknown_030009C0;
+extern u16 gUnknown_030012E0;
+extern u8 gUnknown_03000B58;
+extern u8 gUnknown_03000B74;
+extern u8 gUnknown_03000BB4;
+
+extern void sub_080070E8();
+extern void sub_08071990();
+extern u16 sub_0806C2C4(void);
+extern void sub_080720AC(void);
+extern void sub_08071C24(void);
+
+// probably an inline function
+u16 sub_08034154(void)
+{
+    if (gUnknown_03000B80 == 5)
+        return sub_0806C2C4();
+    else
+        return 0;
+}
+
+// probably an inline function
+bool32 sub_08034178(void)
+{
+    if ((gUnknown_030012E0 & START_BUTTON) &&  (gUnknown_030012E0 & SELECT_BUTTON) && (gUnknown_030012E0 & A_BUTTON) && (gUnknown_030012E0 & B_BUTTON)
+     && gUnknown_030009C0 != 7 && gUnknown_030009C0 != 34)
+    {
+        sub_080070E8(7, 1);
+        gUnknown_03000B80 = 0;
+        gUnknown_03000B58 = 0;
+        gUnknown_03000B74 = 0;
+        gUnknown_03000BB4 = 0;
+        sub_080720AC();
+        sub_08071C24();
+        return TRUE;
+    }
+    else
+    {
+        return FALSE;
+    }
+}
+
 asm(".align 2, 0");
