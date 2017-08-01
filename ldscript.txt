@@ -7,10 +7,10 @@ SECTIONS
 	{
 		asm/crt0.o(.text);
 		asm/rom_800023C.o(.text);
+		asm/rom_8001BA4.o(.text);
 		src/rom_80066FC.o(.text);
 		asm/rom_80066FC.o(.text);
 		src/main.o(.text);
-		asm/main.o(.text);
 		asm/rom1.o(.text);
 		src/rom_8032FB0.o(.text);
 		asm/rom_8032FB0.o(.text);
@@ -77,6 +77,8 @@ SECTIONS
 		. = 0x9B0;		gUnknown_030009B0 = .;
 		. = 0x9C0;		gUnknown_030009C0 = .;
 		. = 0x9C4;		gUnknown_030009C4 = .;
+		. = 0x9C8;		gUnknown_030009C8 = .;
+		. = 0x9CC;		gUnknown_030009CC = .;
 		. = 0xB54;		gUnknown_03000B54 = .;
 		. = 0xB58;		gUnknown_03000B58 = .;
 		. = 0xB64;		gUnknown_03000B64 = .;

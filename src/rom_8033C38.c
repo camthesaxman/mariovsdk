@@ -52,6 +52,7 @@ void sub_08033CD0(void)
     sub_08033D1C();
 }
 
+// 0x08033CE0
 void sub_08033CE0(void)
 {
     DmaFill32(3, 0, (void *)EWRAM, 0x40000);

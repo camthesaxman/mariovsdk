@@ -170,3 +170,31 @@ void main_loop(void)
         gUnknown_030009C0 = gUnknown_030009C4;
     }
 }
+
+extern s8 gUnknown_03000BB4;
+extern u16 gUnknown_03001708;
+extern u16 gUnknown_030012E8;
+extern u32 gUnknown_030009CC;
+extern u32 gUnknown_030009C8;
+
+void sub_080070E8(s32 a, s32 b)
+{
+    if (gUnknown_030009C4 != 31)
+    {
+        if (gUnknown_03000BB4 != 0 && a == 8)
+            a = 24;
+        if (b == 0)
+        {
+            gUnknown_030009C4 = a;
+        }
+        else
+        {
+            gUnknown_030009CC = a;
+            gUnknown_030009C8 = gUnknown_030009C4;
+            gUnknown_030009C4 = 31;
+        }
+        
+        gUnknown_03000024 = 1;
+        gUnknown_030012E8 = gUnknown_03001708 = 0;
+    }
+}

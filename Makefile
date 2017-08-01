@@ -31,8 +31,8 @@ CFILES   := \
 SFILES   := \
 	asm/crt0.s \
 	asm/rom_800023C.s \
+	asm/rom_8001BA4.s \
 	asm/rom_80066FC.s \
-	asm/main.s \
 	asm/rom1.s \
 	asm/rom_8032FB0.s \
 	asm/rom_8033D80.s \

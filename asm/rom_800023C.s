@@ -1808,5 +1808,3 @@ _08001B9C:
 	.4byte 0x03001F24
 _08001BA0:
 	.4byte 0x08B3A0A8
-
-	.INCBIN "baserom.gba", 0x1BA4, 0x66FC-0x1BA4
