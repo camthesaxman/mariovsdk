@@ -113,7 +113,7 @@ interrupt_main:
 	ands r0, r1, #0x2000
   found_interrupt:
 	strh r0, [r3, #2]
-	ldr r1, _08000238  @ =0x08076D58
+	ldr r1, _08000238  @ =gUnknown_08076D58
 	add r1, r1, r2
 	ldr r0, [r1]
 	mov lr, pc
@@ -138,4 +138,4 @@ _08000230:
 _08000234:
 	.4byte AgbMain+1
 _08000238:
-	.4byte 0x08076D58
+	.4byte gUnknown_08076D58

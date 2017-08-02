@@ -217,7 +217,7 @@ _08000524:
 	mov r1, #1
 _0800052C:
 	orr r1, r1, r12, lsl #1
-	ldr r2, _080006D4  @ =0x0807820C
+	ldr r2, _080006D4  @ =gUnknown_0807820C
 	ldr r2, [r2]
 	add r2, r2, #0x4000
 	add r2, r2, #12
@@ -339,7 +339,7 @@ _080006CC:
 _080006D0:
 	.4byte gUnknown_0300170C
 _080006D4:
-	.4byte 0x0807820C
+	.4byte gUnknown_0807820C
 
 _080006D8:
 	push {r4-r11,lr}
@@ -577,7 +577,7 @@ _080009F8:
 	bxge lr
 	push {r4-r11,lr}
 	mov r12, r0
-	ldr r3, _0800168C  @ =0x0807AA58
+	ldr r3, _0800168C  @ =gUnknown_0807AA58
 	ldr r4, _08001690  @ =0x03000970
 _08000A48:
 	ldrb r5, [r1, #152]
@@ -1443,7 +1443,7 @@ _08001684:
 _08001688:
 	.4byte 0x03001940
 _0800168C:
-	.4byte 0x0807AA58
+	.4byte gUnknown_0807AA58
 _08001690:
 	.4byte 0x03000970
 _08001694:
@@ -1656,7 +1656,7 @@ _08001968:
 	ldrsh r9, [r0, #70]
 	cmp r9, #0
 	blt _080019C8
-	ldr r6, _08001B90  @ =0x08B39C1C
+	ldr r6, _08001B90  @ =gUnknown_08B39C1C
 	ldrb r7, [r5, #40]
 	lsr r8, r9, #2
 	add r8, r8, r7, lsl #6
@@ -1676,10 +1676,10 @@ _08001968:
 	strh r9, [r0, #70]
 _080019C8:
 	rsb r4, r4, #0x1e00
-	ldr r6, _08001B94  @ =0x08B39F48
+	ldr r6, _08001B94  @ =gUnknown_08B39F48
 	lsr r9, r4, #8
 	ldr r6, [r6, r9, lsl #2]
-	ldr r7, _08001B98  @ =0x08B3961C
+	ldr r7, _08001B98  @ =gUnknown_08B3961C
 	and r8, r6, #768
 	and r4, r4, #255
 	orr r4, r4, r8
@@ -1765,7 +1765,7 @@ _08001B10:
 	lsl r5, r5, #6
 	cmp r9, #0
 	blt _08001B50
-	ldr r10, _08001BA0  @ =0x08B3A0A8
+	ldr r10, _08001BA0  @ =gUnknown_08B3A0A8
 	rsb r8, r9, #64
 	mul r8, r11, r8
 	asr r8, r8, #5
@@ -1799,12 +1799,12 @@ _08001B84:
 	bx lr
 
 _08001B90:
-	.4byte 0x08B39C1C
+	.4byte gUnknown_08B39C1C
 _08001B94:
-	.4byte 0x08B39F48
+	.4byte gUnknown_08B39F48
 _08001B98:
-	.4byte 0x08B3961C
+	.4byte gUnknown_08B3961C
 _08001B9C:
 	.4byte 0x03001F24
 _08001BA0:
-	.4byte 0x08B3A0A8
+	.4byte gUnknown_08B3A0A8
