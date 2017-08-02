@@ -63,6 +63,12 @@ struct UnknownStruct2
     u8 data[0];
 };
 
+struct UnknownStruct6
+{
+    u8 filler0[0x20];
+    s32 unk20;
+    s32 unk24;
+};
 
 //------------------------------------------------------------------------------
 // Variables
@@ -84,10 +90,10 @@ extern u32 gUnknown_030009C8;
 extern u32 gUnknown_030009CC;
 extern u8 gUnknown_030009D0;
 extern s32 gUnknown_03000B54;
-extern u8 gUnknown_03000B58;
+extern s8 gUnknown_03000B58;
 extern u8 gUnknown_03000B64;
 extern u32 gUnknown_03000B70;
-extern u8 gUnknown_03000B74;
+extern s8 gUnknown_03000B74;
 extern u8 gUnknown_03000B78;
 extern s8 gUnknown_03000B80;
 extern s8 gUnknown_03000BB4;
@@ -144,9 +150,11 @@ void interrupt_main(void);
 void sub_08004634();
 int sub_080066FC(u32 *, int, int, int);
 void sub_08006968();
+void sub_08006D44(void);
 void sub_080070E8(s32, s32);
 void sub_08007170(void);
 void sub_0800EE70(void);
+void sub_08014A58();
 void sub_0801500C();
 void sub_0802919C();
 void sub_0802BA94(void);
@@ -184,7 +192,7 @@ void sub_08034138(void);
 void sub_08034898();
 void sub_080386DC(void);
 s8 sub_08040EE8();
-int sub_08040F30(s8);
+struct UnknownStruct6 *sub_08040F30(s8);
 u16 sub_0806C2C4(void);
 void sub_0806D1AC(u16, u16);
 void sub_080714A8(void);
@@ -192,7 +200,12 @@ void sub_08071800(void);
 void sub_0807194C(void);
 void sub_08071990();
 void sub_08071C24(void);
+void sub_08071CD4(void);
+void sub_08071FA0();
+int sub_08071FE4(void);
+int sub_08072038(void);
 void sub_0807204C();
 void sub_080720AC(void);
+int sub_08072144(void);
 
 #endif  // GUARD_GLOBAL_H

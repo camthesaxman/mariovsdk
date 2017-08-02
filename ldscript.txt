@@ -71,6 +71,8 @@ SECTIONS
 		. = 0x32;		gUnknown_03000032 = .;
 		. = 0x33;		gUnknown_03000033 = .;
 		. = 0x34;		gUnknown_03000034 = .;
+		. = 0x38;		gUnknown_03000038 = .;
+		. = 0x3C;		gUnknown_0300003C = .;
 		. = 0x2A0;		gUnknown_030002A0 = .;
 		. = 0x2AA;		gUnknown_030002AA = .;
 		. = 0x2B0;		gUnknown_030002B0 = .;
@@ -91,6 +93,7 @@ SECTIONS
 		. = 0x9CC;		gUnknown_030009CC = .;
 		. = 0x9D0;		gUnknown_030009D0 = .;
 		. = 0x9D4;		gUnknown_030009D4 = .;
+		. = 0x9D8;		gUnknown_030009D8 = .;
 		. = 0x9DC;		gUnknown_030009DC = .;
 		. = 0x9E4;		gUnknown_030009E4 = .;
 		. = 0x9E8;		gUnknown_030009E8 = .;
@@ -112,6 +115,7 @@ SECTIONS
 		. = 0xB90;		gUnknown_03000B90 = .;
 		. = 0xBB4;		gUnknown_03000BB4 = .;
 		. = 0xBB8;		gUnknown_03000BB8 = .;
+		. = 0xBBC;		gUnknown_03000BBC = .;
 		. = 0xC28;		gUnknown_03000C28 = .;
 		. = 0xEA0;		gUnknown_03000EA0 = .;
 		. = 0x12A0;		gUnknown_030012A0 = .;
@@ -145,7 +149,10 @@ SECTIONS
 		. = 0x19A0;		gUnknown_030019A0 = .;
 		. = 0x1A1C;		gUnknown_03001A1C = .;
 		. = 0x1A30;		gUnknown_03001A30 = .;
+		. = 0x1A38;		gUnknown_03001A38 = .;
+		. = 0x1B30;		gUnknown_03001B30 = .;
 		. = 0x1BDC;		gUnknown_03001BDC = .;
+		. = 0x1C78;		gUnknown_03001C78 = .;
 		. = 0x1F2C;		gFlashTimeoutFlag = .;
 		. = 0x1F30;		PollFlashStatus = .;
 		. = 0x1F34;		WaitForFlashWrite = .;

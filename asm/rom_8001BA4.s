@@ -2906,7 +2906,7 @@ sub_08003040: @ 0x08003040
 	add r5, r1, #0
 	mov r0, #0
 	mov r9, r0
-	ldr r0, _08003108  @ =0x03001A1C
+	ldr r0, _08003108  @ =gUnknown_03001A1C
 	ldr r0, [r0]
 	mov r1, #128
 	lsl r1, r1, #16
@@ -2990,7 +2990,7 @@ _080030BA:
 	bne _080030F2
 	b _08003228
 _080030F2:
-	ldr r0, _08003118  @ =0x03000BBC
+	ldr r0, _08003118  @ =gUnknown_03000BBC
 	ldrb r0, [r0]
 	lsl r0, r0, #24
 	asr r0, r0, #24
@@ -3002,7 +3002,7 @@ _08003100:
 	bl 0x08014A58
 	b _08003228
 _08003108:
-	.4byte 0x03001A1C
+	.4byte gUnknown_03001A1C
 _0800310C:
 	.4byte 0x08078214
 _08003110:
@@ -3010,7 +3010,7 @@ _08003110:
 _08003114:
 	.4byte 0x030009C0
 _08003118:
-	.4byte 0x03000BBC
+	.4byte gUnknown_03000BBC
 _0800311C:
 	ldr r2, _08003164  @ =gUnknown_03001A30
 	ldrb r0, [r4, #4]
@@ -3268,7 +3268,7 @@ _080032CE:
 	mov r2, #16
 	mov r3, #64
 	bl 0x08071990
-	ldr r0, _08003318  @ =0x03000BBC
+	ldr r0, _08003318  @ =gUnknown_03000BBC
 	ldrb r0, [r0]
 	lsl r0, r0, #24
 	asr r0, r0, #24
@@ -3282,7 +3282,7 @@ _0800330C:
 _08003314:
 	.4byte gUnknown_030009EC
 _08003318:
-	.4byte 0x03000BBC
+	.4byte gUnknown_03000BBC
 _0800331C:
 	ldr r2, _0800334C  @ =gUnknown_03001A30
 	ldrb r0, [r4, #4]
@@ -6014,12 +6014,12 @@ _080046F6:
 	add r7, sp, #16
 	cmp r0, #0
 	beq _08004760
-	ldr r1, _0800475C  @ =0x03001A1C
+	ldr r1, _0800475C  @ =gUnknown_03001A1C
 	ldr r0, [r1]
 	mov r1, #128
 	lsl r1, r1, #20
 	orr r0, r0, r1
-	ldr r3, _0800475C  @ =0x03001A1C
+	ldr r3, _0800475C  @ =gUnknown_03001A1C
 	str r0, [r3]
 	b _0800476A
 	.byte 0x00
@@ -6055,9 +6055,9 @@ _08004754:
 _08004758:
 	.4byte 0x0000600C
 _0800475C:
-	.4byte 0x03001A1C
+	.4byte gUnknown_03001A1C
 _08004760:
-	ldr r4, _080047C0  @ =0x03001A1C
+	ldr r4, _080047C0  @ =gUnknown_03001A1C
 	ldr r0, [r4]
 	ldr r1, _080047C4  @ =0xF7FFFFFF
 	and r0, r0, r1
@@ -6107,7 +6107,7 @@ _0800477A:
 	lsr r4, r0, #24
 	b _08004818
 _080047C0:
-	.4byte 0x03001A1C
+	.4byte gUnknown_03001A1C
 _080047C4:
 	.4byte 0xF7FFFFFF
 _080047C8:
@@ -6199,7 +6199,7 @@ _0800486A:
 	cmp r6, r12
 	blt _08004842
 _08004870:
-	ldr r7, _08004884  @ =0x03001A1C
+	ldr r7, _08004884  @ =gUnknown_03001A1C
 	ldr r0, [r7]
 	ldr r1, _08004888  @ =0xF7FFFFFF
 	and r0, r0, r1
@@ -6210,7 +6210,7 @@ _0800487C:
 _08004880:
 	.4byte 0x0000600C
 _08004884:
-	.4byte 0x03001A1C
+	.4byte gUnknown_03001A1C
 _08004888:
 	.4byte 0xF7FFFFFF
 _0800488C:
