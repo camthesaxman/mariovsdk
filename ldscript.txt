@@ -36,25 +36,11 @@ SECTIONS
 		src/libc.o(.text);
 		*(.glue_7t);
 	} = 0
-	
+
 	.data :
 	ALIGN(4)
 	{
 		data/data.o(.data);
-	}
-	
-	. = 0x08000000;
-	.rodata :
-	ALIGN(4)
-	{
-		. = 0x76D94;	gUnknown_08076D94 = .;
-		. = 0x77FAC;	sSetupInfos = .;
-		. = 0x7823C;	gUnknown_0807823C = .;
-		. = 0x782C8;	gUnknown_080782C8 = .;
-		. = 0x78354;	gUnknown_08078354 = .;
-		. = 0x783E0;	gUnknown_080783E0 = .;
-		. = 0x7846C;	gUnknown_0807846C = .;
-		. = 0x7DD94;	gUnknown_0807DD94 = .;
 	}
 
 	. = 0x03000000;
@@ -80,12 +66,12 @@ SECTIONS
 		. = 0x2B8;		gUnknown_030002B8 = .;
 		. = 0x2C0;		gUnknown_030002C0 = .;
 		. = 0x2C8;		gUnknown_030002C8 = .;
-		
+
 		. = 0x880;
 		src/agb_flash.o(.bss);
 		tools/agbcc/lib/libgcc.a:dp-bit.o(.bss);
 		tools/agbcc/lib/libgcc.a:fp-bit.o(.bss);
-		
+
 		. = 0x964;		gUnknown_03000964 = .;
 		. = 0x9B0;		gUnknown_030009B0 = .;
 		. = 0x9C0;		gUnknown_030009C0 = .;

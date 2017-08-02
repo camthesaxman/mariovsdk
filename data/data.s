@@ -3,7 +3,7 @@
 	.data
 
 	@ What is this first part? Seems unreferenced.
-	
+
 	.INCBIN "baserom.gba", 0x76360, 0x76368-0x76360
 
 	.GLOBAL gUnknown_08076368
@@ -100,7 +100,11 @@ gUnknown_08076D58:
 
 	.GLOBAL gUnknown_08076D70
 gUnknown_08076D70:
-	.INCBIN "baserom.gba", 0x76D70, 0x76F6C-0x76D70
+	.INCBIN "baserom.gba", 0x76D70, 0x76D94-0x76D70
+
+	.GLOBAL gUnknown_08076D94
+gUnknown_08076D94:
+	.INCBIN "baserom.gba", 0x76D94, 0x76F6C-0x76D94
 
 	.GLOBAL gUnknown_08076F6C
 gUnknown_08076F6C:
@@ -148,7 +152,11 @@ gUnknown_08076FD0:
 
 	.GLOBAL gUnknown_08076FD4
 gUnknown_08076FD4:
-	.INCBIN "baserom.gba", 0x76FD4, 0x7820C-0x76FD4
+	.INCBIN "baserom.gba", 0x76FD4, 0x77FAC-0x76FD4
+
+	.GLOBAL sSetupInfos
+sSetupInfos:
+	.INCBIN "baserom.gba", 0x77FAC, 0x7820C-0x77FAC
 
 	.GLOBAL gUnknown_0807820C
 gUnknown_0807820C:
@@ -172,7 +180,27 @@ gUnknown_0807822C:
 
 	.GLOBAL gUnknown_08078234
 gUnknown_08078234:
-	.INCBIN "baserom.gba", 0x78234, 0x784F8-0x78234
+	.INCBIN "baserom.gba", 0x78234, 0x7823C-0x78234
+
+	.GLOBAL gUnknown_0807823C
+gUnknown_0807823C:
+	.INCBIN "baserom.gba", 0x7823C, 0x782C8-0x7823C
+
+	.GLOBAL gUnknown_080782C8
+gUnknown_080782C8:
+	.INCBIN "baserom.gba", 0x782C8, 0x78354-0x782C8
+
+	.GLOBAL gUnknown_08078354
+gUnknown_08078354:
+	.INCBIN "baserom.gba", 0x78354, 0x783E0-0x78354
+
+	.GLOBAL gUnknown_080783E0
+gUnknown_080783E0:
+	.INCBIN "baserom.gba", 0x783E0, 0x7846C-0x783E0
+
+	.GLOBAL gUnknown_0807846C
+gUnknown_0807846C:
+	.INCBIN "baserom.gba", 0x7846C, 0x784F8-0x7846C
 
 	.GLOBAL gUnknown_080784F8
 gUnknown_080784F8:
@@ -760,7 +788,11 @@ gUnknown_0807DD64:
 
 	.GLOBAL gUnknown_0807DD7C
 gUnknown_0807DD7C:
-	.INCBIN "baserom.gba", 0x7DD7C, 0x81D98-0x7DD7C
+	.INCBIN "baserom.gba", 0x7DD7C, 0x7DD94-0x7DD7C
+
+	.GLOBAL gUnknown_0807DD94
+gUnknown_0807DD94:
+	.INCBIN "baserom.gba", 0x7DD94, 0x81D98-0x7DD94
 
 	.GLOBAL gUnknown_08081D98
 gUnknown_08081D98:
