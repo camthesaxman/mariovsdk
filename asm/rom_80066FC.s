@@ -155,7 +155,7 @@ _0800680A:
 	add r1, sp, #8
 	add r2, sp, #16
 	str r3, [sp, #24]
-	bl 0x08002390
+	bl sub_08002390
 	ldr r3, [sp, #24]
 	cmp r0, #0
 	beq _08006852
@@ -182,7 +182,7 @@ _0800683E:
 	mov r0, sp
 	add r1, sp, #8
 	add r2, sp, #20
-	bl 0x08002390
+	bl sub_08002390
 	cmp r0, #0
 	beq _08006852
 	ldrb r0, [r0, #4]
@@ -269,7 +269,7 @@ _080068D4:
 	str r6, [r0, #4]
 	add r1, r7, #0
 	mov r2, #0
-	bl 0x08002390
+	bl sub_08002390
 	add r2, r0, #0
 	cmp r2, #0
 	beq _08006926
@@ -287,7 +287,7 @@ _080068FA:
 	mov r0, sp
 	add r1, r7, #0
 	add r3, r4, #0
-	bl 0x080022AC
+	bl sub_080022AC
 	ldr r1, [sp, #48]
 	cmp r0, r1
 	bge _08006926
@@ -354,7 +354,7 @@ sub_08006968: @ 0x08006968
 	ldr r5, _080069B8  @ =gUnknown_08078210
 	ldr r1, [r5]
 	mov r2, #0
-	bl 0x08034790
+	bl sub_08034790
 	mov r4, #0
 	ldr r0, [r5]
 	ldr r0, [r0, #4]
@@ -399,7 +399,7 @@ sub_080069BC: @ 0x080069BC
 	push {r4,lr}
 	mov r0, #175
 	lsl r0, r0, #2
-	bl 0x08034854
+	bl sub_08034854
 	add r4, r0, #0
 	ldr r0, _080069E0  @ =0x08000430
 	mov r2, #175
@@ -414,7 +414,7 @@ sub_080069BC: @ 0x080069BC
 	.byte 0x00
 	.byte 0x00
 _080069E0:
-	.4byte 0x08000430
+	.4byte sub_08000430
 _080069E4:
 	.4byte 0x03000964
 	THUMB_FUNC_END sub_080069BC
@@ -426,7 +426,7 @@ sub_080069E8: @ 0x080069E8
 	ldr r4, _080069FC  @ =0x03000924
 	mov r0, #135
 	lsl r0, r0, #3
-	bl 0x08034854
+	bl sub_08034854
 	str r0, [r4]
 	pop {r4}
 	pop {r0}
@@ -489,7 +489,7 @@ _08006A38:
 	mov r0, #0
 	mov r1, #0
 	mov r2, #0
-	bl 0x08001DBC
+	bl sub_08001DBC
 	add r4, r4, #1
 	cmp r4, #2
 	ble _08006A38
@@ -604,7 +604,7 @@ sub_08006B04: @ 0x08006B04
 	add r3, r1, r3
 	str r5, [sp]
 	add r0, r4, #0
-	bl 0x08006C5C
+	bl sub_08006C5C
 	add sp, sp, #4
 	pop {r4,r5}
 	pop {r0}
@@ -674,7 +674,7 @@ _08006B9C:
 	str r6, [r0, #4]
 	add r1, r7, #0
 	mov r2, #0
-	bl 0x08002390
+	bl sub_08002390
 	add r2, r0, #0
 	cmp r2, #0
 	beq _08006BEE
@@ -692,7 +692,7 @@ _08006BC2:
 	mov r0, sp
 	add r1, r7, #0
 	add r3, r4, #0
-	bl 0x080022AC
+	bl sub_080022AC
 	ldr r1, [sp, #48]
 	cmp r0, r1
 	bge _08006BEE
@@ -758,7 +758,7 @@ sub_08006C30: @ 0x08006C30
 	add r0, r1, #0
 	add r1, r2, #0
 	mov r2, sp
-	bl 0x08002390
+	bl sub_08002390
 	add r1, r0, #0
 	cmp r1, #0
 	beq _08006C50
@@ -880,7 +880,7 @@ sub_08006CF0: @ 0x08006CF0
 	mov r2, #128
 	lsl r2, r2, #2
 	add r1, r3, #0
-	bl 0x08076258
+	bl memcpy
 	ldr r1, _08006D1C  @ =0x03000968
 	ldr r0, _08006D20  @ =0x080003D0
 	str r0, [r1]
@@ -892,7 +892,7 @@ _08006D18:
 _08006D1C:
 	.4byte 0x03000968
 _08006D20:
-	.4byte 0x080003D0
+	.4byte sub_080003D0
 	THUMB_FUNC_END sub_08006CF0
 
 	THUMB_FUNC_START sub_08006D24
@@ -943,13 +943,13 @@ _08006D60:
 	ldr r1, [r2, #4]
 	mov r2, #128
 	lsl r2, r2, #2
-	bl 0x08076258
+	bl memcpy
 	b _08006D80
 _08006D76:
 	ldr r0, _08006D84  @ =0x03000968
 	ldr r1, [r0]
 	add r0, r2, #0
-	bl 0x080747DC
+	bl _call_via_r1
 _08006D80:
 	pop {r0}
 	bx r0

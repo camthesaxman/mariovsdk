@@ -1,4 +1,6 @@
-	
+	.INCLUDE "macro.inc"
+
+	.GLOBAL sub_0800023C
 sub_0800023C:
 	add r1, r0, r1, lsl #2
 	mov r2, #0
@@ -11,6 +13,7 @@ _08000244:
 	bne _08000244
 	bx lr
 
+	.GLOBAL sub_08000260
 sub_08000260:
 	add r3, r0, r3, lsl #2
 _08000264:
@@ -30,6 +33,7 @@ _08000264:
 	blt _08000264
 	bx lr
 
+	.GLOBAL sub_080002A0
 sub_080002A0:
 	ldr r0, _08000314  @ =0x03001F10
 	ldr r0, [r0]
@@ -116,7 +120,8 @@ _080003C4:
 	pop {r3-r12}
 	bx lr
 
-_080003D0:
+	.GLOBAL sub_080003D0
+sub_080003D0:
 	push {r3-r11}
 	mov r4, r0
 	ldm r4!, {r0-r3}
@@ -143,6 +148,9 @@ _080003F8:
 	bge _080003E8
 	pop {r3-r11}
 	bx lr
+
+	.GLOBAL sub_08000430
+sub_08000430:
 	orrs r12, r1, r2
 	moveq r0, #0
 	bxeq lr
@@ -341,7 +349,8 @@ _080006D0:
 _080006D4:
 	.4byte gUnknown_0807820C
 
-_080006D8:
+	.GLOBAL sub_080006D8
+sub_080006D8:
 	push {r4-r11,lr}
 	mov r4, r0
 	mov r5, r1
@@ -1431,13 +1440,13 @@ _08001668:
 _08001670:
 	.4byte 0x03000964
 _08001674:
-	.4byte 0x0802B799
+	.4byte sub_0802B798
 _08001678:
-	.4byte 0x0802BC01
+	.4byte sub_0802BC00
 _0800167C:
-	.4byte 0x0802B985
+	.4byte sub_0802B984
 _08001680:
-	.4byte 0x0802D141
+	.4byte sub_0802D140
 _08001684:
 	.4byte gUnknown_03001A1C
 _08001688:
@@ -1450,7 +1459,9 @@ _08001694:
 	.4byte gUnknown_03001A1C
 _08001698:
 	.4byte gUnknown_03001A1C
-_0800169C:
+
+	.GLOBAL sub_0800169C
+sub_0800169C:
 	ldrh r2, [r0, #8]
 	cmp r2, #4
 	bxeq lr
@@ -1505,6 +1516,9 @@ _08001748:
 	strh r1, [r0, #8]
 	pop {r4-r11}
 	bx lr
+
+	.GLOBAL sub_08001760
+sub_08001760:
 	ldrh r12, [r0, #8]
 	cmp r12, #4
 	bxeq lr
@@ -1566,6 +1580,9 @@ _08001828:
 	strh r1, [r0, #8]
 	pop {r4-r11}
 	bx lr
+
+	.GLOBAL sub_08001840
+sub_08001840:
 _08001840:
 	push {r4-r11}
 	mov r12, r0
