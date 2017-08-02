@@ -6759,13 +6759,13 @@ _08037BE2:
 	add r7, r7, #4
 	mov r8, r7
 	sub r7, r7, #4
-	stm r7, {r0}
+	stm r7!, {r0}
 	add r0, r2, r6
 	mov r7, r9
 	add r7, r7, #4
 	mov r9, r7
 	sub r7, r7, #4
-	stm r7, {r0}
+	stm r7!, {r0}
 	add r0, r4, #0
 	add r0, r0, #80
 	add r1, r1, r0
@@ -7064,7 +7064,7 @@ _08037E16:
 	ldr r1, [r2, #16]
 	ldr r0, [r2]
 	str r0, [r2, #16]
-	stm r2, {r1}
+	stm r2!, {r1}
 	sub r4, r4, #1
 	cmp r4, #0
 	bge _08037E16
@@ -133139,7 +133139,7 @@ sub_08071408: @ 0x08071408
 	str r3, [r0]
 	mov r0, #32
 _08071418:
-	stm r1, {r2}
+	stm r1!, {r2}
 	add r2, r2, r3
 	sub r0, r0, #1
 	cmp r0, #0

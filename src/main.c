@@ -6,11 +6,11 @@ static void main_loop(void);
 // 0x08006DF8
 void AgbMain(void)
 {
-    sub_08033CE0();  
+    clear_ram();  
     gUnknown_03000B64 = 0;
     gUnknown_03000B78 = 0;
     gUnknown_030009C4 = 34;
-    sub_08033C38();
+    init_timer_regs();
     main_loop();
 }
 

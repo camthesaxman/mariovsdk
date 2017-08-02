@@ -10,7 +10,6 @@ OBJCOPY  := $(DEVKITARM)/bin/arm-none-eabi-objcopy
 CC1FLAGS := -mthumb-interwork -Wimplicit -Wparentheses -O2 -fhex-asm
 CPPFLAGS := -I tools/agbcc/include -iquote include -nostdinc -undef
 ASFLAGS  := -mcpu=arm7tdmi -mthumb-interwork -I asminclude
-LDFLAGS  := --no-gc-sections -u __pack_d
 
 
 #### Files ####
@@ -23,6 +22,7 @@ CFILES   := \
 	src/rom_80066FC.c \
 	src/main.c \
 	src/rom1.c \
+	src/rom_8032408.c \
 	src/rom_8032FB0.c \
 	src/rom_8033C38.c \
 	src/agb_flash.c \
@@ -35,6 +35,7 @@ SFILES   := \
 	asm/rom_8001BA4.s \
 	asm/rom_80066FC.s \
 	asm/rom1.s \
+	asm/rom_8032408.s \
 	asm/rom_8032FB0.s \
 	asm/rom_8033D80.s \
 	asm/syscall.s \
@@ -61,7 +62,7 @@ clean:
 #### Recipes ####
 
 $(ELF): $(OFILES) $(LDSCRIPT)
-	$(LD) $(LDFLAGS) -T $(LDSCRIPT) -Map $(MAP) $(OFILES) tools/agbcc/lib/libgcc.a -o $@
+	$(LD) -T $(LDSCRIPT) -Map $(MAP) $(OFILES) tools/agbcc/lib/libgcc.a -o $@
 
 %.gba: %.elf
 	$(OBJCOPY) -O binary --pad-to 0x9000000 $< $@

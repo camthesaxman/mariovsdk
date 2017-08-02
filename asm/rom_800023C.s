@@ -1,22 +1,25 @@
 	.INCLUDE "macro.inc"
+	.INCLUDE "gba.inc"
 
-	.GLOBAL sub_0800023C
+	ARM_FUNC_START sub_0800023C
 sub_0800023C:
 	add r1, r0, r1, lsl #2
 	mov r2, #0
-_08000244:
+  1:
 	str r2, [r0], #4
 	str r2, [r0], #4
 	str r2, [r0], #4
 	str r2, [r0], #4
 	cmp r0, r1
-	bne _08000244
+	bne 1b
 	bx lr
+ARM_FUNC_END sub_0800023C
 
-	.GLOBAL sub_08000260
+
+	ARM_FUNC_START sub_08000260
 sub_08000260:
 	add r3, r0, r3, lsl #2
-_08000264:
+  1:
 	ldrsh r12, [r0], #2
 	cmn r12, #127
 	mvnle r12, #126
@@ -30,43 +33,50 @@ _08000264:
 	movge r12, #127
 	strb r12, [r2], #1
 	cmp r0, r3
-	blt _08000264
+	blt 1b
 	bx lr
+ARM_FUNC_END sub_08000260
 
-	.GLOBAL sub_080002A0
+
+	ARM_FUNC_START sub_080002A0
 sub_080002A0:
-	ldr r0, _08000314  @ =0x03001F10
+	ldr r0, =0x03001F10
 	ldr r0, [r0]
 	ldrb r1, [r0, #2]
 	subs r1, r1, #1
 	strb r1, [r0, #2]
 	bxgt lr
-	mov r2, #0x4000000
+	mov r2, #REG_BASE
 	mov r3, #0
-	str r3, [r2, #196]
-	str r3, [r2, #208]
+	str r3, [r2, #REG_OFFSET_DMA1CNT]
+	str r3, [r2, #REG_OFFSET_DMA2CNT]
 	ldrb r1, [r0, #7]
 	strb r1, [r0, #6]
 	mov r12, #576
 	add r3, r0, #16
 	mla r1, r12, r1, r3
-	str r1, [r2, #188]
+	str r1, [r2, #REG_OFFSET_DMA1SAD]
 	add r1, r1, #288
-	str r1, [r2, #200]
-	mov r1, #0xf6000000
-	orr r1, r1, #0x600000
-	orr r1, r1, #4
-	str r1, [r2, #196]
-	str r1, [r2, #208]
+	str r1, [r2, #REG_OFFSET_DMA2SAD]
+	@ Upper DMA Flags
+	mov r1, #(DMA_ENABLE | DMA_INTR_ENABLE | DMA_START_VBLANK | DMA_START_HBLANK | DMA_32BIT | DMA_REPEAT) << 16
+	orr r1, r1, #DMA_DEST_RELOAD << 16
+	@ Size of 16
+	orr r1, r1, #16 / 4
+	str r1, [r2, #REG_OFFSET_DMA1CNT]
+	str r1, [r2, #REG_OFFSET_DMA2CNT]
 	mov r3, #18
 	strb r3, [r0, #2]
 	ldrb r3, [r0, #1]
 	orr r3, r3, #2
 	strb r3, [r0, #1]
 	bx lr
-_08000314:
-	.4byte 0x03001F10
+	.pool
+ARM_FUNC_END sub_080002A0
 
+
+	ARM_FUNC_START sub_08000318
+sub_08000318:
 	push {r3-r12}
 	mov r12, r0
 	ldm r12, {r0-r7,r11}
@@ -119,8 +129,10 @@ _080003C4:
 	str r2, [r12, #8]
 	pop {r3-r12}
 	bx lr
+ARM_FUNC_END sub_08000318
 
-	.GLOBAL sub_080003D0
+
+	ARM_FUNC_START sub_080003D0
 sub_080003D0:
 	push {r3-r11}
 	mov r4, r0
@@ -148,8 +160,10 @@ _080003F8:
 	bge _080003E8
 	pop {r3-r11}
 	bx lr
+ARM_FUNC_END sub_080003D0
 
-	.GLOBAL sub_08000430
+
+	ARM_FUNC_START sub_08000430
 sub_08000430:
 	orrs r12, r1, r2
 	moveq r0, #0
@@ -259,6 +273,8 @@ _08000580:
 _080005A0:
 	pop {r3-r12,lr}
 	bx lr
+ARM_FUNC_END sub_08000430
+
 
 _080005A8:
 	ldmia sp!, {r11}
@@ -349,7 +365,8 @@ _080006D0:
 _080006D4:
 	.4byte gUnknown_0807820C
 
-	.GLOBAL sub_080006D8
+
+	ARM_FUNC_START sub_080006D8
 sub_080006D8:
 	push {r4-r11,lr}
 	mov r4, r0
@@ -372,7 +389,7 @@ sub_080006D8:
 	mov r1, #0
 	ldrsh r8, [r4, #50]
 	mov r2, r8
-	bl _08000984
+	bl sub_08000984
 	cmp r0, #0
 	bne _08000754
 	add r7, r7, r8
@@ -459,7 +476,7 @@ _08000868:
 	ldrsh r7, [r4, #48]
 	mov r1, r7
 	mov r2, #0
-	bl _08000984
+	bl sub_08000984
 	cmp r0, #0
 	bne _0800088C
 	add r6, r6, r7
@@ -533,7 +550,11 @@ _08000960:
 _0800097C:
 	pop {r4-r11,lr}
 	bx lr
-_08000984:
+ARM_FUNC_START sub_080006D8
+
+
+	ARM_FUNC_START sub_08000984
+sub_08000984:
 	mov r0, sp
 	ldr r3, [r4, #96]
 	ands r3, r3, #4096
@@ -551,7 +572,7 @@ _08000984:
 _080009BC:
 	mov r0, r4
 	mov r1, r9
-	ldr r12, _08001674  @ =0x0802B799
+	ldr r12, _08001674  @ =sub_0802B798
 	bx r12
 _080009CC:
 	lsr r0, r9, #16
@@ -618,7 +639,11 @@ _08000AA4:
 	mov r0, #0
 	pop {r4-r11,lr}
 	bx lr
-_08000AB0:
+ARM_FUNC_END sub_08000984
+
+
+	ARM_FUNC_START sub_08000AB0
+sub_08000AB0:
 	push {r1-r4}
 	add r10, r12, #108
 	ldm r10, {r1-r4}
@@ -647,7 +672,11 @@ _08000AFC:
 	pop {r1-r4}
 	movs r0, #0
 	bx lr
-_08000B14:
+ARM_FUNC_END sub_08000AB0
+
+
+	ARM_FUNC_START sub_08000B14
+sub_08000B14:
 	stmdb sp!, {lr}
 	ldr r0, [r12, #92]
 	ldr r10, [r5, #132]
@@ -716,7 +745,11 @@ _08000BF4:
 	str r11, [r5, #92]
 	ldmia sp!, {lr}
 	bx lr
-_08000C04:
+ARM_FUNC_END sub_08000B14
+
+
+	ARM_FUNC_START sub_08000C04
+sub_08000C04:
 	ldrsh r1, [r12, #50]
 	ldrsh r2, [r12, #48]
 	ldrsh r3, [r5, #50]
@@ -770,7 +803,11 @@ _08000CBC:
 	str r6, [r12, #92]
 	str r7, [r5, #92]
 	bx lr
-_08000CC8:
+ARM_FUNC_END sub_08000C04
+
+
+	ARM_FUNC_START sub_08000CC8
+sub_08000CC8:
 	sub r10, r4, r8
 	sub r8, r3, r10
 	mov r9, #0x80000000
@@ -804,7 +841,7 @@ _08000CF0:
 	bge _08000D68
 	ldr r10, [r5, #96]
 	tst r10, #0x8000
-	bleq _08000CC8
+	bleq sub_08000CC8
 	tst r6, #0x400000
 	orreq r6, r6, #4
 	tsteq r7, #0x800000
@@ -827,7 +864,7 @@ _08000D68:
 _08000D94:
 	cmp r3, r10
 	bge _08000DA0
-	bl _08000CC8
+	bl sub_08000CC8
 _08000DA0:
 	mov lr, r11
 	ldrsh r2, [r12, #48]
@@ -944,7 +981,11 @@ _08000F38:
 	str r4, [r12, #92]
 	str r7, [r5, #92]
 	bx lr
-_08000F48:
+ARM_FUNC_END sub_08000CC8
+
+
+	ARM_FUNC_START sub_08000F48
+sub_08000F48:
 	mov r0, #1
 	ldrsh r10, [r12, #50]
 	cmp r10, #0
@@ -1051,8 +1092,11 @@ _08001094:
 	str r3, [r12, #92]
 	str r4, [r5, #92]
 	bx lr
+ARM_FUNC_END sub_08000F48
 
-_080010E0:
+
+	ARM_FUNC_START sub_080010E0
+sub_080010E0:
 	ldrsh r9, [r12, #50]
 	ldrsh r10, [r5, #50]
 	orrs r11, r9, r10
@@ -1150,12 +1194,16 @@ _0800123C:
 	str r4, [r12, #92]
 	str r7, [r5, #92]
 	bx lr
+THUMB_FUNC_END sub_080010E0
+
+@ What is this ?
+
 	push {r1-r4}
 	add r10, r12, #108
 	ldm r10, {r1-r4}
 	b _0800158C
 _0800125C:
-	bl _08000AB0
+	bl sub_08000AB0
 	beq _08000A90
 	ldr r6, [r12, #92]
 	ldr r7, [r5, #92]
@@ -1170,7 +1218,7 @@ _08001284:
 	ldrsb r6, [r6, #17]
 	cmp r6, #2
 	beq _08000A90
-	bl _08000AB0
+	bl sub_08000AB0
 	beq _08000A90
 	ldr r6, [r12, #92]
 	ldr r7, [r5, #92]
@@ -1181,14 +1229,14 @@ _08001284:
 	pop {r1-r4}
 	b _08000A90
 _080012BC:
-	bl _08000AB0
+	bl sub_08000AB0
 	beq _08000A90
-	bl _08000B14
+	bl sub_08000B14
 	pop {r1-r4}
 	b _08000A90
 _080012D0:
 	mov r0, #1
-	bl _08000AB0
+	bl sub_08000AB0
 	beq _08000A90
 	ldr r10, [r12, #132]
 	ldr r10, [r10, #12]
@@ -1214,7 +1262,7 @@ _08001328:
 	str r10, [r12, #76]
 	ldrb r10, [r12, #61]
 	str r10, [r5, #76]
-	bl _08000B14
+	bl sub_08000B14
 	pop {r1-r4}
 	b _08000A90
 _08001344:
@@ -1227,9 +1275,9 @@ _08001344:
 	tst r10, #0x4000
 	bne _08000A90
 _08001364:
-	bl _08000AB0
+	bl sub_08000AB0
 	beq _08000A90
-	bl _08000B14
+	bl sub_08000B14
 	pop {r1-r4}
 	b _08000A90
 _08001378:
@@ -1247,9 +1295,9 @@ _08001378:
 	cmp r7, r6
 	bgt _08000A90
 	mov r0, #2
-	bl _08000AB0
+	bl sub_08000AB0
 	strb r11, [r12, #11]
-	bl _080010E0
+	bl sub_080010E0
 	pop {r1-r4}
 	b _08000A90
 _080013C4:
@@ -1259,7 +1307,7 @@ _080013C4:
 	beq _08000A90
 	bgt _08000A90
 	mov r0, #2
-	bl _08000AB0
+	bl sub_08000AB0
 	beq _080013F4
 	strb r11, [r12, #11]
 	bl _08000DB0
@@ -1287,19 +1335,19 @@ _0800142C:
 	cmp r6, #2
 	beq _08000A90
 	mov r0, #2
-	bl _08000AB0
+	bl sub_08000AB0
 	beq _080013F4
 	strb r11, [r12, #11]
-	bl _08000F48
+	bl sub_08000F48
 	pop {r1-r4}
 	b _08000A90
 _08001458:
 	ldr r10, [r12, #96]
 	tst r10, #0x80000000
 	bne _08000A90
-	bl _08000AB0
+	bl sub_08000AB0
 	beq _08000A90
-	bl _08000C04
+	bl sub_08000C04
 	pop {r1-r4}
 	b _08000A90
 _08001478:
@@ -1311,7 +1359,7 @@ _08001478:
 	sub r10, r10, r11
 	cmp r10, #3584
 	blt _08000A90
-	bl _08000AB0
+	bl sub_08000AB0
 	beq _08000A90
 	strb r11, [r12, #11]
 	bl _08000DB0
@@ -1328,9 +1376,9 @@ _080014B0:
 	ldrsb r10, [r10, #17]
 	cmp r10, #0
 	bne _08000A90
-	bl _08000AB0
+	bl sub_08000AB0
 	beq _08000A90
-	bl _08000C04
+	bl sub_08000C04
 	pop {r1-r4}
 	b _08000A90
 _080014EC:
@@ -1338,7 +1386,7 @@ _080014EC:
 	tst r10, #0x80000000
 	bne _08000A90
 	mov r0, #2
-	bl _08000AB0
+	bl sub_08000AB0
 	beq _080013F4
 	strb r11, [r12, #11]
 	bl _08000CF0
@@ -1460,7 +1508,8 @@ _08001694:
 _08001698:
 	.4byte gUnknown_03001A1C
 
-	.GLOBAL sub_0800169C
+
+	ARM_FUNC_START sub_0800169C
 sub_0800169C:
 	ldrh r2, [r0, #8]
 	cmp r2, #4
@@ -1516,8 +1565,10 @@ _08001748:
 	strh r1, [r0, #8]
 	pop {r4-r11}
 	bx lr
+ARM_FUNC_END sub_0800169C
 
-	.GLOBAL sub_08001760
+
+	ARM_FUNC_START sub_08001760
 sub_08001760:
 	ldrh r12, [r0, #8]
 	cmp r12, #4
@@ -1580,8 +1631,10 @@ _08001828:
 	strh r1, [r0, #8]
 	pop {r4-r11}
 	bx lr
+ARM_FUNC_END sub_08001760
 
-	.GLOBAL sub_08001840
+
+	ARM_FUNC_START sub_08001840
 sub_08001840:
 _08001840:
 	push {r4-r11}
@@ -1673,7 +1726,7 @@ _08001968:
 	ldrsh r9, [r0, #70]
 	cmp r9, #0
 	blt _080019C8
-	ldr r6, _08001B90  @ =gUnknown_08B39C1C
+	ldr r6, =gUnknown_08B39C1C
 	ldrb r7, [r5, #40]
 	lsr r8, r9, #2
 	add r8, r8, r7, lsl #6
@@ -1693,10 +1746,10 @@ _08001968:
 	strh r9, [r0, #70]
 _080019C8:
 	rsb r4, r4, #0x1e00
-	ldr r6, _08001B94  @ =gUnknown_08B39F48
+	ldr r6, =gUnknown_08B39F48
 	lsr r9, r4, #8
 	ldr r6, [r6, r9, lsl #2]
-	ldr r7, _08001B98  @ =gUnknown_08B3961C
+	ldr r7, =gUnknown_08B3961C
 	and r8, r6, #768
 	and r4, r4, #255
 	orr r4, r4, r8
@@ -1740,7 +1793,7 @@ _080019C8:
 	moveq r6, #0
 	orr r10, r10, r6, lsl #1
 	strb r10, [r0, #29]
-	ldr r10, _08001B9C  @ =0x03001F24
+	ldr r10, =0x03001F24
 	ldr r10, [r10]
 	mul r6, r10, r6
 	asrs r6, r6, #7
@@ -1782,7 +1835,7 @@ _08001B10:
 	lsl r5, r5, #6
 	cmp r9, #0
 	blt _08001B50
-	ldr r10, _08001BA0  @ =gUnknown_08B3A0A8
+	ldr r10, =gUnknown_08B3A0A8
 	rsb r8, r9, #64
 	mul r8, r11, r8
 	asr r8, r8, #5
@@ -1814,14 +1867,5 @@ _08001B84:
 	str r3, [r0, #32]
 	pop {r4-r11,lr}
 	bx lr
-
-_08001B90:
-	.4byte gUnknown_08B39C1C
-_08001B94:
-	.4byte gUnknown_08B39F48
-_08001B98:
-	.4byte gUnknown_08B3961C
-_08001B9C:
-	.4byte 0x03001F24
-_08001BA0:
-	.4byte gUnknown_08B3A0A8
+	.pool
+ARM_FUNC_END sub_08001840

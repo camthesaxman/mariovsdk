@@ -4,7 +4,7 @@
 #define EWRAM 0x02000000
 #define IWRAM 0x03000000
 
-void sub_08033C38(void)
+void init_timer_regs(void)
 {
     REG_IME = 0;
     REG_IE |= INTR_FLAG_TIMER2;
@@ -32,12 +32,12 @@ void sub_08033CA0(void)
 
 void sub_08033CD0(void)
 {
-    sub_08033CE0();
+    clear_ram();
     sub_08033D1C();
 }
 
 // 0x08033CE0
-void sub_08033CE0(void)
+void clear_ram(void)
 {
     DmaFill32(3, 0, (void *)EWRAM, 0x40000);
     DmaFill32(3, 0, (void *)IWRAM, 0x7E00);
@@ -46,7 +46,7 @@ void sub_08033CE0(void)
 void sub_08033D1C(void)
 {
     sub_08033D30();
-    sub_08032FB0();
+    load_some_oam();
     sub_08033D58();
 }
 
@@ -95,7 +95,7 @@ void sub_08033DCC(void)
     sub_0802C144(gUnknown_030012D0.unk6);
     sub_0802C058();
     sub_0807194C();
-    sub_080000FC_t();
+    irq_enable_t();
     if (gUnknown_030012C0 != NULL)
     {
         if (gUnknown_03001700 == 0)
@@ -116,15 +116,15 @@ void sub_08033DCC(void)
     }
     gUnknown_03001748++;
     sub_08071800();
-    sub_08000114_t();
+    irq_disable_t();
 }
 
 void sub_08033E60(void)
 {
     sub_08033EBC();
     gUnknown_030012C0 = sub_08034138;
-    DmaCopy16(3, interrupt_main, gUnknown_03001300, 0x400);
-    gUnknown_03007FFC = gUnknown_03001300;
+    DmaCopy16(3, interrupt_main, gIntrMainBuffer, 0x400);
+    gUnknown_03007FFC = gIntrMainBuffer;
 }
 
 void sub_08033EA0(void (*func)(void))
@@ -958,21 +958,21 @@ void sub_08034828(void)
 {
 }
 
-void sub_0803482C(int a, int b)
+void sub_0803482C(void *a, void *b)
 {
     s32 i;
     
     gUnknown_03001750.unk0 = a;
     gUnknown_03001750.unk8 = b;
-    gUnknown_03001750.unkC = b - a;
+    gUnknown_03001750.unkC = (u32)b - (u32)a;
     gUnknown_03001750.unk4 = a;
     for (i = 0; i < 4; i++)
         gUnknown_03001750.unk10[i] = gUnknown_03001750.unk0;
 }
 
-int sub_08034854(u32 a)
+void *sub_08034854(u32 a)
 {
-    int r4 = gUnknown_03001750.unk4;
+    void *r4 = gUnknown_03001750.unk4;
     
     gUnknown_03001750.unk4 += (a + 3) & ~3;
     if (gUnknown_03001750.unk4 > gUnknown_03001750.unk8)
@@ -993,7 +993,7 @@ void sub_08034898(s32 a)
         gUnknown_03001750.unk4 = gUnknown_03001750.unk10[a];
 }
 
-void sub_080348C8(struct UnknownStruct10 *a, u32 b, u32 c, u32 d)
+void sub_080348C8(const struct UnknownStruct10 *a, u32 b, u32 c, u32 d)
 {
     gUnknown_03001770.unk0 = a;
     gUnknown_03001770.unk4 = b;

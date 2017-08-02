@@ -160,7 +160,7 @@ sSetupInfos:
 
 	.GLOBAL gUnknown_0807820C
 gUnknown_0807820C:
-	.INCBIN "baserom.gba", 0x7820C, 0x78210-0x7820C
+	.4byte 0x02000000
 
 	.GLOBAL gUnknown_08078210
 gUnknown_08078210:
@@ -184,23 +184,193 @@ gUnknown_08078234:
 
 	.GLOBAL gUnknown_0807823C
 gUnknown_0807823C:
-	.INCBIN "baserom.gba", 0x7823C, 0x782C8-0x7823C
+	.4byte sub_0801B9DC
+	.4byte sub_080347DC
+	.4byte sub_08008B8C
+	.4byte sub_080114D4
+	.4byte sub_0802895C
+	.4byte sub_08008B8C
+	.4byte sub_0800748C
+	.4byte sub_0801B55C
+	.4byte sub_08015280
+	.4byte sub_08035388
+	.4byte sub_08008C34
+	.4byte sub_08008C9C
+	.4byte sub_08008A9C
+	.4byte sub_08008B14
+	.4byte sub_0802AAE8
+	.4byte 0
+	.4byte sub_0801BE34
+	.4byte sub_0802A4B4
+	.4byte sub_0802AAE8
+	.4byte 0
+	.4byte sub_0801BF14
+	.4byte sub_0802935C
+	.4byte sub_080215B4
+	.4byte sub_08027068
+	.4byte sub_0802EC34
+	.4byte sub_0802DE08
+	.4byte sub_0802DD4C
+	.4byte sub_0802DD4C
+	.4byte sub_0802F590
+	.4byte sub_0803218C
+	.4byte sub_0802D510
+	.4byte sub_08029D48
+	.4byte sub_08037050
+	.4byte sub_08032370
+	.4byte sub_08032408
 
 	.GLOBAL gUnknown_080782C8
 gUnknown_080782C8:
-	.INCBIN "baserom.gba", 0x782C8, 0x78354-0x782C8
+	.4byte sub_0801BA88
+	.4byte sub_08034820
+	.4byte sub_080080F8
+	.4byte sub_080123B8
+	.4byte sub_08028C08
+	.4byte sub_080080F8
+	.4byte sub_080080F8
+	.4byte sub_0801B64C
+	.4byte sub_08016BEC
+	.4byte sub_08035908
+	.4byte sub_08008CF0
+	.4byte sub_08008CF0
+	.4byte 0
+	.4byte sub_08007B58
+	.4byte sub_0802ACAC
+	.4byte sub_08007B58
+	.4byte sub_0801BE7C
+	.4byte sub_0802AA28
+	.4byte sub_0802ACAC
+	.4byte 0
+	.4byte sub_0801C278
+	.4byte sub_080296A4
+	.4byte sub_08021924
+	.4byte sub_08027900
+	.4byte sub_0802DF50
+	.4byte sub_0802DF50
+	.4byte sub_0802D6DC
+	.4byte sub_0802D6DC
+	.4byte sub_0802F1EC
+	.4byte sub_08031EE8
+	.4byte sub_0802D208
+	.4byte sub_08029F24
+	.4byte sub_080374E0
+	.4byte sub_08032210
+	.4byte sub_080324DC
 
 	.GLOBAL gUnknown_08078354
 gUnknown_08078354:
-	.INCBIN "baserom.gba", 0x78354, 0x783E0-0x78354
+	.4byte sub_0801BAC4
+	.4byte sub_08034824
+	.4byte sub_080088F0
+	.4byte sub_08014780
+	.4byte sub_08028E44
+	.4byte sub_080088F0
+	.4byte sub_080088F0
+	.4byte sub_0801B908
+	.4byte sub_0801ADBC
+	.4byte sub_08036F28
+	.4byte 0
+	.4byte sub_080088F0
+	.4byte sub_080088F0
+	.4byte sub_080088F0
+	.4byte sub_0802B78C
+	.4byte sub_080088F0
+	.4byte sub_0801BEBC
+	.4byte sub_0802AA90
+	.4byte sub_0802B78C
+	.4byte 0
+	.4byte sub_0801C9AC
+	.4byte sub_08029B84
+	.4byte sub_080219A4
+	.4byte sub_08027990
+	.4byte sub_0802E888
+	.4byte sub_0802E888
+	.4byte sub_0802DBEC
+	.4byte sub_0802DBEC
+	.4byte sub_0802F440
+	.4byte sub_080320E4
+	.4byte sub_0802D588
+	.4byte 0
+	.4byte sub_08037848
+	.4byte sub_080323CC
+	.4byte sub_08032708
 
 	.GLOBAL gUnknown_080783E0
 gUnknown_080783E0:
-	.INCBIN "baserom.gba", 0x783E0, 0x7846C-0x783E0
+	.4byte sub_0801BAD4
+	.4byte sub_08034828
+	.4byte sub_08008BF4
+	.4byte sub_08014880
+	.4byte sub_0802904C
+	.4byte sub_08008BF4
+	.4byte sub_08008BF4
+	.4byte sub_0801BA6C
+	.4byte sub_0801B220
+	.4byte sub_0803704C
+	.4byte sub_08008D7C
+	.4byte sub_08008D7C
+	.4byte 0
+	.4byte sub_08008BF4
+	.4byte sub_0802B780
+	.4byte sub_08008BF4
+	.4byte sub_0801BEC8
+	.4byte sub_0802AA1C
+	.4byte sub_0802B780
+	.4byte 0
+	.4byte sub_0801CB98
+	.4byte sub_08029C1C
+	.4byte sub_08021BA0
+	.4byte sub_08027B98
+	.4byte sub_0802ECF0
+	.4byte sub_0802ECF0
+	.4byte sub_0802DDE8
+	.4byte sub_0802DDE8
+	.4byte sub_0802F5BC
+	.4byte sub_0803220C
+	.4byte sub_0802D5FC
+	.4byte sub_08029E70
+	.4byte sub_080379B8
+	.4byte sub_080323E8
+	.4byte sub_08032784
 
 	.GLOBAL gUnknown_0807846C
 gUnknown_0807846C:
-	.INCBIN "baserom.gba", 0x7846C, 0x784F8-0x7846C
+	.4byte sub_08015044
+	.4byte sub_08015044
+	.4byte sub_08015044
+	.4byte sub_08015044
+	.4byte sub_08015044
+	.4byte sub_08015044
+	.4byte sub_08015044
+	.4byte sub_08015044
+	.4byte sub_08015044
+	.4byte sub_08015044
+	.4byte sub_08015044
+	.4byte sub_08015044
+	.4byte sub_08015044
+	.4byte sub_08015044
+	.4byte sub_08015044
+	.4byte sub_08015044
+	.4byte sub_08015044
+	.4byte sub_08015044
+	.4byte sub_08015044
+	.4byte sub_08015044
+	.4byte sub_08015044
+	.4byte sub_08015044
+	.4byte sub_08015044
+	.4byte sub_08015044
+	.4byte sub_08015044
+	.4byte sub_08015044
+	.4byte sub_08015044
+	.4byte sub_08015044
+	.4byte sub_08015044
+	.4byte sub_08015044
+	.4byte sub_08015044
+	.4byte sub_08015044
+	.4byte sub_08015044
+	.4byte sub_08015044
+	.4byte sub_08015044
 
 	.GLOBAL gUnknown_080784F8
 gUnknown_080784F8:

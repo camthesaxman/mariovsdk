@@ -13,6 +13,8 @@ SECTIONS
 		src/main.o(.text);
 		src/rom1.o(.text);
 		asm/rom1.o(.text);
+		src/rom_8032408.o(.text);
+		asm/rom_8032408.o(.text);
 		src/rom_8032FB0.o(.text);
 		asm/rom_8032FB0.o(.text);
 		src/rom_8033C38.o(.text);
@@ -60,6 +62,7 @@ SECTIONS
 		. = 0x34;		gUnknown_03000034 = .;
 		. = 0x38;		gUnknown_03000038 = .;
 		. = 0x3C;		gUnknown_0300003C = .;
+		. = 0x29C;		gUnknown_0300029C = .;
 		. = 0x2A0;		gUnknown_030002A0 = .;
 		. = 0x2AA;		gUnknown_030002AA = .;
 		. = 0x2B0;		gUnknown_030002B0 = .;
@@ -88,6 +91,7 @@ SECTIONS
 		. = 0xB44;		gUnknown_03000B44 = .;
 		. = 0xB48;		gUnknown_03000B48 = .;
 		. = 0xB4C;		gUnknown_03000B4C = .;
+		. = 0xB50;		gUnknown_03000B50 = .;
 		. = 0xB54;		gUnknown_03000B54 = .;
 		. = 0xB58;		gUnknown_03000B58 = .;
 		. = 0xB5C;		gUnknown_03000B5C = .;
@@ -115,8 +119,9 @@ SECTIONS
 		. = 0x12F4;		gUnknown_030012F4 = .;
 		. = 0x12F8;		gUnknown_030012F8 = .;
 		. = 0x12FC;		gUnknown_030012FC = .;
-		. = 0x1300;		gUnknown_03001300 = .;
+		. = 0x1300;		gIntrMainBuffer = .;
 		. = 0x1700;		gUnknown_03001700 = .;
+		. = 0x1704;		gUnknown_03001704 = .;
 		. = 0x1708;		gUnknown_03001708 = .;
 		. = 0x170C;		gUnknown_0300170C = .;
 		. = 0x1710;		gUnknown_03001710 = .;
@@ -150,6 +155,8 @@ SECTIONS
 		. = 0x1F44;		EraseFlashChip = .;
 		. = 0x1F48;		EraseFlashSector = .;
 		. = 0x1F4C;		gFlashMaxTime = .;
+		. = 0x1F50;		gUnknown_03001F50 = .;
+		. = 0x7AB0;		gUnknown_03007AB0 = .;
 		. = 0x7FFC;		gUnknown_03007FFC = .;
 	} = 0
 

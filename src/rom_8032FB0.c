@@ -1,7 +1,7 @@
 #include "gba/gba.h"
 #include "global.h"
 
-void sub_08032FB0(void)
+void load_some_oam(void)
 {
     int i;
     struct OamData *oam = &gUnknown_03000EA0;

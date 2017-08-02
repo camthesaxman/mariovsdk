@@ -43,11 +43,11 @@ struct Struct30009B0
 
 struct UnknownStruct3
 {
-    u32 unk0;
-    u32 unk4;
-    u32 unk8;
+    void *unk0;
+    void *unk4;
+    void *unk8;
     u32 unkC;
-    u32 unk10[4];
+    void *unk10[4];
 };
 
 struct CompressionHeader
@@ -103,30 +103,30 @@ struct UnknownStruct8
     u32 unk14;
 };
 
-struct UnknownStruct9
-{
-    void *unk0;
-    u32 unk4;
-    u32 unk8;
-    u32 unkC;
-    void *unk10;
-    u8 unk14;
-    u8 unk15;
-    u8 unk16;
-    u8 unk17;
-    u16 unk18;
-    u32 unk1C;
-    u32 unk20;
-    u32 unk24;
-    u16 unk28;
-};
-
 struct UnknownStruct10
 {
     u8 unk0[4];
     u16 unk4;
     u8 filler6[4];
     u8 unkA;
+};
+
+struct UnknownStruct9
+{
+    const struct UnknownStruct10 *unk0;
+    u32 unk4;
+    u32 unk8;
+    u32 unkC;
+    const void *unk10;
+    u8 unk14;
+    u8 unk15;
+    u8 unk16;
+    u8 unk17;
+    u16 unk18;
+    void *unk1C;
+    u32 unk20;
+    u32 unk24;
+    u16 unk28;
 };
 
 //------------------------------------------------------------------------------
@@ -166,6 +166,7 @@ extern u8 gUnknown_030009EC;
 extern s32 gUnknown_03000B44;
 extern u32 gUnknown_03000B48;
 extern u32 gUnknown_03000B4C;
+extern u8 gUnknown_03000B50;
 extern s32 gUnknown_03000B54;
 extern s8 gUnknown_03000B58;
 extern u8 gUnknown_03000B5C;
@@ -194,8 +195,9 @@ extern u16 gUnknown_030012E8;
 extern s16 gUnknown_030012F4;
 extern s16 gUnknown_030012F8;
 extern void (*gUnknown_030012FC)(void);
-extern u8 gUnknown_03001300[];
+extern u8 gIntrMainBuffer[];
 extern volatile u16 gUnknown_03001700;  // vblank counter, to run at 30 FPS?
+extern u8 gUnknown_03001704;
 extern u16 gUnknown_03001708;
 extern s16 gUnknown_0300170C;
 extern s16 gUnknown_03001710;
@@ -223,10 +225,10 @@ extern struct UnknownStruct7 *gUnknown_03001C78;
 extern void *gUnknown_03007FFC;
 
 extern const u8 gUnknown_08076D94[];
-extern u16 *const gUnknown_0807820C;
+extern u8 *const gUnknown_0807820C;
 extern void (*const gUnknown_0807823C[])(void);
 extern void (*const gUnknown_080782C8[])(void);
-extern const u32 gUnknown_08078354[];
+extern void (*const gUnknown_08078354[])(void);
 extern void (*const gUnknown_080783E0[])(void);
 extern const u32 gUnknown_0807846C[];
 extern u16 *const gUnknown_0807DD94;
@@ -237,8 +239,8 @@ extern u16 *const gUnknown_0807DD94;
 //------------------------------------------------------------------------------
 
 // crt0.s
-void sub_080000FC_t(void);
-void sub_08000114_t(void);
+void irq_enable_t(void);
+void irq_disable_t(void);
 void interrupt_main(void);
 
 void sub_08004634();
@@ -265,14 +267,17 @@ void sub_0802C938(void);
 void sub_0802CF08(void);
 void sub_0802D1D0(void);
 void sub_0802D468();
+void sub_0802F060(void);
 int sub_0802F5C0();
 void sub_0803109C(void);
 void sub_080317F8(void);
 void sub_08031BF0();
-void sub_08032FB0(void);
+void sub_08032F68(void);
+void load_some_oam(void);
+void sub_080331FC(void);
 void sub_08033440(void);
-void sub_08033C38(void);
-void sub_08033CE0(void);
+void init_timer_regs(void);
+void clear_ram(void);
 void sub_08033D1C(void);
 void sub_08033D30(void);
 void sub_08033D58(void);
@@ -283,7 +288,11 @@ void sub_08033EE0(void);
 void sub_08033FAC(s16, s16);
 void sub_08033FC8(void);
 void sub_08034138(void);
+void sub_0803482C();
+void *sub_08034854();
+void sub_08034884(u32);
 void sub_08034898();
+void sub_080348C8(const struct UnknownStruct10 *, u32, u32, u32);
 void sub_08037A04();
 void sub_080386DC(void);
 s8 sub_08040EE8();
@@ -291,6 +300,7 @@ struct UnknownStruct6 *sub_08040F30(s8);
 u16 sub_0806C2C4(void);
 void sub_0806D1AC(u16, u16);
 void sub_080714A8(void);
+void sub_0807166C();
 void sub_08071800(void);
 void sub_0807194C(void);
 void sub_08071990();

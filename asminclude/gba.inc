@@ -2,17 +2,17 @@
 @ Program Status Register
 @-------------------------------------------------------------------------------
 
-PSR_USR_MODE  = 0x00000010
-PSR_FIQ_MODE  = 0x00000011
-PSR_IRQ_MODE  = 0x00000012
-PSR_SVC_MODE  = 0x00000013
-PSR_ABT_MODE  = 0x00000017
-PSR_UND_MODE  = 0x0000001B
-PSR_SYS_MODE  = 0x0000001F
-PSR_MODE_MASK = 0x0000001F
-PSR_T_BIT     = 0x00000020
-PSR_F_BIT     = 0x00000040
-PSR_I_BIT     = 0x00000080
+PSR_USR_MODE  		= 0x00000010
+PSR_FIQ_MODE  		= 0x00000011
+PSR_IRQ_MODE  		= 0x00000012
+PSR_SVC_MODE  		= 0x00000013
+PSR_ABT_MODE  		= 0x00000017
+PSR_UND_MODE  		= 0x0000001B
+PSR_SYS_MODE  		= 0x0000001F
+PSR_MODE_MASK 		= 0x0000001F
+PSR_THUMB_BIT     	= 0x00000020
+PSR_FIQ_DISABLE_BIT	= 0x00000040
+PSR_IRQ_DISABLE_BIT = 0x00000080
 
 
 @-------------------------------------------------------------------------------
@@ -422,3 +422,43 @@ REG_IE           = (REG_BASE + REG_OFFSET_IE)
 REG_IF           = (REG_BASE + REG_OFFSET_IF)
 
 REG_WAITCNT      = (REG_BASE + REG_OFFSET_WAITCNT)
+
+@-------------------------------------------------------------------------------
+@ I/O Register Flags
+@-------------------------------------------------------------------------------
+
+@ DMA
+DMA_DEST_INC      = 0x0000
+DMA_DEST_DEC      = 0x0020
+DMA_DEST_FIXED    = 0x0040
+DMA_DEST_RELOAD   = 0x0060
+DMA_SRC_INC       = 0x0000
+DMA_SRC_DEC       = 0x0080
+DMA_SRC_FIXED     = 0x0100
+DMA_REPEAT        = 0x0200
+DMA_16BIT         = 0x0000
+DMA_32BIT         = 0x0400
+DMA_DREQ_ON       = 0x0800
+DMA_START_NOW     = 0x0000
+DMA_START_VBLANK  = 0x1000
+DMA_START_HBLANK  = 0x2000
+DMA_START_SPECIAL = 0x3000
+DMA_START_MASK    = 0x3000
+DMA_INTR_ENABLE   = 0x4000
+DMA_ENABLE        = 0x8000
+
+@ Interrupt Flags
+INTR_FLAG_VBLANK   = (1 <<  0)
+INTR_FLAG_HBLANK   = (1 <<  1)
+INTR_FLAG_VCOUNT   = (1 <<  2)
+INTR_FLAG_TIMER0   = (1 <<  3)
+INTR_FLAG_TIMER1   = (1 <<  4)
+INTR_FLAG_TIMER2   = (1 <<  5)
+INTR_FLAG_TIMER3   = (1 <<  6)
+INTR_FLAG_SERIAL   = (1 <<  7)
+INTR_FLAG_DMA0     = (1 <<  8)
+INTR_FLAG_DMA1     = (1 <<  9)
+INTR_FLAG_DMA2     = (1 << 10)
+INTR_FLAG_DMA3     = (1 << 11)
+INTR_FLAG_KEYPAD   = (1 << 12)
+INTR_FLAG_GAMEPAK  = (1 << 13)
