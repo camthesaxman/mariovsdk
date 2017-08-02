@@ -84086,7 +84086,7 @@ sub_0802EDAC: @ 0x0802EDAC
 	add r0, r5, r0
 	add r1, r1, #20
 	mov r2, #0
-	bl 0x08034790
+	bl sub_08034790
 	ldr r0, [r7]
 	add r0, r0, #72
 	str r0, [r6, #20]
@@ -90166,7 +90166,7 @@ _0803198C:
 	ldr r1, [r4]
 	add r1, r1, #40
 	mov r2, #0
-	bl 0x08034790
+	bl sub_08034790
 _080319AC:
 	pop {r4,r5}
 	pop {r0}
@@ -92276,7 +92276,7 @@ _0803291E:
 	ldr r1, [r1]
 	add r1, r1, r2
 	mov r2, #1
-	bl 0x08034790
+	bl sub_08034790
 	ldrh r0, [r6]
 	ldr r1, _08032A74  @ =0x0000FF7F
 	add r2, r1, #0
@@ -92970,7 +92970,7 @@ _08032E3A:
 	add r1, r1, r2
 	ldr r1, [r1]
 	mov r2, #1
-	bl 0x08034790
+	bl sub_08034790
 _08032E68:
 	add r4, r4, #1
 	cmp r4, r9

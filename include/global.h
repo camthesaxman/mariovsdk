@@ -70,12 +70,81 @@ struct UnknownStruct6
     s32 unk24;
 };
 
+struct UnknownStruct5
+{
+    u8 filler0[8];
+    u16 unk8;
+};
+
+// These may be the same. Don't know yet.
+struct UnknownStruct4
+{
+    struct UnknownStruct5 *unk0;
+    u32 unk4;
+    u8 filler8[0x10-0x8];
+    s16 unk10;
+    u8 filler12[2];
+    u32 unk14;
+    u32 unk18;
+    u8 filler1C[1];
+    u8 unk1D[3];
+    u32 unk20;
+};
+
+struct UnknownStruct7
+{
+    u8 filler0[0x34];
+    s8 unk34;
+};
+
+struct UnknownStruct8
+{
+    u8 filler0[0x14];
+    u32 unk14;
+};
+
+struct UnknownStruct9
+{
+    void *unk0;
+    u32 unk4;
+    u32 unk8;
+    u32 unkC;
+    void *unk10;
+    u8 unk14;
+    u8 unk15;
+    u8 unk16;
+    u8 unk17;
+    u16 unk18;
+    u32 unk1C;
+    u32 unk20;
+    u32 unk24;
+    u16 unk28;
+};
+
+struct UnknownStruct10
+{
+    u8 unk0[4];
+    u16 unk4;
+    u8 filler6[4];
+    u8 unkA;
+};
+
 //------------------------------------------------------------------------------
 // Variables
 //------------------------------------------------------------------------------
 
 extern u32 gUnknown_03000020;
 extern u32 gUnknown_03000024;
+extern u8 gUnknown_03000028;
+extern u8 gUnknown_03000029;
+extern s32 gUnknown_0300002C;
+extern u8 gUnknown_03000030;
+extern u8 gUnknown_03000031;
+extern u8 gUnknown_03000032;
+extern u8 gUnknown_03000033;
+extern u32 gUnknown_03000034;
+extern u32 gUnknown_03000038;
+extern u32 gUnknown_0300003C;
 extern u8 gUnknown_030002A0[];
 extern u16 gUnknown_030002AA;
 extern struct Struct30002B8 gUnknown_030002B0;
@@ -89,15 +158,31 @@ extern u32 gUnknown_030009C4;
 extern u32 gUnknown_030009C8;
 extern u32 gUnknown_030009CC;
 extern u8 gUnknown_030009D0;
+extern u8 gUnknown_030009D4;
+extern u16 gUnknown_030009D8;
+extern u8 gUnknown_030009E4[];  // unknown type
+extern u8 gUnknown_030009E8;
+extern u8 gUnknown_030009EC;
+extern s32 gUnknown_03000B44;
+extern u32 gUnknown_03000B48;
+extern u32 gUnknown_03000B4C;
 extern s32 gUnknown_03000B54;
 extern s8 gUnknown_03000B58;
+extern u8 gUnknown_03000B5C;
+extern u8 gUnknown_03000B60;
 extern u8 gUnknown_03000B64;
+extern u8 gUnknown_03000B68;
+extern u32 gUnknown_03000B6C;
 extern u32 gUnknown_03000B70;
 extern s8 gUnknown_03000B74;
 extern u8 gUnknown_03000B78;
 extern s8 gUnknown_03000B80;
+extern struct UnknownStruct4 gUnknown_03000B90;
 extern s8 gUnknown_03000BB4;
+extern u32 gUnknown_03000BB8;
+extern s8 gUnknown_03000BBC;
 extern u8 gUnknown_03000C28;
+extern u32 gUnknown_030009DC;
 extern struct OamData gUnknown_03000EA0;
 extern s16 gUnknown_030012A0;
 extern void (*gUnknown_030012A8)(void);
@@ -124,11 +209,20 @@ extern u8 gUnknown_03001740;
 extern u8 gUnknown_03001744;
 extern u16 gUnknown_03001748;
 extern struct UnknownStruct3 gUnknown_03001750;
+extern struct UnknownStruct9 gUnknown_03001770;
+extern u8 gUnknown_0300192C[];  // unknown type
+extern u8 gUnknown_03001930[];  // unknown type
 extern u32 gUnknown_03001938;
 extern u32 gUnknown_030019A0;
 extern u32 gUnknown_03001A1C;
+extern u8 gUnknown_03001A30[];  // unknown type
+extern u8 gUnknown_03001A38;
+extern struct UnknownStruct8 gUnknown_03001B30;
+extern u8 gUnknown_03001BDC;
+extern struct UnknownStruct7 *gUnknown_03001C78;
 extern void *gUnknown_03007FFC;
 
+extern const u8 gUnknown_08076D94[];
 extern u16 *const gUnknown_0807820C;
 extern void (*const gUnknown_0807823C[])(void);
 extern void (*const gUnknown_080782C8[])(void);
@@ -190,6 +284,7 @@ void sub_08033FAC(s16, s16);
 void sub_08033FC8(void);
 void sub_08034138(void);
 void sub_08034898();
+void sub_08037A04();
 void sub_080386DC(void);
 s8 sub_08040EE8();
 struct UnknownStruct6 *sub_08040F30(s8);

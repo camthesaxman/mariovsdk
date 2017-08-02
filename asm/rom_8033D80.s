@@ -1,134 +1,5 @@
 	.INCLUDE "macro.inc"
 
-	THUMB_FUNC_START sub_08034854
-sub_08034854: @ 0x08034854
-	push {r4,lr}
-	ldr r2, _0803487C  @ =gUnknown_03001750
-	ldr r4, [r2, #4]
-	add r0, r0, #3
-	mov r1, #4
-	neg r1, r1
-	and r0, r0, r1
-	add r0, r4, r0
-	str r0, [r2, #4]
-	ldr r1, [r2, #8]
-	cmp r0, r1
-	bls _08034872
-	ldr r0, _08034880  @ =0x08076D94
-	bl 0x08037A04
-_08034872:
-	add r0, r4, #0
-	pop {r4}
-	pop {r1}
-	bx r1
-	.byte 0x00
-	.byte 0x00
-_0803487C:
-	.4byte gUnknown_03001750
-_08034880:
-	.4byte 0x08076D94
-	THUMB_FUNC_END sub_08034854
-
-	THUMB_FUNC_START sub_08034884
-sub_08034884: @ 0x08034884
-	ldr r2, _08034894  @ =gUnknown_03001750
-	lsl r0, r0, #2
-	add r1, r2, #0
-	add r1, r1, #16
-	add r0, r0, r1
-	ldr r1, [r2, #4]
-	str r1, [r0]
-	bx lr
-_08034894:
-	.4byte gUnknown_03001750
-	THUMB_FUNC_END sub_08034884
-
-	THUMB_FUNC_START sub_08034898
-sub_08034898: @ 0x08034898
-	push {lr}
-	add r1, r0, #0
-	mov r0, #1
-	neg r0, r0
-	cmp r1, r0
-	bne _080348B0
-	ldr r1, _080348AC  @ =gUnknown_03001750
-	ldr r0, [r1]
-	str r0, [r1, #4]
-	b _080348BE
-_080348AC:
-	.4byte gUnknown_03001750
-_080348B0:
-	ldr r2, _080348C4  @ =gUnknown_03001750
-	lsl r0, r1, #2
-	add r1, r2, #0
-	add r1, r1, #16
-	add r0, r0, r1
-	ldr r0, [r0]
-	str r0, [r2, #4]
-_080348BE:
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-_080348C4:
-	.4byte gUnknown_03001750
-	THUMB_FUNC_END sub_08034898
-
-	THUMB_FUNC_START sub_080348C8
-sub_080348C8: @ 0x080348C8
-	push {r4,r5,lr}
-	ldr r4, _080348E8  @ =0x03001770
-	str r0, [r4]
-	str r1, [r4, #4]
-	str r2, [r4, #8]
-	str r3, [r4, #12]
-	ldrh r1, [r0, #4]
-	add r1, r0, r1
-	str r1, [r4, #16]
-	ldrb r0, [r0, #10]
-	add r5, r4, #0
-	cmp r0, #4
-	bne _080348EC
-	mov r0, #2
-	b _080348EE
-	.byte 0x00
-	.byte 0x00
-_080348E8:
-	.4byte 0x03001770
-_080348EC:
-	mov r0, #3
-_080348EE:
-	strb r0, [r5, #20]
-	mov r0, #1
-	ldrb r1, [r5, #20]
-	lsl r0, r0, r1
-	sub r0, r0, #1
-	mov r4, #0
-	strb r0, [r5, #22]
-	ldrb r0, [r5, #20]
-	mov r1, #3
-	sub r1, r1, r0
-	mov r0, #64
-	asr r0, r0, r1
-	strb r0, [r5, #21]
-	ldr r0, [r5, #8]
-	strh r0, [r5, #24]
-	mov r0, #220
-	lsl r0, r0, #1
-	bl 0x08034854
-	str r0, [r5, #28]
-	str r4, [r5, #36]
-	str r4, [r5, #32]
-	mov r0, #128
-	lsl r0, r0, #8
-	strh r0, [r5, #40]
-	pop {r4,r5}
-	pop {r0}
-	bx r0
-	THUMB_FUNC_END sub_080348C8
-
-	.byte 0x00
-	.byte 0x00
 	THUMB_FUNC_START sub_08034928
 sub_08034928: @ 0x08034928
 	push {r4-r7,lr}
@@ -140,7 +11,7 @@ sub_08034928: @ 0x08034928
 	str r0, [sp, #4]
 	str r2, [sp, #8]
 	str r3, [sp, #12]
-	ldr r2, _080349C4  @ =0x03001770
+	ldr r2, _080349C4  @ =gUnknown_03001770
 	ldrb r0, [r2, #20]
 	str r0, [sp, #24]
 	ldrb r3, [r2, #22]
@@ -189,7 +60,7 @@ _0803496C:
 	beq _080349B8
 	cmp r1, #10
 	beq _080349B8
-	ldr r0, _080349C4  @ =0x03001770
+	ldr r0, _080349C4  @ =gUnknown_03001770
 	ldr r3, [r0, #16]
 	ldr r1, [r0]
 _0803499C:
@@ -215,10 +86,10 @@ _080349B8:
 	asr r0, r0, #1
 	b _08034A6E
 _080349C4:
-	.4byte 0x03001770
+	.4byte gUnknown_03001770
 _080349C8:
 	ldrb r0, [r3]
-	ldr r2, _08034AA4  @ =0x03001770
+	ldr r2, _08034AA4  @ =gUnknown_03001770
 	ldr r1, [r2, #16]
 	lsl r0, r0, #1
 	add r0, r0, r1
@@ -336,7 +207,7 @@ _08034A80:
 	.byte 0x00
 	.byte 0x00
 _08034AA4:
-	.4byte 0x03001770
+	.4byte gUnknown_03001770
 _08034AA8:
 	.4byte 0x0000FFFF
 	THUMB_FUNC_END sub_08034928
@@ -353,7 +224,7 @@ sub_08034AAC: @ 0x08034AAC
 	str r1, [sp, #40]
 	mov r9, r2
 	str r3, [sp, #44]
-	ldr r3, _08034C34  @ =0x03001770
+	ldr r3, _08034C34  @ =gUnknown_03001770
 	ldr r1, [r3]
 	ldrb r0, [r1, #11]
 	str r0, [sp, #28]
@@ -422,7 +293,7 @@ _08034B36:
 	cmp r0, #0
 	bne _08034AEE
 _08034B3E:
-	ldr r7, _08034C34  @ =0x03001770
+	ldr r7, _08034C34  @ =gUnknown_03001770
 	ldrb r0, [r7, #20]
 	mov r1, #3
 	sub r0, r1, r0
@@ -550,7 +421,7 @@ _08034C28:
 	.byte 0x00
 	.byte 0x00
 _08034C34:
-	.4byte 0x03001770
+	.4byte gUnknown_03001770
 _08034C38:
 	mov r1, #0
 _08034C3A:
@@ -572,7 +443,7 @@ _08034C3A:
 	mov r1, r10
 	mov r2, r12
 	bl 0x08034928
-	ldr r1, _08034CC8  @ =0x03001770
+	ldr r1, _08034CC8  @ =gUnknown_03001770
 	ldr r2, [r1, #12]
 	mov r12, r2
 	ldr r0, [sp, #28]
@@ -614,7 +485,7 @@ _08034CA6:
 	cmp r0, r7
 	blt _08034C86
 _08034CAC:
-	ldr r1, _08034CC8  @ =0x03001770
+	ldr r1, _08034CC8  @ =gUnknown_03001770
 	ldrh r0, [r1, #24]
 	ldr r2, [sp, #60]
 	add r0, r0, r2
@@ -630,7 +501,7 @@ _08034CAC:
 	.byte 0x00
 	.byte 0x00
 _08034CC8:
-	.4byte 0x03001770
+	.4byte gUnknown_03001770
 	THUMB_FUNC_END sub_08034AAC
 
 	THUMB_FUNC_START sub_08034CCC
@@ -660,7 +531,7 @@ sub_08034CCC: @ 0x08034CCC
 	mov r1, #1
 	str r1, [sp, #48]
 _08034CFC:
-	ldr r2, _08034D34  @ =0x03001770
+	ldr r2, _08034D34  @ =gUnknown_03001770
 	ldr r1, [r2, #32]
 	mov r0, #44
 	mul r1, r0, r1
@@ -689,7 +560,7 @@ _08034D2C:
 _08034D30:
 	.4byte gUnknown_0300192C
 _08034D34:
-	.4byte 0x03001770
+	.4byte gUnknown_03001770
 _08034D38:
 	mov r0, #0
 _08034D3A:
@@ -988,7 +859,7 @@ _08034F22:
 	mov r6, #30
 	ldrsh r0, [r5, r6]
 	str r0, [sp, #8]
-	ldr r0, _08034FAC  @ =0x03001770
+	ldr r0, _08034FAC  @ =gUnknown_03001770
 	ldrb r3, [r0, #21]
 	mov r6, #32
 	ldrsh r0, [r5, r6]
@@ -1025,7 +896,7 @@ _08034FA4:
 _08034FA8:
 	.4byte 0x06010000
 _08034FAC:
-	.4byte 0x03001770
+	.4byte gUnknown_03001770
 	THUMB_FUNC_END sub_08034CCC
 
 	
@@ -1047,7 +918,7 @@ sub_08034FB0: @ 0x08034FB0
 	mov r0, #34
 	ldrsh r2, [r4, r0]
 	str r2, [sp, #8]
-	ldr r0, _0803509C  @ =0x03001770
+	ldr r0, _0803509C  @ =gUnknown_03001770
 	ldrb r6, [r0, #20]
 	ldrh r5, [r4, #8]
 	sub r6, r6, #2
@@ -1153,7 +1024,7 @@ _0803502E:
 	add r5, r5, r2
 	b _080350D6
 _0803509C:
-	.4byte 0x03001770
+	.4byte gUnknown_03001770
 _080350A0:
 	.4byte 0x03000EA0
 _080350A4:
@@ -1224,7 +1095,7 @@ sub_08035108: @ 0x08035108
 	sub sp, sp, #24
 	mov r8, r0
 	mov r7, #0
-	ldr r1, _080351BC  @ =0x03001770
+	ldr r1, _080351BC  @ =gUnknown_03001770
 	ldr r4, [r1, #28]
 	ldr r0, [r1, #32]
 	cmp r7, r0
@@ -1295,7 +1166,7 @@ _0803515A:
 	cmp r7, r0
 	blt _08035122
 _080351A4:
-	ldr r1, _080351BC  @ =0x03001770
+	ldr r1, _080351BC  @ =gUnknown_03001770
 	mov r2, r8
 	ldrh r0, [r2]
 	strh r0, [r1, #42]
@@ -1309,7 +1180,7 @@ _080351A4:
 	.byte 0x00
 	.byte 0x00
 _080351BC:
-	.4byte 0x03001770
+	.4byte gUnknown_03001770
 _080351C0:
 	.4byte 0x06010000
 	THUMB_FUNC_END sub_08035108
@@ -1333,7 +1204,7 @@ _080351DC:
 
 	THUMB_FUNC_START sub_080351E0
 sub_080351E0: @ 0x080351E0
-	ldr r1, _080351F8  @ =0x03001770
+	ldr r1, _080351F8  @ =gUnknown_03001770
 	ldr r0, [r1, #8]
 	mov r2, #0
 	strh r0, [r1, #24]
@@ -1347,13 +1218,13 @@ sub_080351E0: @ 0x080351E0
 	.byte 0x00
 	.byte 0x00
 _080351F8:
-	.4byte 0x03001770
+	.4byte gUnknown_03001770
 	THUMB_FUNC_END sub_080351E0
 
 	THUMB_FUNC_START sub_080351FC
 sub_080351FC: @ 0x080351FC
 	push {r4,r5,lr}
-	ldr r5, _08035214  @ =0x03001770
+	ldr r5, _08035214  @ =gUnknown_03001770
 	mov r4, #44
 	mul r4, r0, r4
 	ldr r0, [r5, #28]
@@ -1365,7 +1236,7 @@ sub_080351FC: @ 0x080351FC
 	.byte 0x00
 	.byte 0x00
 _08035214:
-	.4byte 0x03001770
+	.4byte gUnknown_03001770
 	THUMB_FUNC_END sub_080351FC
 
 	THUMB_FUNC_START sub_08035218
@@ -1379,7 +1250,7 @@ sub_08035218: @ 0x08035218
 	beq _0803524C
 	cmp r0, #10
 	beq _0803524C
-	ldr r0, _08035258  @ =0x03001770
+	ldr r0, _08035258  @ =gUnknown_03001770
 	ldr r4, [r0, #16]
 	ldr r1, [r0]
 _08035230:
@@ -1406,7 +1277,7 @@ _0803524C:
 	.byte 0x00
 	.byte 0x00
 _08035258:
-	.4byte 0x03001770
+	.4byte gUnknown_03001770
 	THUMB_FUNC_END sub_08035218
 
 	THUMB_FUNC_START sub_0803525C
@@ -1419,7 +1290,7 @@ sub_0803525C: @ 0x0803525C
 	sub sp, sp, #4
 	mov r8, r1
 	mov r9, r2
-	ldr r2, _080352F4  @ =0x03001770
+	ldr r2, _080352F4  @ =gUnknown_03001770
 	ldr r1, [r2]
 	ldrb r6, [r1, #11]
 	mov r5, #0
@@ -1494,7 +1365,7 @@ _080352D2:
 	pop {r0}
 	bx r0
 _080352F4:
-	.4byte 0x03001770
+	.4byte gUnknown_03001770
 	THUMB_FUNC_END sub_0803525C
 
 	THUMB_FUNC_START sub_080352F8
@@ -1503,7 +1374,7 @@ sub_080352F8: @ 0x080352F8
 	sub sp, sp, #24
 	add r4, r0, #0
 	add r7, r1, #0
-	ldr r0, _08035380  @ =0x03001770
+	ldr r0, _08035380  @ =gUnknown_03001770
 	ldrb r1, [r0, #21]
 	mov r2, #32
 	ldrsh r0, [r4, r2]
@@ -1567,7 +1438,7 @@ _08035338:
 	.byte 0x00
 	.byte 0x00
 _08035380:
-	.4byte 0x03001770
+	.4byte gUnknown_03001770
 _08035384:
 	.4byte 0x06010000
 	THUMB_FUNC_END sub_080352F8
@@ -8635,7 +8506,7 @@ _08038826:
 	add r0, r1, #4
 	ldr r1, _080388A0  @ =0x02020000
 	mov r2, #0
-	bl 0x08034790
+	bl sub_08034790
 _08038836:
 	mov r0, #1
 	strh r0, [r4]

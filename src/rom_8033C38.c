@@ -970,4 +970,47 @@ void sub_0803482C(int a, int b)
         gUnknown_03001750.unk10[i] = gUnknown_03001750.unk0;
 }
 
+int sub_08034854(u32 a)
+{
+    int r4 = gUnknown_03001750.unk4;
+    
+    gUnknown_03001750.unk4 += (a + 3) & ~3;
+    if (gUnknown_03001750.unk4 > gUnknown_03001750.unk8)
+        sub_08037A04(gUnknown_08076D94);
+    return r4;
+}
+
+void sub_08034884(u32 a)
+{
+    gUnknown_03001750.unk10[a] = gUnknown_03001750.unk4;
+}
+
+void sub_08034898(s32 a)
+{
+    if (a == -1)
+        gUnknown_03001750.unk4 = gUnknown_03001750.unk0;
+    else
+        gUnknown_03001750.unk4 = gUnknown_03001750.unk10[a];
+}
+
+void sub_080348C8(struct UnknownStruct10 *a, u32 b, u32 c, u32 d)
+{
+    gUnknown_03001770.unk0 = a;
+    gUnknown_03001770.unk4 = b;
+    gUnknown_03001770.unk8 = c;
+    gUnknown_03001770.unkC = d;
+    gUnknown_03001770.unk10 = &a->unk0[a->unk4];
+    if (a->unkA == 4)
+        gUnknown_03001770.unk14 = 2;
+    else
+        gUnknown_03001770.unk14 = 3;
+    gUnknown_03001770.unk16 = (1 << gUnknown_03001770.unk14) - 1;
+    gUnknown_03001770.unk15 = 0x40 >> (3 - gUnknown_03001770.unk14);
+    gUnknown_03001770.unk18 = gUnknown_03001770.unk8;
+    gUnknown_03001770.unk1C = sub_08034854(440);
+    gUnknown_03001770.unk24 = 0;
+    gUnknown_03001770.unk20 = 0;
+    gUnknown_03001770.unk28 = 0x8000;
+}
+
 asm(".align 2, 0");

@@ -1,54 +1,6 @@
 #include "gba/gba.h"
 #include "global.h"
 
-struct UnknownStruct5
-{
-    u8 filler0[8];
-    u16 unk8;
-};
-
-struct UnknownStruct4
-{
-    struct UnknownStruct5 *unk0;
-    u32 unk4;
-    u8 filler8[0x10-0x8];
-    s16 unk10;
-    u8 filler12[2];
-    u32 unk14;
-    u32 unk18;
-    u8 filler1C[1];
-    u8 unk1D[3];
-    u32 unk20;
-};
-
-extern s32 gUnknown_0300002C;
-extern u8 gUnknown_03000033;
-extern u8 gUnknown_030009EC;
-extern s32 gUnknown_03000B44;
-extern u32 gUnknown_03000B48;
-extern u32 gUnknown_03000B4C;
-extern u8 gUnknown_03000B5C;
-extern u8 gUnknown_03000B60;
-extern u32 gUnknown_03000B6C;
-extern struct UnknownStruct4 gUnknown_03000B90;
-extern u32 gUnknown_03000BB8;
-extern u32 gUnknown_030009DC;
-extern u8 gUnknown_0300192C[];  // unknown type
-extern u8 gUnknown_03001930[];  // unknown type
-extern u8 gUnknown_030009E4[];  // unknown type
-extern u8 gUnknown_03001A30[];  // unknown type
-extern u8 gUnknown_030009D4;
-extern u32 gUnknown_030009C0;
-extern u8 gUnknown_03000028;
-extern u8 gUnknown_030009E8;
-extern u8 gUnknown_03000B68;
-extern u8 gUnknown_03001BDC;
-extern u8 gUnknown_03000029;
-extern u8 gUnknown_03000032;
-extern u8 gUnknown_03000030;
-extern u8 gUnknown_03000031;
-extern u32 gUnknown_03000034;
-
 void sub_08007154(void)
 {
     gUnknown_030009C4 = gUnknown_030009CC;
@@ -189,26 +141,6 @@ void sub_0800748C(void)
     if (sub_08071FE4() != 11)
         sub_0807204C(11, 128, 1);
 }
-
-struct UnknownStruct7
-{
-    u8 filler0[0x34];
-    s8 unk34;
-};
-
-struct UnknownStruct8
-{
-    u8 filler0[0x14];
-    u32 unk14;
-};
-
-extern struct UnknownStruct7 *gUnknown_03001C78;
-extern u8 gUnknown_03001A38;
-extern u32 gUnknown_03000038;
-extern struct UnknownStruct8 gUnknown_03001B30;
-extern s8 gUnknown_03000BBC;
-extern u16 gUnknown_030009D8;
-extern u32 gUnknown_0300003C;
 
 void sub_08007544(void)
 {

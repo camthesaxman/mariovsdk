@@ -47,6 +47,7 @@ SECTIONS
 	.rodata :
 	ALIGN(4)
 	{
+		. = 0x76D94;	gUnknown_08076D94 = .;
 		. = 0x77FAC;	sSetupInfos = .;
 		. = 0x7823C;	gUnknown_0807823C = .;
 		. = 0x782C8;	gUnknown_080782C8 = .;
@@ -143,6 +144,7 @@ SECTIONS
 		. = 0x1744;		gUnknown_03001744 = .;
 		. = 0x1748;		gUnknown_03001748 = .;
 		. = 0x1750;		gUnknown_03001750 = .;
+		. = 0x1770;		gUnknown_03001770 = .;
 		. = 0x192C;		gUnknown_0300192C = .;
 		. = 0x1930;		gUnknown_03001930 = .;
 		. = 0x1938;		gUnknown_03001938 = .;
