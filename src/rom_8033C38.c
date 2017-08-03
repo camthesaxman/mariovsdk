@@ -1,5 +1,6 @@
 #include "gba/gba.h"
 #include "global.h"
+#include "main.h"
 
 #define EWRAM 0x02000000
 #define IWRAM 0x03000000
@@ -321,7 +322,7 @@ u16 sub_08034154(void)
 bool32 sub_08034178(void)
 {
     if ((gUnknown_030012E0 & START_BUTTON) &&  (gUnknown_030012E0 & SELECT_BUTTON) && (gUnknown_030012E0 & A_BUTTON) && (gUnknown_030012E0 & B_BUTTON)
-     && gUnknown_030009C0 != 7 && gUnknown_030009C0 != 34)
+     && gMainState != MAIN_STATE_TITLE_SCREEN && gMainState != MAIN_STATE_INIT)
     {
         sub_080070E8(7, 1);
         gUnknown_03000B80 = 0;

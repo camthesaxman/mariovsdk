@@ -844,7 +844,7 @@ sub_08032B30: @ 0x08032B30
 	asr r0, r0, #24
 	cmp r0, #0
 	bne _08032BC4
-	ldr r0, _08032B6C  @ =gUnknown_030009C0
+	ldr r0, _08032B6C  @ =gMainState
 	ldr r0, [r0]
 	cmp r0, #5
 	bne _08032B84
@@ -863,7 +863,7 @@ sub_08032B30: @ 0x08032B30
 _08032B68:
 	.4byte gUnknown_03000B80
 _08032B6C:
-	.4byte gUnknown_030009C0
+	.4byte gMainState
 _08032B70:
 	.4byte gUnknown_0807DD34
 _08032B74:

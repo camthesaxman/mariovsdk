@@ -1,5 +1,6 @@
 #include "gba/gba.h"
 #include "global.h"
+#include "main.h"
 
 void load_some_oam(void)
 {
@@ -123,7 +124,7 @@ static inline u16 inline_1(void)
 static inline bool32 inline_2(void)
 {
     if ((gUnknown_030012E0 & START_BUTTON) &&  (gUnknown_030012E0 & SELECT_BUTTON) && (gUnknown_030012E0 & A_BUTTON) && (gUnknown_030012E0 & B_BUTTON)
-     && gUnknown_030009C0 != 7 && gUnknown_030009C0 != 34)
+     && gMainState != MAIN_STATE_TITLE_SCREEN && gMainState != MAIN_STATE_INIT)
     {
         sub_080070E8(7, 1);
         gUnknown_03000B80 = 0;
@@ -148,7 +149,7 @@ void sub_080331FC(void)
     bool16 r3_2;
 
     keys = keyInput.keys;
-    if (gUnknown_030009C0 == 5 || gUnknown_030009C0 == 2)
+    if (gMainState == MAIN_STATE_TUTORIAL || gMainState == MAIN_STATE_DEMO)
         gUnknown_030012E0 = gUnknown_030002AA;
     r4 = gUnknown_03001938;
     if (r4 & 0x400)
@@ -156,7 +157,7 @@ void sub_080331FC(void)
         gUnknown_030012E8 = keys & ~gUnknown_030012E0;
         gUnknown_030012E0 = keys;
 
-        if ((keys & (START_BUTTON | SELECT_BUTTON)) == (START_BUTTON | SELECT_BUTTON) && (keys & A_BUTTON) && (keys & B_BUTTON) && gUnknown_030009C0 != 7)
+        if ((keys & (START_BUTTON | SELECT_BUTTON)) == (START_BUTTON | SELECT_BUTTON) && (keys & A_BUTTON) && (keys & B_BUTTON) && gMainState != MAIN_STATE_TITLE_SCREEN)
         {
             gUnknown_03001938 = r4 & ~0x400;
         }
@@ -182,12 +183,12 @@ void sub_080331FC(void)
     {
         s32 i;
 
-        if (gUnknown_030009C0 == 5)
+        if (gMainState == MAIN_STATE_TUTORIAL)
         {
             gUnknown_030002AA = gUnknown_030012E0;
             sub_08033024();
         }
-        else if (gUnknown_030009C0 == 2)
+        else if (gMainState == MAIN_STATE_DEMO)
         {
             gUnknown_030002AA = gUnknown_030012E0;
             sub_08033148();
@@ -196,7 +197,7 @@ void sub_080331FC(void)
         {
             gUnknown_030012E8 = gUnknown_030012E0 = 0;
         }
-        else if (gUnknown_030009C0 == 13)
+        else if (gMainState == MAIN_STATE_LEVEL_PLAY)
         {
             if (gUnknown_03000B54 <= 10)
             {

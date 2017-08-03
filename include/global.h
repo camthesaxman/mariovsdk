@@ -153,7 +153,6 @@ extern struct Struct30002B8 gUnknown_030002C0;
 extern struct Struct30002B8 gUnknown_030002C8;
 extern int (*gUnknown_03000964)(u32 *, int, int, int);
 extern struct Struct30009B0 gUnknown_030009B0;
-extern u32 gUnknown_030009C0;
 extern u32 gUnknown_030009C4;
 extern u32 gUnknown_030009C8;
 extern u32 gUnknown_030009CC;

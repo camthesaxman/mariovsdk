@@ -12,3 +12,4 @@ tools/*
 
 # Emulator save files
 *.sav
+*.sgm

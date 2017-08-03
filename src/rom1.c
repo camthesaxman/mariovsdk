@@ -1,5 +1,6 @@
 #include "gba/gba.h"
 #include "global.h"
+#include "main.h"
 
 void sub_08007154(void)
 {
@@ -60,10 +61,10 @@ void sub_080072A4(void)
     
     gUnknown_030009D4 = 1;
     sub_08007170();
-    r5 = gUnknown_030009C0;
-    gUnknown_030009C0 = 13;
+    r5 = gMainState;
+    gMainState = MAIN_STATE_LEVEL_PLAY;
     sub_08004634(1);
-    gUnknown_030009C0 = r5;
+    gMainState = r5;
     r1 = sub_08040F30(sub_08040EE8(2));
     if (r1 == NULL)
         r1 = sub_08040F30(sub_08040EE8(0));
@@ -78,7 +79,7 @@ void sub_080072A4(void)
     gUnknown_03000028 = 0;
     gUnknown_030009E8 = 0;
     if ((!(gUnknown_03000B68 & 2) || (gUnknown_03000B90.unk20 & 32))
-     && gUnknown_030009C0 != 5)
+     && gMainState != MAIN_STATE_TUTORIAL)
     {
         sub_080720AC();
         if (gUnknown_03000B80 == 2 || gUnknown_03000B80 == 3 || gUnknown_03000BB4 != 0)
@@ -120,11 +121,11 @@ void sub_0800748C(void)
     struct UnknownStruct6 *r1;
     
     sub_08007170();
-    r5 = gUnknown_030009C0;
-    if (gUnknown_030009C0 != 2)
-        gUnknown_030009C0 = 5;
+    r5 = gMainState;
+    if (gMainState != MAIN_STATE_DEMO)
+        gMainState = MAIN_STATE_TUTORIAL;
     sub_08004634(1);
-    gUnknown_030009C0 = r5;
+    gMainState = r5;
     r1 = sub_08040F30(sub_08040EE8(2));
     if (r1 == NULL)
         r1 = sub_08040F30(sub_08040EE8(0));
@@ -174,7 +175,7 @@ void sub_08007544(void)
             gUnknown_03000B54 = 0;
             gUnknown_03001A1C |= 0x400;
             gUnknown_03000029 = 0;
-            if (gUnknown_030009C0 != 5 && gUnknown_030009C0 != 2)
+            if (gMainState != MAIN_STATE_TUTORIAL && gMainState != MAIN_STATE_DEMO)
             {
                 sub_080720AC();
                 sub_0807204C(63, 128, 0);
@@ -188,7 +189,7 @@ void sub_08007544(void)
     if (r7 && gUnknown_03000B54 <= 0x708 && !(gUnknown_03001A1C & 0x80))
     {
         gUnknown_03000029 = 0;
-        if (gUnknown_030009C0 != 5 && gUnknown_030009C0 != 2)
+        if (gMainState != MAIN_STATE_TUTORIAL && gMainState != MAIN_STATE_DEMO)
         {
             sub_080720AC();
             sub_0807204C(6, 128, 0);
@@ -198,7 +199,7 @@ void sub_08007544(void)
     if (gUnknown_03000038 & 0x8000)
     {
         gUnknown_03000029 = 0;
-        if (gUnknown_030009C0 != 5 && gUnknown_030009C0 != 2)
+        if (gMainState != MAIN_STATE_TUTORIAL && gMainState != MAIN_STATE_DEMO)
         {
             sub_080720AC();
             sub_08071CD4();
@@ -226,7 +227,7 @@ void sub_08007544(void)
 
     if (gUnknown_03000038 & 0x80)
     {
-        if (gUnknown_030009C0 != 5 && gUnknown_030009C0 != 2)
+        if (gMainState != MAIN_STATE_TUTORIAL && gMainState != MAIN_STATE_DEMO)
         {
             sub_080720AC();
             sub_0807204C(3, 128, 0);
@@ -240,7 +241,7 @@ void sub_08007544(void)
 
     if (gUnknown_03000038 & 0x2000)
     {
-        if (gUnknown_030009C0 != 5 && gUnknown_030009C0 != 2)
+        if (gMainState != MAIN_STATE_TUTORIAL && gMainState != MAIN_STATE_DEMO)
         {
             if (gUnknown_03000B90.unk20 & 2)
             {
@@ -248,7 +249,7 @@ void sub_08007544(void)
             }
             else
             {
-                if (gUnknown_030009C0 != 5 && gUnknown_030009C0 != 2 && gUnknown_03000B80 != 5)
+                if (gMainState != MAIN_STATE_TUTORIAL && gMainState != MAIN_STATE_DEMO && gUnknown_03000B80 != 5)
                 {
                     sub_080720AC();
                     sub_08071FA0(gUnknown_03000B90.unk14, gUnknown_03000B90.unk18, 1, gUnknown_03000B90.unk1D);
@@ -266,7 +267,7 @@ void sub_08007544(void)
     if (gUnknown_03000B5C == 0 && (gUnknown_03000B90.unk20 & 2) && gUnknown_03000029 == 0
      && gUnknown_030009E8 != 0 && sub_08072144() != 0)
     {
-        if (gUnknown_030009C0 != 5 && gUnknown_030009C0 != 2)
+        if (gMainState != MAIN_STATE_TUTORIAL && gMainState != MAIN_STATE_DEMO)
             sub_08071FA0(gUnknown_03000B90.unk14, gUnknown_03000B90.unk18, 1, gUnknown_03000B90.unk1D);
         gUnknown_03000029 = 1;
     }
@@ -275,7 +276,7 @@ void sub_08007544(void)
     {
         gUnknown_030009E8 = 0;
         gUnknown_03000029 = 0;
-        if (gUnknown_030009C0 != 5 && gUnknown_030009C0 != 2)
+        if (gMainState != MAIN_STATE_TUTORIAL && gMainState != MAIN_STATE_DEMO)
         {
             sub_08071CD4();
             sub_080720AC();
@@ -288,7 +289,7 @@ void sub_08007544(void)
     {
         gUnknown_030009E8 = 0;
         gUnknown_03000029 = 0;
-        if (gUnknown_030009C0 != 5 && gUnknown_030009C0 != 2
+        if (gMainState != MAIN_STATE_TUTORIAL && gMainState != MAIN_STATE_DEMO
          && gUnknown_03000B5C == 0)
         {
             sub_08071CD4();
@@ -302,7 +303,7 @@ void sub_08007544(void)
     {
         gUnknown_030009E8 = 0;
         gUnknown_03000029 = 0;
-        if (gUnknown_030009C0 != 5 && gUnknown_030009C0 != 2
+        if (gMainState != MAIN_STATE_TUTORIAL && gMainState != MAIN_STATE_DEMO
          && gUnknown_03000B5C == 0)
         {
             sub_08071CD4();
@@ -318,7 +319,7 @@ void sub_08007544(void)
         gUnknown_030009E8 = 0;
         if (gUnknown_03000B80 != 5)
             sub_08071CD4();
-        if (gUnknown_030009C0 != 5 && gUnknown_030009C0 != 2
+        if (gMainState != MAIN_STATE_TUTORIAL && gMainState != MAIN_STATE_DEMO
          && !(gUnknown_03000B90.unk20 & 2))
         {
             if (gUnknown_03000B90.unk20 & 8)
@@ -346,7 +347,7 @@ void sub_08007544(void)
         {
             if (gUnknown_03000038 & 0x4000000)
             {
-                if (gUnknown_030009C0 != 5 && gUnknown_030009C0 != 2)
+                if (gMainState != MAIN_STATE_TUTORIAL && gMainState != MAIN_STATE_DEMO)
                 {
                     sub_080720AC();
                     sub_0807204C(14, 128, 1);
@@ -354,7 +355,7 @@ void sub_08007544(void)
             }
             else if (gUnknown_0300003C & 0x4000000)
             {
-                if (gUnknown_030009C0 != 5 && gUnknown_030009C0 != 2)
+                if (gMainState != MAIN_STATE_TUTORIAL && gMainState != MAIN_STATE_DEMO)
                 {
                     sub_080720AC();
                     sub_08071FA0(gUnknown_03000B90.unk14, gUnknown_03000B90.unk18, 1, gUnknown_03000B90.unk1D);

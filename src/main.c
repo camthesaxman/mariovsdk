@@ -1,5 +1,6 @@
 #include "gba/gba.h"
 #include "global.h"
+#include "main.h"
 
 static void main_loop(void);
 
@@ -9,7 +10,7 @@ void AgbMain(void)
     clear_ram();  
     gUnknown_03000B64 = 0;
     gUnknown_03000B78 = 0;
-    gUnknown_030009C4 = 34;
+    gUnknown_030009C4 = MAIN_STATE_INIT;
     init_timer_regs();
     main_loop();
 }
@@ -101,25 +102,25 @@ void sub_08006F90(void)
 // 0x08006FF0
 static void main_loop(void)
 {
-    gUnknown_030009C0 = gUnknown_030009C4;
+    gMainState = gUnknown_030009C4;
     gUnknown_03000B70 = 0;
     
     while (1)
     {
-        gUnknown_03000020 = gUnknown_030009C0;
+        gUnknown_03000020 = gMainState;
         if (gUnknown_0807823C[gUnknown_03000020] != NULL)
             gUnknown_0807823C[gUnknown_03000020]();
-        if (gUnknown_030009C0 == 19 || gUnknown_030009C0 == 15)
+        if (gMainState == MAIN_STATE_UNKNOWN_19 || gMainState == MAIN_STATE_UNKNOWN_15)
         {
-            gUnknown_030009C0 = 13;
-            gUnknown_03000020 = 13;
-            gUnknown_030009C4 = 13;
+            gMainState = MAIN_STATE_LEVEL_PLAY;
+            gUnknown_03000020 = MAIN_STATE_LEVEL_PLAY;
+            gUnknown_030009C4 = MAIN_STATE_LEVEL_PLAY;
         }
-        else if (gUnknown_030009C0 == 6)
+        else if (gMainState == MAIN_STATE_TUTORIAL_SETUP)
         {
-            gUnknown_030009C0 = 5;
-            gUnknown_03000020 = 5;
-            gUnknown_030009C4 = 5;
+            gMainState = MAIN_STATE_TUTORIAL;
+            gUnknown_03000020 = MAIN_STATE_TUTORIAL;
+            gUnknown_030009C4 = MAIN_STATE_TUTORIAL;
         }
         sub_0801500C(gUnknown_0807846C[gUnknown_03000020]);
         sub_08033EA0(gUnknown_08078354[gUnknown_03000020]);
@@ -133,15 +134,15 @@ static void main_loop(void)
         gUnknown_03000024 = 0;
         if (gUnknown_080783E0[gUnknown_03000020] != NULL)
             gUnknown_080783E0[gUnknown_03000020]();
-        gUnknown_030009C0 = gUnknown_030009C4;
+        gMainState = gUnknown_030009C4;
     }
 }
 
 void sub_080070E8(s32 a, s32 b)
 {
-    if (gUnknown_030009C4 != 31)
+    if (gUnknown_030009C4 != MAIN_STATE_FADETRANSITION)
     {
-        if (gUnknown_03000BB4 != 0 && a == 8)
+        if (gUnknown_03000BB4 != MAIN_STATE_INTRO && a == 8)
             a = 24;
         if (b == 0)
         {

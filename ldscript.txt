@@ -77,7 +77,7 @@ SECTIONS
 
 		. = 0x964;		gUnknown_03000964 = .;
 		. = 0x9B0;		gUnknown_030009B0 = .;
-		. = 0x9C0;		gUnknown_030009C0 = .;
+		. = 0x9C0;		gMainState = .;
 		. = 0x9C4;		gUnknown_030009C4 = .;
 		. = 0x9C8;		gUnknown_030009C8 = .;
 		. = 0x9CC;		gUnknown_030009CC = .;
