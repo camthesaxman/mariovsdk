@@ -218,7 +218,7 @@ gUnknown_08078234:
 
 	.GLOBAL gUnknown_0807823C
 gUnknown_0807823C:
-	.4byte sub_0801B9DC
+	.4byte cb_init_intro
 	.4byte sub_080347DC
 	.4byte sub_08008B8C
 	.4byte sub_080114D4

@@ -13,6 +13,8 @@ SECTIONS
 		src/main.o(.text);
 		src/rom1.o(.text);
 		asm/rom1.o(.text);
+		src/intro.o(.text);
+		asm/rom_801BAD8.o(.text);
 		src/rom_8032408.o(.text);
 		asm/rom_8032408.o(.text);
 		src/rom_8032FB0.o(.text);
@@ -62,6 +64,7 @@ SECTIONS
 		. = 0x34;		gUnknown_03000034 = .;
 		. = 0x38;		gUnknown_03000038 = .;
 		. = 0x3C;		gUnknown_0300003C = .;
+		. = 0xAC;		gUnknown_030000AC = .;
 		. = 0x29C;		gUnknown_0300029C = .;
 		. = 0x2A0;		gUnknown_030002A0 = .;
 		. = 0x2AA;		gUnknown_030002AA = .;
@@ -107,6 +110,8 @@ SECTIONS
 		. = 0xBB4;		gUnknown_03000BB4 = .;
 		. = 0xBB8;		gUnknown_03000BB8 = .;
 		. = 0xBBC;		gUnknown_03000BBC = .;
+		. = 0xBD0;		gUnknown_03000BD0 = .;
+		. = 0xBE0;		gUnknown_03000BE0 = .;
 		. = 0xC28;		gUnknown_03000C28 = .;
 		. = 0xEA0;		gUnknown_03000EA0 = .;
 		. = 0x12A0;		gUnknown_030012A0 = .;

@@ -7268,7 +7268,7 @@ _080050BA:
 	mov r0, #8
 	mov r1, #1
 	bl sub_080070E8
-	ldr r0, _080050E4  @ =0x03000BD0
+	ldr r0, _080050E4  @ =gUnknown_03000BD0
 	strb r4, [r0]
 	ldrh r1, [r5]
 	ldr r0, _080050E8  @ =0x0000FFF7
@@ -7276,7 +7276,7 @@ _080050BA:
 	strh r0, [r5]
 	b _080051FA
 _080050E4:
-	.4byte 0x03000BD0
+	.4byte gUnknown_03000BD0
 _080050E8:
 	.4byte 0x0000FFF7
 _080050EC:

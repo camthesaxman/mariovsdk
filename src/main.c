@@ -87,7 +87,7 @@ void sub_08006F5C(u32 a, u32 b)
 
 void sub_08006F90(void)
 {
-    struct OamData *oam = &gUnknown_03000EA0;
+    struct OamData *oam = &gUnknown_03000EA0[0];
     s32 x;
     s32 y;
     
@@ -142,8 +142,8 @@ void sub_080070E8(s32 a, s32 b)
 {
     if (gUnknown_030009C4 != MAIN_STATE_FADETRANSITION)
     {
-        if (gUnknown_03000BB4 != MAIN_STATE_INTRO && a == 8)
-            a = 24;
+        if (gUnknown_03000BB4 != MAIN_STATE_INTRO && a == MAIN_STATE_LEVEL_SELECT)
+            a = MAIN_STATE_EWORLD_LEVEL_SELECT;
         if (b == 0)
         {
             gUnknown_030009C4 = a;

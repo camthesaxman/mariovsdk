@@ -22,6 +22,7 @@ CFILES   := \
 	src/rom_80066FC.c \
 	src/main.c \
 	src/rom1.c \
+	src/intro.c \
 	src/rom_8032408.c \
 	src/rom_8032FB0.c \
 	src/rom_8033C38.c \
@@ -35,6 +36,7 @@ SFILES   := \
 	asm/rom_8001BA4.s \
 	asm/rom_80066FC.s \
 	asm/rom1.s \
+	asm/rom_801BAD8.s \
 	asm/rom_8032408.s \
 	asm/rom_8032FB0.s \
 	asm/rom_8033D80.s \
@@ -49,6 +51,7 @@ src/agb_flash_mx.o: CC1FLAGS := -O1 -mthumb-interwork
 
 src/libc.o: CC1 := $(CC1_OLD)
 src/libc.o: CC1FLAGS := -O2
+
 
 #### Main Targets ####
 
