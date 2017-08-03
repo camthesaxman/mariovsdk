@@ -104,20 +104,54 @@ gUnknown_08076D70:
 
 	.GLOBAL gUnknown_08076D94
 gUnknown_08076D94:
-	.INCBIN "baserom.gba", 0x76D94, 0x76F6C-0x76D94
+	.ASCII "Heap overflow.\nWe are out of RAM!\0"
 
+	.ALIGN 2
+	.ASCII "MultiSio010918\0"
+
+	.ALIGN 2
+	.ASCII "SENDING COMPLETED\n\n"
+	.ASCII "Press A Button to Resend\n"
+	.ASCII "Press B Button to Cancel.\0"
+
+	.ALIGN 2
+	.ASCII "SENDING...\n\n"
+	.ASCII "Please DO NOT TURN OFF\n"
+	.ASCII "Game Boy Advance Systems\n"
+	.ASCII "or Disconnect the\n"
+	.ASCII "Game Boy Advance\n"
+	.ASCII "Game Link cable.\0"
+
+	.ALIGN 2
+	.ASCII "READY TO SEND\n\n"
+	.ASCII "Press A Button on GBA with\n"
+	.ASCII "Mario vs. Donkey Kong to\n"
+	.ASCII "begin sending new level to.\0"
+
+	.ALIGN 2
+	.ASCII "READY TO SEND\n\n"
+	.ASCII "Link e-Reader to\n"
+	.ASCII "Mario vs. Donkey Kong and\n"
+	.ASCII "select the e-Reader card\n"
+	.ASCII "Menu and ADD LEVEL to begin.\n"
+	.ASCII "Press B Button to Cancel\0"
+
+	.ALIGN 2
 	.GLOBAL gUnknown_08076F6C
 gUnknown_08076F6C:
-	.INCBIN "baserom.gba", 0x76F6C, 0x76F78-0x76F6C
+	.ASCII "LOST ALL\0"
 
+	.ALIGN 2
 	.GLOBAL gUnknown_08076F78
 gUnknown_08076F78:
-	.INCBIN "baserom.gba", 0x76F78, 0x76F84-0x76F78
+	.ASCII "MINI MARIOS\0"
 
+	.ALIGN 2
 	.GLOBAL gUnknown_08076F84
 gUnknown_08076F84:
-	.INCBIN "baserom.gba", 0x76F84, 0x76F94-0x76F84
+	.ASCII "GET TOY CARDS!\0"
 
+	.ALIGN 2
 	.GLOBAL gUnknown_08076F94
 gUnknown_08076F94:
 	.INCBIN "baserom.gba", 0x76F94, 0x76F98-0x76F94

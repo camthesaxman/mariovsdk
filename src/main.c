@@ -152,7 +152,7 @@ void sub_080070E8(s32 a, s32 b)
         {
             gUnknown_030009CC = a;
             gUnknown_030009C8 = gUnknown_030009C4;
-            gUnknown_030009C4 = 31;
+            gUnknown_030009C4 = MAIN_STATE_FADETRANSITION;
         }
         
         gUnknown_03000024 = 1;
