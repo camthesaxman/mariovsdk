@@ -22,6 +22,7 @@ CFILES   := \
 	src/rom_80066FC.c \
 	src/main.c \
 	src/rom1.c \
+	src/title.c \
 	src/intro.c \
 	src/rom_8032408.c \
 	src/rom_8032FB0.c \

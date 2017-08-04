@@ -1384,7 +1384,7 @@ sub_0801C51C: @ 0x0801C51C
 	ldr r6, _0801C5C4  @ =0x030000BE
 	ldrh r1, [r6]
 	lsl r1, r1, #3
-	ldr r3, _0801C5C8  @ =gUnknown_03000EA0
+	ldr r3, _0801C5C8  @ =gOamData
 	mov r8, r3
 	add r1, r1, r8
 	str r1, [r2, #4]
@@ -1456,7 +1456,7 @@ _0801C5C0:
 _0801C5C4:
 	.4byte 0x030000BE
 _0801C5C8:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0801C5CC:
 	.4byte 0x84000002
 _0801C5D0:
@@ -1522,7 +1522,7 @@ sub_0801C5E0: @ 0x0801C5E0
 	mov r3, r8
 	ldrh r2, [r3]
 	lsl r2, r2, #3
-	ldr r6, _0801C6F0  @ =gUnknown_03000EA0
+	ldr r6, _0801C6F0  @ =gOamData
 	add r2, r2, r6
 	str r2, [r4, #4]
 	ldr r2, _0801C6F4  @ =0x84000002
@@ -1609,7 +1609,7 @@ _0801C6E8:
 _0801C6EC:
 	.4byte 0x030000BE
 _0801C6F0:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0801C6F4:
 	.4byte 0x84000002
 _0801C6F8:
@@ -1712,7 +1712,7 @@ sub_0801C758: @ 0x0801C758
 	ldr r6, _0801C834  @ =0x030000BE
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _0801C838  @ =gUnknown_03000EA0
+	ldr r5, _0801C838  @ =gOamData
 	add r0, r0, r5
 	str r0, [r3, #4]
 	ldr r0, _0801C83C  @ =0x84000002
@@ -1779,7 +1779,7 @@ _0801C830:
 _0801C834:
 	.4byte 0x030000BE
 _0801C838:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0801C83C:
 	.4byte 0x84000002
 _0801C840:
@@ -2006,7 +2006,7 @@ _0801C9BA:
 	str r0, [sp, #16]
 	add r0, sp, #16
 	str r0, [r1]
-	ldr r0, _0801CACC  @ =gUnknown_03000EA0
+	ldr r0, _0801CACC  @ =gOamData
 	str r0, [r1, #4]
 	ldr r0, _0801CAD0  @ =0x85000100
 	str r0, [r1, #8]
@@ -2131,7 +2131,7 @@ _0801CAC4:
 _0801CAC8:
 	.4byte 0x81000100
 _0801CACC:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0801CAD0:
 	.4byte 0x85000100
 _0801CAD4:
@@ -2173,7 +2173,7 @@ _0801CB00:
 	str r0, [sp, #16]
 	add r0, sp, #16
 	str r0, [r1]
-	ldr r0, _0801CB7C  @ =gUnknown_03000EA0
+	ldr r0, _0801CB7C  @ =gOamData
 	str r0, [r1, #4]
 	ldr r0, _0801CB80  @ =0x85000100
 	str r0, [r1, #8]
@@ -2203,7 +2203,7 @@ _0801CB56:
 	bl sub_0801C8B8
 _0801CB5A:
 	ldr r1, _0801CB74  @ =0x040000D4
-	ldr r0, _0801CB7C  @ =gUnknown_03000EA0
+	ldr r0, _0801CB7C  @ =gOamData
 	str r0, [r1]
 	mov r0, #224
 	lsl r0, r0, #19
@@ -2220,7 +2220,7 @@ _0801CB74:
 _0801CB78:
 	.4byte 0x81000100
 _0801CB7C:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0801CB80:
 	.4byte 0x85000100
 _0801CB84:
@@ -2319,7 +2319,7 @@ sub_0801CBD8: @ 0x0801CBD8
 	str r0, [r4]
 	ldrh r0, [r7]
 	lsl r0, r0, #3
-	ldr r5, _0801CEC8  @ =gUnknown_03000EA0
+	ldr r5, _0801CEC8  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0801CECC  @ =0x84000002
@@ -2433,7 +2433,7 @@ _0801CCCE:
 	str r0, [r4]
 	ldrh r0, [r7]
 	lsl r0, r0, #3
-	ldr r5, _0801CEC8  @ =gUnknown_03000EA0
+	ldr r5, _0801CEC8  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0801CECC  @ =0x84000002
@@ -2547,7 +2547,7 @@ _0801CDB0:
 	str r0, [r4]
 	ldrh r0, [r7]
 	lsl r0, r0, #3
-	ldr r5, _0801CEC8  @ =gUnknown_03000EA0
+	ldr r5, _0801CEC8  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0801CECC  @ =0x84000002
@@ -2659,7 +2659,7 @@ _0801CEC0:
 _0801CEC4:
 	.4byte gUnknown_082AEF74
 _0801CEC8:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0801CECC:
 	.4byte 0x84000002
 _0801CED0:
@@ -2716,7 +2716,7 @@ sub_0801CEE4: @ 0x0801CEE4
 	str r0, [r4]
 	ldrh r0, [r7]
 	lsl r0, r0, #3
-	ldr r5, _0801D1D4  @ =gUnknown_03000EA0
+	ldr r5, _0801D1D4  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0801D1D8  @ =0x84000002
@@ -2830,7 +2830,7 @@ _0801CFDA:
 	str r0, [r4]
 	ldrh r0, [r7]
 	lsl r0, r0, #3
-	ldr r5, _0801D1D4  @ =gUnknown_03000EA0
+	ldr r5, _0801D1D4  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0801D1D8  @ =0x84000002
@@ -2944,7 +2944,7 @@ _0801D0BC:
 	str r0, [r4]
 	ldrh r0, [r7]
 	lsl r0, r0, #3
-	ldr r5, _0801D1D4  @ =gUnknown_03000EA0
+	ldr r5, _0801D1D4  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0801D1D8  @ =0x84000002
@@ -3056,7 +3056,7 @@ _0801D1CC:
 _0801D1D0:
 	.4byte gUnknown_082AEF74
 _0801D1D4:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0801D1D8:
 	.4byte 0x84000002
 _0801D1DC:
@@ -3112,7 +3112,7 @@ sub_0801D1F0: @ 0x0801D1F0
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _0801D270  @ =gUnknown_03000EA0
+	ldr r5, _0801D270  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0801D274  @ =0x84000002
@@ -3139,7 +3139,7 @@ _0801D268:
 _0801D26C:
 	.4byte gUnknown_0811BCB0
 _0801D270:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0801D274:
 	.4byte 0x84000002
 _0801D278:
@@ -3235,7 +3235,7 @@ _0801D322:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _0801D3F8  @ =gUnknown_03000EA0
+	ldr r5, _0801D3F8  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0801D3FC  @ =0x84000002
@@ -3342,7 +3342,7 @@ _0801D3F0:
 _0801D3F4:
 	.4byte gUnknown_08125928
 _0801D3F8:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0801D3FC:
 	.4byte 0x84000002
 _0801D400:
@@ -3454,7 +3454,7 @@ _0801D4CA:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _0801D5A0  @ =gUnknown_03000EA0
+	ldr r5, _0801D5A0  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0801D5A4  @ =0x84000002
@@ -3560,7 +3560,7 @@ _0801D598:
 _0801D59C:
 	.4byte gUnknown_08125928
 _0801D5A0:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0801D5A4:
 	.4byte 0x84000002
 _0801D5A8:
@@ -3672,7 +3672,7 @@ _0801D672:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _0801D72C  @ =gUnknown_03000EA0
+	ldr r5, _0801D72C  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0801D730  @ =0x84000002
@@ -3765,7 +3765,7 @@ _0801D724:
 _0801D728:
 	.4byte gUnknown_08125928
 _0801D72C:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0801D730:
 	.4byte 0x84000002
 _0801D734:
@@ -3831,7 +3831,7 @@ _0801D776:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _0801D860  @ =gUnknown_03000EA0
+	ldr r5, _0801D860  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0801D864  @ =0x84000002
@@ -3924,7 +3924,7 @@ _0801D858:
 _0801D85C:
 	.4byte gUnknown_0811C1C0
 _0801D860:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0801D864:
 	.4byte 0x84000002
 _0801D868:
@@ -3963,7 +3963,7 @@ _0801D878:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _0801D8E0  @ =gUnknown_03000EA0
+	ldr r5, _0801D8E0  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0801D8E4  @ =0x84000002
@@ -3990,7 +3990,7 @@ _0801D8D8:
 _0801D8DC:
 	.4byte gUnknown_0811C1C0
 _0801D8E0:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0801D8E4:
 	.4byte 0x84000002
 _0801D8E8:
@@ -4021,7 +4021,7 @@ _0801D8E8:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _0801D9BC  @ =gUnknown_03000EA0
+	ldr r5, _0801D9BC  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0801D9C0  @ =0x84000002
@@ -4101,7 +4101,7 @@ _0801D9B4:
 _0801D9B8:
 	.4byte gUnknown_0811F7A4
 _0801D9BC:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0801D9C0:
 	.4byte 0x84000002
 _0801D9C4:
@@ -4140,7 +4140,7 @@ _0801D9D4:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _0801DA3C  @ =gUnknown_03000EA0
+	ldr r5, _0801DA3C  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0801DA40  @ =0x84000002
@@ -4167,7 +4167,7 @@ _0801DA34:
 _0801DA38:
 	.4byte gUnknown_0811C1C0
 _0801DA3C:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0801DA40:
 	.4byte 0x84000002
 _0801DA44:
@@ -4198,7 +4198,7 @@ _0801DA44:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _0801DC20  @ =gUnknown_03000EA0
+	ldr r5, _0801DC20  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0801DC24  @ =0x84000002
@@ -4325,7 +4325,7 @@ _0801DB40:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _0801DC20  @ =gUnknown_03000EA0
+	ldr r5, _0801DC20  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0801DC24  @ =0x84000002
@@ -4414,7 +4414,7 @@ _0801DC18:
 _0801DC1C:
 	.4byte gUnknown_0811C1C0
 _0801DC20:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0801DC24:
 	.4byte 0x84000002
 _0801DC28:
@@ -4457,7 +4457,7 @@ _0801DC40:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _0801DCA8  @ =gUnknown_03000EA0
+	ldr r5, _0801DCA8  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0801DCAC  @ =0x84000002
@@ -4484,7 +4484,7 @@ _0801DCA0:
 _0801DCA4:
 	.4byte gUnknown_0811C1C0
 _0801DCA8:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0801DCAC:
 	.4byte 0x84000002
 _0801DCB0:
@@ -4515,7 +4515,7 @@ _0801DCB0:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _0801DD84  @ =gUnknown_03000EA0
+	ldr r5, _0801DD84  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0801DD88  @ =0x84000002
@@ -4595,7 +4595,7 @@ _0801DD7C:
 _0801DD80:
 	.4byte gUnknown_0811F7A4
 _0801DD84:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0801DD88:
 	.4byte 0x84000002
 _0801DD8C:
@@ -4634,7 +4634,7 @@ _0801DD9C:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _0801DE04  @ =gUnknown_03000EA0
+	ldr r5, _0801DE04  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0801DE08  @ =0x84000002
@@ -4661,7 +4661,7 @@ _0801DDFC:
 _0801DE00:
 	.4byte gUnknown_0811C1C0
 _0801DE04:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0801DE08:
 	.4byte 0x84000002
 _0801DE0C:
@@ -4692,7 +4692,7 @@ _0801DE0C:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _0801DFF0  @ =gUnknown_03000EA0
+	ldr r5, _0801DFF0  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0801DFF4  @ =0x84000002
@@ -4820,7 +4820,7 @@ _0801DF0A:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _0801DFF0  @ =gUnknown_03000EA0
+	ldr r5, _0801DFF0  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0801DFF4  @ =0x84000002
@@ -4913,7 +4913,7 @@ _0801DFE8:
 _0801DFEC:
 	.4byte gUnknown_0811C1C0
 _0801DFF0:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0801DFF4:
 	.4byte 0x84000002
 _0801DFF8:
@@ -4956,7 +4956,7 @@ _0801E010:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _0801E0D8  @ =gUnknown_03000EA0
+	ldr r5, _0801E0D8  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0801E0DC  @ =0x84000002
@@ -5031,7 +5031,7 @@ _0801E0D0:
 _0801E0D4:
 	.4byte gUnknown_0811C1C0
 _0801E0D8:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0801E0DC:
 	.4byte 0x84000002
 _0801E0E0:
@@ -5070,7 +5070,7 @@ _0801E0F0:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _0801E1C8  @ =gUnknown_03000EA0
+	ldr r5, _0801E1C8  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0801E1CC  @ =0x84000002
@@ -5152,7 +5152,7 @@ _0801E1C0:
 _0801E1C4:
 	.4byte gUnknown_0811F7A4
 _0801E1C8:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0801E1CC:
 	.4byte 0x84000002
 _0801E1D0:
@@ -5191,7 +5191,7 @@ _0801E1E0:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _0801E2A8  @ =gUnknown_03000EA0
+	ldr r5, _0801E2A8  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0801E2AC  @ =0x84000002
@@ -5266,7 +5266,7 @@ _0801E2A0:
 _0801E2A4:
 	.4byte gUnknown_0811C1C0
 _0801E2A8:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0801E2AC:
 	.4byte 0x84000002
 _0801E2B0:
@@ -5305,7 +5305,7 @@ _0801E2C0:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _0801E3CC  @ =gUnknown_03000EA0
+	ldr r5, _0801E3CC  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0801E3D0  @ =0x84000002
@@ -5417,7 +5417,7 @@ _0801E3C4:
 _0801E3C8:
 	.4byte gUnknown_0811C1C0
 _0801E3CC:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0801E3D0:
 	.4byte 0x84000002
 _0801E3D4:
@@ -5517,7 +5517,7 @@ _0801E426:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _0801E824  @ =gUnknown_03000EA0
+	ldr r5, _0801E824  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0801E828  @ =0x84000002
@@ -5648,7 +5648,7 @@ _0801E52C:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _0801E824  @ =gUnknown_03000EA0
+	ldr r5, _0801E824  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0801E828  @ =0x84000002
@@ -5779,7 +5779,7 @@ _0801E630:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _0801E824  @ =gUnknown_03000EA0
+	ldr r5, _0801E824  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0801E828  @ =0x84000002
@@ -5909,7 +5909,7 @@ _0801E744:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _0801E824  @ =gUnknown_03000EA0
+	ldr r5, _0801E824  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0801E828  @ =0x84000002
@@ -5985,7 +5985,7 @@ _0801E81C:
 _0801E820:
 	.4byte gUnknown_0811C1C0
 _0801E824:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0801E828:
 	.4byte 0x84000002
 _0801E82C:
@@ -6070,7 +6070,7 @@ _0801E86E:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _0801E9AC  @ =gUnknown_03000EA0
+	ldr r5, _0801E9AC  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0801E9B0  @ =0x84000002
@@ -6184,7 +6184,7 @@ _0801E9A4:
 _0801E9A8:
 	.4byte gUnknown_0811C1C0
 _0801E9AC:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0801E9B0:
 	.4byte 0x84000002
 _0801E9B4:
@@ -6262,7 +6262,7 @@ _0801EA02:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _0801EDF8  @ =gUnknown_03000EA0
+	ldr r5, _0801EDF8  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0801EDFC  @ =0x84000002
@@ -6373,7 +6373,7 @@ _0801EAE0:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _0801EDF8  @ =gUnknown_03000EA0
+	ldr r5, _0801EDF8  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0801EDFC  @ =0x84000002
@@ -6484,7 +6484,7 @@ _0801EBBC:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _0801EDF8  @ =gUnknown_03000EA0
+	ldr r5, _0801EDF8  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0801EDFC  @ =0x84000002
@@ -6592,7 +6592,7 @@ _0801EC92:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _0801EDF8  @ =gUnknown_03000EA0
+	ldr r5, _0801EDF8  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0801EDFC  @ =0x84000002
@@ -6695,7 +6695,7 @@ _0801ED70:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _0801EDF8  @ =gUnknown_03000EA0
+	ldr r5, _0801EDF8  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0801EDFC  @ =0x84000002
@@ -6748,7 +6748,7 @@ _0801EDF0:
 _0801EDF4:
 	.4byte gUnknown_0811C1C0
 _0801EDF8:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0801EDFC:
 	.4byte 0x84000002
 _0801EE00:
@@ -6899,7 +6899,7 @@ _0801EEFA:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _0801EFF8  @ =gUnknown_03000EA0
+	ldr r5, _0801EFF8  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0801EFFC  @ =0x84000002
@@ -7016,7 +7016,7 @@ _0801EFF0:
 _0801EFF4:
 	.4byte gUnknown_082B30AC
 _0801EFF8:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0801EFFC:
 	.4byte 0x84000002
 _0801F000:
@@ -7052,7 +7052,7 @@ _0801F022:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _0801F120  @ =gUnknown_03000EA0
+	ldr r5, _0801F120  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0801F124  @ =0x84000002
@@ -7169,7 +7169,7 @@ _0801F118:
 _0801F11C:
 	.4byte gUnknown_082B30AC
 _0801F120:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0801F124:
 	.4byte 0x84000002
 _0801F128:
@@ -7205,7 +7205,7 @@ _0801F14A:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _0801F234  @ =gUnknown_03000EA0
+	ldr r5, _0801F234  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0801F238  @ =0x84000002
@@ -7311,7 +7311,7 @@ _0801F22C:
 _0801F230:
 	.4byte gUnknown_082B30AC
 _0801F234:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0801F238:
 	.4byte 0x84000002
 _0801F23C:
@@ -7370,7 +7370,7 @@ sub_0801F254: @ 0x0801F254
 	str r0, [r4]
 	ldrh r0, [r7]
 	lsl r0, r0, #3
-	ldr r5, _0801F538  @ =gUnknown_03000EA0
+	ldr r5, _0801F538  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0801F53C  @ =0x84000002
@@ -7482,7 +7482,7 @@ _0801F346:
 	str r0, [r4]
 	ldrh r0, [r7]
 	lsl r0, r0, #3
-	ldr r5, _0801F538  @ =gUnknown_03000EA0
+	ldr r5, _0801F538  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0801F53C  @ =0x84000002
@@ -7594,7 +7594,7 @@ _0801F424:
 	str r0, [r4]
 	ldrh r0, [r7]
 	lsl r0, r0, #3
-	ldr r5, _0801F538  @ =gUnknown_03000EA0
+	ldr r5, _0801F538  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0801F53C  @ =0x84000002
@@ -7704,7 +7704,7 @@ _0801F530:
 _0801F534:
 	.4byte gUnknown_082B30AC
 _0801F538:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0801F53C:
 	.4byte 0x84000002
 _0801F540:
@@ -7750,7 +7750,7 @@ sub_0801F554: @ 0x0801F554
 	str r5, [r6]
 	ldrh r4, [r0]
 	lsl r4, r4, #3
-	ldr r6, _0801F81C  @ =gUnknown_03000EA0
+	ldr r6, _0801F81C  @ =gOamData
 	mov r10, r6
 	add r4, r4, r10
 	mov r5, r9
@@ -8078,7 +8078,7 @@ _0801F814:
 _0801F818:
 	.4byte gUnknown_082AF7A0
 _0801F81C:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0801F820:
 	.4byte 0x84000002
 _0801F824:
@@ -8134,7 +8134,7 @@ sub_0801F838: @ 0x0801F838
 	str r0, [r4]
 	ldrh r0, [r7]
 	lsl r0, r0, #3
-	ldr r5, _0801FB20  @ =gUnknown_03000EA0
+	ldr r5, _0801FB20  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0801FB24  @ =0x84000002
@@ -8247,7 +8247,7 @@ _0801F92C:
 	str r0, [r4]
 	ldrh r0, [r7]
 	lsl r0, r0, #3
-	ldr r5, _0801FB20  @ =gUnknown_03000EA0
+	ldr r5, _0801FB20  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0801FB24  @ =0x84000002
@@ -8360,7 +8360,7 @@ _0801FA0C:
 	str r0, [r4]
 	ldrh r0, [r7]
 	lsl r0, r0, #3
-	ldr r5, _0801FB20  @ =gUnknown_03000EA0
+	ldr r5, _0801FB20  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0801FB24  @ =0x84000002
@@ -8472,7 +8472,7 @@ _0801FB18:
 _0801FB1C:
 	.4byte gUnknown_082AF7A0
 _0801FB20:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0801FB24:
 	.4byte 0x84000002
 _0801FB28:
@@ -8547,7 +8547,7 @@ _0801FB5E:
 	str r0, [r4]
 	ldrh r0, [r7]
 	lsl r0, r0, #3
-	ldr r5, _0801FF50  @ =gUnknown_03000EA0
+	ldr r5, _0801FF50  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0801FF54  @ =0x84000002
@@ -8674,7 +8674,7 @@ _0801FC54:
 	str r0, [r4]
 	ldrh r0, [r7]
 	lsl r0, r0, #3
-	ldr r5, _0801FF50  @ =gUnknown_03000EA0
+	ldr r5, _0801FF50  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0801FF54  @ =0x84000002
@@ -8801,7 +8801,7 @@ _0801FD50:
 	str r0, [r4]
 	ldrh r0, [r7]
 	lsl r0, r0, #3
-	ldr r5, _0801FF50  @ =gUnknown_03000EA0
+	ldr r5, _0801FF50  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0801FF54  @ =0x84000002
@@ -8934,7 +8934,7 @@ _0801FE62:
 	str r0, [r4]
 	ldrh r0, [r7]
 	lsl r0, r0, #3
-	ldr r5, _0801FF50  @ =gUnknown_03000EA0
+	ldr r5, _0801FF50  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0801FF54  @ =0x84000002
@@ -9019,7 +9019,7 @@ _0801FF48:
 _0801FF4C:
 	.4byte gUnknown_082B3544
 _0801FF50:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0801FF54:
 	.4byte 0x84000002
 _0801FF58:
@@ -9101,7 +9101,7 @@ _0801FFA0:
 	str r0, [r4]
 	ldrh r0, [r7]
 	lsl r0, r0, #3
-	ldr r5, _080201D0  @ =gUnknown_03000EA0
+	ldr r5, _080201D0  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _080201D4  @ =0x84000002
@@ -9229,7 +9229,7 @@ _0802009C:
 	str r0, [r4]
 	ldrh r0, [r7]
 	lsl r0, r0, #3
-	ldr r5, _080201D0  @ =gUnknown_03000EA0
+	ldr r5, _080201D0  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _080201D4  @ =0x84000002
@@ -9343,7 +9343,7 @@ _080201C8:
 _080201CC:
 	.4byte gUnknown_082B5674
 _080201D0:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _080201D4:
 	.4byte 0x84000002
 _080201D8:
@@ -9418,7 +9418,7 @@ _0802020E:
 	str r0, [r4]
 	ldrh r0, [r7]
 	lsl r0, r0, #3
-	ldr r5, _08020600  @ =gUnknown_03000EA0
+	ldr r5, _08020600  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _08020604  @ =0x84000002
@@ -9545,7 +9545,7 @@ _08020304:
 	str r0, [r4]
 	ldrh r0, [r7]
 	lsl r0, r0, #3
-	ldr r5, _08020600  @ =gUnknown_03000EA0
+	ldr r5, _08020600  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _08020604  @ =0x84000002
@@ -9672,7 +9672,7 @@ _08020400:
 	str r0, [r4]
 	ldrh r0, [r7]
 	lsl r0, r0, #3
-	ldr r5, _08020600  @ =gUnknown_03000EA0
+	ldr r5, _08020600  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _08020604  @ =0x84000002
@@ -9805,7 +9805,7 @@ _08020512:
 	str r0, [r4]
 	ldrh r0, [r7]
 	lsl r0, r0, #3
-	ldr r5, _08020600  @ =gUnknown_03000EA0
+	ldr r5, _08020600  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _08020604  @ =0x84000002
@@ -9890,7 +9890,7 @@ _080205F8:
 _080205FC:
 	.4byte gUnknown_082B3544
 _08020600:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _08020604:
 	.4byte 0x84000002
 _08020608:
@@ -9972,7 +9972,7 @@ _08020650:
 	str r0, [r4]
 	ldrh r0, [r7]
 	lsl r0, r0, #3
-	ldr r5, _08020880  @ =gUnknown_03000EA0
+	ldr r5, _08020880  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _08020884  @ =0x84000002
@@ -10100,7 +10100,7 @@ _0802074C:
 	str r0, [r4]
 	ldrh r0, [r7]
 	lsl r0, r0, #3
-	ldr r5, _08020880  @ =gUnknown_03000EA0
+	ldr r5, _08020880  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _08020884  @ =0x84000002
@@ -10214,7 +10214,7 @@ _08020878:
 _0802087C:
 	.4byte gUnknown_082B5674
 _08020880:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _08020884:
 	.4byte 0x84000002
 _08020888:
@@ -12511,7 +12511,7 @@ sub_080219A4: @ 0x080219A4
 	ldr r6, _08021B6C  @ =0x040000D4
 	add r0, sp, #4
 	str r0, [r6]
-	ldr r7, _08021B70  @ =gUnknown_03000EA0
+	ldr r7, _08021B70  @ =gOamData
 	str r7, [r6, #4]
 	ldr r0, _08021B74  @ =0x85000100
 	str r0, [r6, #8]
@@ -12717,7 +12717,7 @@ _08021B68:
 _08021B6C:
 	.4byte 0x040000D4
 _08021B70:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _08021B74:
 	.4byte 0x85000100
 _08021B78:
@@ -13401,7 +13401,7 @@ sub_0802200C: @ 0x0802200C
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _08022324  @ =gUnknown_03000EA0
+	ldr r5, _08022324  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _08022328  @ =0x84000002
@@ -13522,7 +13522,7 @@ _08022112:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _08022324  @ =gUnknown_03000EA0
+	ldr r5, _08022324  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _08022328  @ =0x84000002
@@ -13642,7 +13642,7 @@ _08022200:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _08022324  @ =gUnknown_03000EA0
+	ldr r5, _08022324  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _08022328  @ =0x84000002
@@ -13758,7 +13758,7 @@ _0802231C:
 _08022320:
 	.4byte gUnknown_082AEF74
 _08022324:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _08022328:
 	.4byte 0x84000002
 _0802232C:
@@ -13925,7 +13925,7 @@ _0802245A:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _08022538  @ =gUnknown_03000EA0
+	ldr r5, _08022538  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0802253C  @ =0x84000002
@@ -14035,7 +14035,7 @@ _08022530:
 _08022534:
 	.4byte gUnknown_08125928
 _08022538:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0802253C:
 	.4byte 0x84000002
 _08022540:
@@ -14147,7 +14147,7 @@ _0802260A:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _080226E8  @ =gUnknown_03000EA0
+	ldr r5, _080226E8  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _080226EC  @ =0x84000002
@@ -14257,7 +14257,7 @@ _080226E0:
 _080226E4:
 	.4byte gUnknown_08125928
 _080226E8:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _080226EC:
 	.4byte 0x84000002
 _080226F0:
@@ -14369,7 +14369,7 @@ _080227BA:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _08022874  @ =gUnknown_03000EA0
+	ldr r5, _08022874  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _08022878  @ =0x84000002
@@ -14462,7 +14462,7 @@ _0802286C:
 _08022870:
 	.4byte gUnknown_08125928
 _08022874:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _08022878:
 	.4byte 0x84000002
 _0802287C:
@@ -14530,7 +14530,7 @@ sub_08022890: @ 0x08022890
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _0802298C  @ =gUnknown_03000EA0
+	ldr r5, _0802298C  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _08022990  @ =0x84000002
@@ -14606,7 +14606,7 @@ _08022984:
 _08022988:
 	.4byte gUnknown_0811C1C0
 _0802298C:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _08022990:
 	.4byte 0x84000002
 _08022994:
@@ -14643,7 +14643,7 @@ _080229A4:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _08022A64  @ =gUnknown_03000EA0
+	ldr r5, _08022A64  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _08022A68  @ =0x84000002
@@ -14715,7 +14715,7 @@ _08022A5C:
 _08022A60:
 	.4byte gUnknown_0811C1C0
 _08022A64:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _08022A68:
 	.4byte 0x84000002
 _08022A6C:
@@ -14752,7 +14752,7 @@ _08022A7C:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _08022B48  @ =gUnknown_03000EA0
+	ldr r5, _08022B48  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _08022B4C  @ =0x84000002
@@ -14831,7 +14831,7 @@ _08022B40:
 _08022B44:
 	.4byte gUnknown_0811F7A4
 _08022B48:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _08022B4C:
 	.4byte 0x84000002
 _08022B50:
@@ -14868,7 +14868,7 @@ _08022B60:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _08022C20  @ =gUnknown_03000EA0
+	ldr r5, _08022C20  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _08022C24  @ =0x84000002
@@ -14940,7 +14940,7 @@ _08022C18:
 _08022C1C:
 	.4byte gUnknown_0811C1C0
 _08022C20:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _08022C24:
 	.4byte 0x84000002
 _08022C28:
@@ -14977,7 +14977,7 @@ _08022C38:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _08022DE8  @ =gUnknown_03000EA0
+	ldr r5, _08022DE8  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _08022DEC  @ =0x84000002
@@ -15100,7 +15100,7 @@ _08022D0A:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _08022DE8  @ =gUnknown_03000EA0
+	ldr r5, _08022DE8  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _08022DEC  @ =0x84000002
@@ -15172,7 +15172,7 @@ _08022DE0:
 _08022DE4:
 	.4byte gUnknown_0811C1C0
 _08022DE8:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _08022DEC:
 	.4byte 0x84000002
 _08022DF0:
@@ -15213,7 +15213,7 @@ _08022E08:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _08022EC8  @ =gUnknown_03000EA0
+	ldr r5, _08022EC8  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _08022ECC  @ =0x84000002
@@ -15285,7 +15285,7 @@ _08022EC0:
 _08022EC4:
 	.4byte gUnknown_0811C1C0
 _08022EC8:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _08022ECC:
 	.4byte 0x84000002
 _08022ED0:
@@ -15322,7 +15322,7 @@ _08022EE0:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _08022FAC  @ =gUnknown_03000EA0
+	ldr r5, _08022FAC  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _08022FB0  @ =0x84000002
@@ -15401,7 +15401,7 @@ _08022FA4:
 _08022FA8:
 	.4byte gUnknown_0811F7A4
 _08022FAC:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _08022FB0:
 	.4byte 0x84000002
 _08022FB4:
@@ -15438,7 +15438,7 @@ _08022FC4:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _08023084  @ =gUnknown_03000EA0
+	ldr r5, _08023084  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _08023088  @ =0x84000002
@@ -15510,7 +15510,7 @@ _0802307C:
 _08023080:
 	.4byte gUnknown_0811C1C0
 _08023084:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _08023088:
 	.4byte 0x84000002
 _0802308C:
@@ -15547,7 +15547,7 @@ _0802309C:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _08023254  @ =gUnknown_03000EA0
+	ldr r5, _08023254  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _08023258  @ =0x84000002
@@ -15670,7 +15670,7 @@ _0802316E:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _08023254  @ =gUnknown_03000EA0
+	ldr r5, _08023254  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _08023258  @ =0x84000002
@@ -15746,7 +15746,7 @@ _0802324C:
 _08023250:
 	.4byte gUnknown_0811C1C0
 _08023254:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _08023258:
 	.4byte 0x84000002
 _0802325C:
@@ -15787,7 +15787,7 @@ _08023274:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _0802333C  @ =gUnknown_03000EA0
+	ldr r5, _0802333C  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _08023340  @ =0x84000002
@@ -15863,7 +15863,7 @@ _08023334:
 _08023338:
 	.4byte gUnknown_0811C1C0
 _0802333C:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _08023340:
 	.4byte 0x84000002
 _08023344:
@@ -15900,7 +15900,7 @@ _08023354:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _08023428  @ =gUnknown_03000EA0
+	ldr r5, _08023428  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0802342C  @ =0x84000002
@@ -15983,7 +15983,7 @@ _08023420:
 _08023424:
 	.4byte gUnknown_0811F7A4
 _08023428:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0802342C:
 	.4byte 0x84000002
 _08023430:
@@ -16020,7 +16020,7 @@ _08023440:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _08023508  @ =gUnknown_03000EA0
+	ldr r5, _08023508  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _0802350C  @ =0x84000002
@@ -16096,7 +16096,7 @@ _08023500:
 _08023504:
 	.4byte gUnknown_0811C1C0
 _08023508:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0802350C:
 	.4byte 0x84000002
 _08023510:
@@ -16133,7 +16133,7 @@ _08023520:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _08023620  @ =gUnknown_03000EA0
+	ldr r5, _08023620  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _08023624  @ =0x84000002
@@ -16240,7 +16240,7 @@ _08023618:
 _0802361C:
 	.4byte gUnknown_0811C1C0
 _08023620:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _08023624:
 	.4byte 0x84000002
 _08023628:
@@ -16320,7 +16320,7 @@ sub_0802363C: @ 0x0802363C
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _08023A50  @ =gUnknown_03000EA0
+	ldr r5, _08023A50  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _08023A54  @ =0x84000002
@@ -16453,7 +16453,7 @@ _0802375A:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _08023A50  @ =gUnknown_03000EA0
+	ldr r5, _08023A50  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _08023A54  @ =0x84000002
@@ -16586,7 +16586,7 @@ _08023862:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _08023A50  @ =gUnknown_03000EA0
+	ldr r5, _08023A50  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _08023A54  @ =0x84000002
@@ -16721,7 +16721,7 @@ _08023980:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _08023A50  @ =gUnknown_03000EA0
+	ldr r5, _08023A50  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _08023A54  @ =0x84000002
@@ -16785,7 +16785,7 @@ _08023A48:
 _08023A4C:
 	.4byte gUnknown_0811C1C0
 _08023A50:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _08023A54:
 	.4byte 0x84000002
 _08023A58:
@@ -16887,7 +16887,7 @@ _08023AB2:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _08023BF0  @ =gUnknown_03000EA0
+	ldr r5, _08023BF0  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _08023BF4  @ =0x84000002
@@ -16996,7 +16996,7 @@ _08023BE8:
 _08023BEC:
 	.4byte gUnknown_0811C1C0
 _08023BF0:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _08023BF4:
 	.4byte 0x84000002
 _08023BF8:
@@ -17054,7 +17054,7 @@ sub_08023C08: @ 0x08023C08
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _08024014  @ =gUnknown_03000EA0
+	ldr r5, _08024014  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _08024018  @ =0x84000002
@@ -17167,7 +17167,7 @@ _08023CFE:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _08024014  @ =gUnknown_03000EA0
+	ldr r5, _08024014  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _08024018  @ =0x84000002
@@ -17279,7 +17279,7 @@ _08023DDC:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _08024014  @ =gUnknown_03000EA0
+	ldr r5, _08024014  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _08024018  @ =0x84000002
@@ -17391,7 +17391,7 @@ _08023EBA:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _08024014  @ =gUnknown_03000EA0
+	ldr r5, _08024014  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _08024018  @ =0x84000002
@@ -17496,7 +17496,7 @@ _08023F9C:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _08024014  @ =gUnknown_03000EA0
+	ldr r5, _08024014  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _08024018  @ =0x84000002
@@ -17536,7 +17536,7 @@ _0802400C:
 _08024010:
 	.4byte gUnknown_0811C1C0
 _08024014:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _08024018:
 	.4byte 0x84000002
 _0802401C:
@@ -17678,7 +17678,7 @@ sub_080240D0: @ 0x080240D0
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _080243E8  @ =gUnknown_03000EA0
+	ldr r5, _080243E8  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _080243EC  @ =0x84000002
@@ -17799,7 +17799,7 @@ _080241D6:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _080243E8  @ =gUnknown_03000EA0
+	ldr r5, _080243E8  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _080243EC  @ =0x84000002
@@ -17919,7 +17919,7 @@ _080242C4:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _080243E8  @ =gUnknown_03000EA0
+	ldr r5, _080243E8  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _080243EC  @ =0x84000002
@@ -18035,7 +18035,7 @@ _080243E0:
 _080243E4:
 	.4byte gUnknown_082B30AC
 _080243E8:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _080243EC:
 	.4byte 0x84000002
 _080243F0:
@@ -18114,7 +18114,7 @@ _08024422:
 	str r0, [r4]
 	ldrh r0, [r7]
 	lsl r0, r0, #3
-	ldr r5, _08024554  @ =gUnknown_03000EA0
+	ldr r5, _08024554  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _08024558  @ =0x84000002
@@ -18222,7 +18222,7 @@ _0802454C:
 _08024550:
 	.4byte gUnknown_082B0080
 _08024554:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _08024558:
 	.4byte 0x84000002
 _0802455C:
@@ -18272,7 +18272,7 @@ _08024570:
 	str r0, [r4]
 	ldrh r0, [r7]
 	lsl r0, r0, #3
-	ldr r5, _080246FC  @ =gUnknown_03000EA0
+	ldr r5, _080246FC  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _08024700  @ =0x84000002
@@ -18436,7 +18436,7 @@ _080246F4:
 _080246F8:
 	.4byte gUnknown_082AF7A0
 _080246FC:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _08024700:
 	.4byte 0x84000002
 _08024704:
@@ -18893,7 +18893,7 @@ _08024A22:
 	str r0, [r4]
 	ldrh r0, [r7]
 	lsl r0, r0, #3
-	ldr r5, _08024B54  @ =gUnknown_03000EA0
+	ldr r5, _08024B54  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _08024B58  @ =0x84000002
@@ -19001,7 +19001,7 @@ _08024B4C:
 _08024B50:
 	.4byte gUnknown_082B0080
 _08024B54:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _08024B58:
 	.4byte 0x84000002
 _08024B5C:
@@ -19051,7 +19051,7 @@ _08024B70:
 	str r0, [r4]
 	ldrh r0, [r7]
 	lsl r0, r0, #3
-	ldr r5, _08024CFC  @ =gUnknown_03000EA0
+	ldr r5, _08024CFC  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _08024D00  @ =0x84000002
@@ -19215,7 +19215,7 @@ _08024CF4:
 _08024CF8:
 	.4byte gUnknown_082AF7A0
 _08024CFC:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _08024D00:
 	.4byte 0x84000002
 _08024D04:
@@ -19443,7 +19443,7 @@ sub_08024E5C: @ 0x08024E5C
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _08025184  @ =gUnknown_03000EA0
+	ldr r5, _08025184  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _08025188  @ =0x84000002
@@ -19568,7 +19568,7 @@ _08024F6A:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _08025184  @ =gUnknown_03000EA0
+	ldr r5, _08025184  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _08025188  @ =0x84000002
@@ -19692,7 +19692,7 @@ _08025060:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _08025184  @ =gUnknown_03000EA0
+	ldr r5, _08025184  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _08025188  @ =0x84000002
@@ -19804,7 +19804,7 @@ _0802517C:
 _08025180:
 	.4byte gUnknown_082AF7A0
 _08025184:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _08025188:
 	.4byte 0x84000002
 _0802518C:
@@ -19882,7 +19882,7 @@ _080251C2:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _080255B4  @ =gUnknown_03000EA0
+	ldr r5, _080255B4  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _080255B8  @ =0x84000002
@@ -20016,7 +20016,7 @@ _080252C8:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _080255B4  @ =gUnknown_03000EA0
+	ldr r5, _080255B4  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _080255B8  @ =0x84000002
@@ -20150,7 +20150,7 @@ _080253D2:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _080255B4  @ =gUnknown_03000EA0
+	ldr r5, _080255B4  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _080255B8  @ =0x84000002
@@ -20291,7 +20291,7 @@ _080254FC:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _080255B4  @ =gUnknown_03000EA0
+	ldr r5, _080255B4  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _080255B8  @ =0x84000002
@@ -20351,7 +20351,7 @@ _080255AC:
 _080255B0:
 	.4byte gUnknown_082B3544
 _080255B4:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _080255B8:
 	.4byte 0x84000002
 _080255BC:
@@ -20466,7 +20466,7 @@ _08025640:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _0802588C  @ =gUnknown_03000EA0
+	ldr r5, _0802588C  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _08025890  @ =0x84000002
@@ -20599,7 +20599,7 @@ _08025748:
 	str r0, [r4]
 	ldrh r0, [r6]
 	lsl r0, r0, #3
-	ldr r5, _0802588C  @ =gUnknown_03000EA0
+	ldr r5, _0802588C  @ =gOamData
 	add r0, r0, r5
 	str r0, [r4, #4]
 	ldr r0, _08025890  @ =0x84000002
@@ -20720,7 +20720,7 @@ _08025884:
 _08025888:
 	.4byte gUnknown_082B5674
 _0802588C:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _08025890:
 	.4byte 0x84000002
 _08025894:
@@ -25250,7 +25250,7 @@ sub_08027990: @ 0x08027990
 	ldr r6, _08027B64  @ =0x040000D4
 	add r0, sp, #4
 	str r0, [r6]
-	ldr r7, _08027B68  @ =gUnknown_03000EA0
+	ldr r7, _08027B68  @ =gOamData
 	str r7, [r6, #4]
 	ldr r0, _08027B6C  @ =0x85000100
 	str r0, [r6, #8]
@@ -25463,7 +25463,7 @@ _08027B60:
 _08027B64:
 	.4byte 0x040000D4
 _08027B68:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _08027B6C:
 	.4byte 0x85000100
 _08027B70:
@@ -26392,7 +26392,7 @@ sub_080281C8: @ 0x080281C8
 	mov r10, r0
 	ldrh r0, [r3]
 	lsl r0, r0, #3
-	ldr r1, _08028290  @ =gUnknown_03000EA0
+	ldr r1, _08028290  @ =gOamData
 	add r3, r0, r1
 	ldrb r0, [r4, #13]
 	cmp r0, #0
@@ -26484,7 +26484,7 @@ _08028264:
 	blt _08028200
 	b _08028324
 _08028290:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _08028294:
 	.4byte 0x040000D4
 _08028298:
@@ -28108,7 +28108,7 @@ _08028E9E:
 	ldr r1, _08028FEC  @ =0x040000D4
 	add r3, sp, #4
 	str r3, [r1]
-	ldr r0, _08028FF0  @ =gUnknown_03000EA0
+	ldr r0, _08028FF0  @ =gOamData
 	str r0, [r1, #4]
 	ldr r0, _08028FF4  @ =0x85000100
 	str r0, [r1, #8]
@@ -28273,7 +28273,7 @@ _08028FE8:
 _08028FEC:
 	.4byte 0x040000D4
 _08028FF0:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _08028FF4:
 	.4byte 0x85000100
 _08028FF8:
@@ -28296,7 +28296,7 @@ _08029004:
 _0802901A:
 	bl sub_0801B4BC
 	ldr r1, _08029040  @ =0x040000D4
-	ldr r0, _08029044  @ =gUnknown_03000EA0
+	ldr r0, _08029044  @ =gOamData
 	str r0, [r1]
 	mov r0, #224
 	lsl r0, r0, #19
@@ -28315,7 +28315,7 @@ _0802901A:
 _08029040:
 	.4byte 0x040000D4
 _08029044:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _08029048:
 	.4byte 0x84000100
 	THUMB_FUNC_END sub_08028E44
@@ -29840,7 +29840,7 @@ sub_08029B84: @ 0x08029B84
 	ldr r4, _08029C08  @ =0x040000D4
 	mov r0, sp
 	str r0, [r4]
-	ldr r0, _08029C0C  @ =gUnknown_03000EA0
+	ldr r0, _08029C0C  @ =gOamData
 	mov r8, r0
 	str r0, [r4, #4]
 	ldr r0, _08029C10  @ =0x85000100
@@ -29883,7 +29883,7 @@ _08029C04:
 _08029C08:
 	.4byte 0x040000D4
 _08029C0C:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _08029C10:
 	.4byte 0x85000100
 _08029C14:
@@ -31473,7 +31473,7 @@ _0802A6A6:
 	cmp r6, r2
 	bcs _0802A74C
 	ldr r7, _0802A76C  @ =0x040000D4
-	ldr r4, _0802A784  @ =gUnknown_03000EA0
+	ldr r4, _0802A784  @ =gOamData
 	ldr r3, _0802A788  @ =0x000003FF
 	ldr r0, [sp]
 	and r0, r0, r3
@@ -31579,7 +31579,7 @@ _0802A77C:
 _0802A780:
 	.4byte 0x03000132
 _0802A784:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0802A788:
 	.4byte 0x000003FF
 _0802A78C:
@@ -31654,7 +31654,7 @@ _0802A7C4:
 	mov r1, #0
 	str r1, [sp]
 	ldr r6, _0802A8CC  @ =0x040000D4
-	ldr r5, _0802A8D8  @ =gUnknown_03000EA0
+	ldr r5, _0802A8D8  @ =gOamData
 	ldr r2, _0802A8D0  @ =0x03000138
 	mov r12, r2
 	ldr r3, _0802A8DC  @ =0xFFFFFE00
@@ -31756,7 +31756,7 @@ _0802A8D0:
 _0802A8D4:
 	.4byte 0x06010000
 _0802A8D8:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0802A8DC:
 	.4byte 0xFFFFFE00
 _0802A8E0:
@@ -31791,7 +31791,7 @@ sub_0802A8F0: @ 0x0802A8F0
 	bge _0802A9E6
 	mov r10, r3
 	ldr r7, _0802A9FC  @ =0x040000D4
-	ldr r0, _0802AA00  @ =gUnknown_03000EA0
+	ldr r0, _0802AA00  @ =gOamData
 	mov r12, r0
 _0802A91C:
 	mov r3, r10
@@ -31910,7 +31910,7 @@ _0802A9F8:
 _0802A9FC:
 	.4byte 0x040000D4
 _0802AA00:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0802AA04:
 	.4byte 0x06010000
 _0802AA08:
@@ -32681,7 +32681,7 @@ _0802AF70:
 	bge _0802B01A
 	ldr r0, _0802B03C  @ =0x040000D4
 	mov r12, r0
-	ldr r6, _0802B05C  @ =gUnknown_03000EA0
+	ldr r6, _0802B05C  @ =gOamData
 	ldr r1, _0802B060  @ =0x000003FF
 	ldr r2, [sp]
 	and r2, r2, r1
@@ -32790,7 +32790,7 @@ _0802B054:
 _0802B058:
 	.4byte 0x03000156
 _0802B05C:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0802B060:
 	.4byte 0x000003FF
 _0802B064:
@@ -32860,7 +32860,7 @@ _0802B0C4:
 	bge _0802B16E
 	ldr r0, _0802B190  @ =0x040000D4
 	mov r12, r0
-	ldr r6, _0802B1B0  @ =gUnknown_03000EA0
+	ldr r6, _0802B1B0  @ =gOamData
 	ldr r1, _0802B1B4  @ =0x000003FF
 	ldr r2, [sp]
 	and r2, r2, r1
@@ -32969,7 +32969,7 @@ _0802B1A8:
 _0802B1AC:
 	.4byte 0x03000154
 _0802B1B0:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0802B1B4:
 	.4byte 0x000003FF
 _0802B1B8:
@@ -33039,7 +33039,7 @@ _0802B218:
 	bge _0802B2BE
 	ldr r0, _0802B2E0  @ =0x040000D4
 	mov r12, r0
-	ldr r6, _0802B300  @ =gUnknown_03000EA0
+	ldr r6, _0802B300  @ =gOamData
 	ldr r1, _0802B304  @ =0x000003FF
 	ldr r2, [sp]
 	and r2, r2, r1
@@ -33146,7 +33146,7 @@ _0802B2F8:
 _0802B2FC:
 	.4byte 0x03000154
 _0802B300:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0802B304:
 	.4byte 0x000003FF
 _0802B308:
@@ -33216,7 +33216,7 @@ _0802B368:
 	bge _0802B412
 	ldr r0, _0802B434  @ =0x040000D4
 	mov r12, r0
-	ldr r6, _0802B454  @ =gUnknown_03000EA0
+	ldr r6, _0802B454  @ =gOamData
 	ldr r1, _0802B458  @ =0x000003FF
 	ldr r2, [sp]
 	and r2, r2, r1
@@ -33325,7 +33325,7 @@ _0802B44C:
 _0802B450:
 	.4byte 0x03000154
 _0802B454:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0802B458:
 	.4byte 0x000003FF
 _0802B45C:
@@ -33496,7 +33496,7 @@ _0802B578:
 	cmp r6, r0
 	bge _0802B61E
 	ldr r7, _0802B640  @ =0x040000D4
-	ldr r4, _0802B658  @ =gUnknown_03000EA0
+	ldr r4, _0802B658  @ =gOamData
 	ldr r0, _0802B65C  @ =0x000003FF
 	ldr r2, [sp]
 	and r2, r2, r0
@@ -33604,7 +33604,7 @@ _0802B650:
 _0802B654:
 	.4byte 0x03000155
 _0802B658:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0802B65C:
 	.4byte 0x000003FF
 _0802B660:
@@ -38006,7 +38006,7 @@ sub_0802D588: @ 0x0802D588
 	ldr r5, _0802D5E8  @ =0x040000D4
 	add r4, sp, #4
 	str r4, [r5]
-	ldr r6, _0802D5EC  @ =gUnknown_03000EA0
+	ldr r6, _0802D5EC  @ =gOamData
 	str r6, [r5, #4]
 	ldr r4, _0802D5F0  @ =0x85000100
 	str r4, [r5, #8]
@@ -38035,7 +38035,7 @@ _0802D5E4:
 _0802D5E8:
 	.4byte 0x040000D4
 _0802D5EC:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0802D5F0:
 	.4byte 0x85000100
 _0802D5F4:
@@ -38849,7 +38849,7 @@ sub_0802DBEC: @ 0x0802DBEC
 	ldr r1, _0802DCD0  @ =0x040000D4
 	add r0, sp, #4
 	str r0, [r1]
-	ldr r0, _0802DCD4  @ =gUnknown_03000EA0
+	ldr r0, _0802DCD4  @ =gOamData
 	str r0, [r1, #4]
 	ldr r0, _0802DCD8  @ =0x85000100
 	str r0, [r1, #8]
@@ -38959,7 +38959,7 @@ _0802DCBA:
 _0802DCD0:
 	.4byte 0x040000D4
 _0802DCD4:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0802DCD8:
 	.4byte 0x85000100
 _0802DCDC:
@@ -38996,7 +38996,7 @@ _0802DD18:
 	add r0, r7, #0
 	bl sub_08035108
 	ldr r1, _0802DD40  @ =0x040000D4
-	ldr r0, _0802DD44  @ =gUnknown_03000EA0
+	ldr r0, _0802DD44  @ =gOamData
 	str r0, [r1]
 	mov r0, #224
 	lsl r0, r0, #19
@@ -39015,7 +39015,7 @@ _0802DD3C:
 _0802DD40:
 	.4byte 0x040000D4
 _0802DD44:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0802DD48:
 	.4byte 0x80000200
 	THUMB_FUNC_END sub_0802DBEC
@@ -39055,7 +39055,7 @@ _0802DD68:
 	ldr r0, _0802DDD4  @ =0x040000D4
 	mov r1, sp
 	str r1, [r0]
-	ldr r2, _0802DDD8  @ =gUnknown_03000EA0
+	ldr r2, _0802DDD8  @ =gOamData
 	str r2, [r0, #4]
 	ldr r1, _0802DDDC  @ =0x85000100
 	str r1, [r0, #8]
@@ -39092,7 +39092,7 @@ _0802DDD0:
 _0802DDD4:
 	.4byte 0x040000D4
 _0802DDD8:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0802DDDC:
 	.4byte 0x85000100
 _0802DDE0:
@@ -40541,7 +40541,7 @@ sub_0802E888: @ 0x0802E888
 	ldr r1, _0802E8DC  @ =0x040000D4
 	add r0, sp, #4
 	str r0, [r1]
-	ldr r0, _0802E8E0  @ =gUnknown_03000EA0
+	ldr r0, _0802E8E0  @ =gOamData
 	str r0, [r1, #4]
 	ldr r0, _0802E8E4  @ =0x85000100
 	str r0, [r1, #8]
@@ -40571,7 +40571,7 @@ sub_0802E888: @ 0x0802E888
 _0802E8DC:
 	.4byte 0x040000D4
 _0802E8E0:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0802E8E4:
 	.4byte 0x85000100
 _0802E8E8:
@@ -40959,7 +40959,7 @@ _0802EBC6:
 _0802EBCE:
 	bl sub_0801B4BC
 	ldr r2, _0802EC20  @ =0x040000D4
-	ldr r0, _0802EC24  @ =gUnknown_03000EA0
+	ldr r0, _0802EC24  @ =gOamData
 	str r0, [r2]
 	mov r0, #224
 	lsl r0, r0, #19
@@ -41000,7 +41000,7 @@ _0802EC1C:
 _0802EC20:
 	.4byte 0x040000D4
 _0802EC24:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0802EC28:
 	.4byte 0x84000100
 _0802EC2C:
@@ -42164,7 +42164,7 @@ sub_0802F440: @ 0x0802F440
 	ldr r1, _0802F498  @ =0x040000D4
 	add r0, sp, #4
 	str r0, [r1]
-	ldr r0, _0802F49C  @ =gUnknown_03000EA0
+	ldr r0, _0802F49C  @ =gOamData
 	str r0, [r1, #4]
 	ldr r0, _0802F4A0  @ =0x85000100
 	str r0, [r1, #8]
@@ -42195,7 +42195,7 @@ _0802F494:
 _0802F498:
 	.4byte 0x040000D4
 _0802F49C:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0802F4A0:
 	.4byte 0x85000100
 _0802F4A4:
@@ -42296,7 +42296,7 @@ _0802F556:
 	mov r0, r8
 	bl sub_08035108
 	ldr r1, _0802F584  @ =0x040000D4
-	ldr r0, _0802F588  @ =gUnknown_03000EA0
+	ldr r0, _0802F588  @ =gOamData
 	str r0, [r1]
 	mov r0, #224
 	lsl r0, r0, #19
@@ -42319,7 +42319,7 @@ _0802F580:
 _0802F584:
 	.4byte 0x040000D4
 _0802F588:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0802F58C:
 	.4byte 0x80000200
 	THUMB_FUNC_END sub_0802F440
@@ -42947,7 +42947,7 @@ sub_0802F9D8: @ 0x0802F9D8
 	cmp r12, r8
 	bcs _0802FADE
 	ldr r5, _0802FAF0  @ =0x040000D4
-	ldr r7, _0802FAF4  @ =gUnknown_03000EA0
+	ldr r7, _0802FAF4  @ =gOamData
 _0802FA16:
 	mov r1, r9
 	add r1, r1, r12
@@ -43064,7 +43064,7 @@ _0802FADE:
 _0802FAF0:
 	.4byte 0x040000D4
 _0802FAF4:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0802FAF8:
 	.4byte gUnknown_080CB7F0
 _0802FAFC:
@@ -43143,7 +43143,7 @@ sub_0802FB60: @ 0x0802FB60
 	lsl r0, r0, #24
 	mov r6, #0
 	ldr r7, _0802FC08  @ =0x040000D4
-	ldr r5, _0802FC0C  @ =gUnknown_03000EA0
+	ldr r5, _0802FC0C  @ =gOamData
 	lsr r0, r0, #20
 	mov r12, r0
 _0802FB88:
@@ -43214,7 +43214,7 @@ _0802FB88:
 _0802FC08:
 	.4byte 0x040000D4
 _0802FC0C:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _0802FC10:
 	.4byte gUnknown_082EC748
 _0802FC14:
@@ -45065,7 +45065,7 @@ _08030998:
 	mov r5, r9
 	ldrh r0, [r5]
 	lsl r0, r0, #3
-	ldr r1, _080309D4  @ =gUnknown_03000EA0
+	ldr r1, _080309D4  @ =gOamData
 	add r4, r0, r1
 	add r6, r2, #0
 	ldr r0, [r6, #12]
@@ -45094,7 +45094,7 @@ _080309CC:
 _080309D0:
 	.4byte gUnknown_030012F4
 _080309D4:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _080309D8:
 	ldr r5, [sp, #16]
 	lsl r1, r5, #16
@@ -45315,7 +45315,7 @@ _08030B76:
 	mov r5, r9
 	ldrh r0, [r5]
 	lsl r0, r0, #3
-	ldr r4, _08030C78  @ =gUnknown_03000EA0
+	ldr r4, _08030C78  @ =gOamData
 	add r0, r0, r4
 	str r0, [r3, #4]
 	ldr r0, _08030C7C  @ =0x84000002
@@ -45439,7 +45439,7 @@ _08030C70:
 _08030C74:
 	.4byte 0x040000D4
 _08030C78:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _08030C7C:
 	.4byte 0x84000002
 _08030C80:
@@ -45527,7 +45527,7 @@ _08030CFE:
 _08030D18:
 	ldrh r0, [r7]
 	lsl r0, r0, #3
-	ldr r1, _08030D5C  @ =gUnknown_03000EA0
+	ldr r1, _08030D5C  @ =gOamData
 	add r5, r0, r1
 	add r0, r4, #0
 	add r1, r7, #0
@@ -45559,7 +45559,7 @@ _08030D18:
 	mov r0, #128
 	b _08030D6C
 _08030D5C:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _08030D60:
 	.4byte gUnknown_030009D8
 _08030D64:
@@ -47557,7 +47557,7 @@ _08031B34:
 	mov r1, r9
 	ldrh r3, [r1]
 	lsl r3, r3, #3
-	ldr r2, _08031BCC  @ =gUnknown_03000EA0
+	ldr r2, _08031BCC  @ =gOamData
 	add r3, r3, r2
 	ldr r0, _08031BD0  @ =gUnknown_082EC748
 	mov r1, r8
@@ -47632,7 +47632,7 @@ _08031BC4:
 _08031BC8:
 	.4byte 0x040000D4
 _08031BCC:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _08031BD0:
 	.4byte gUnknown_082EC748
 _08031BD4:
@@ -48348,7 +48348,7 @@ sub_080320E4: @ 0x080320E4
 	ldr r1, _08032120  @ =0x040000D4
 	add r0, sp, #4
 	str r0, [r1]
-	ldr r0, _08032124  @ =gUnknown_03000EA0
+	ldr r0, _08032124  @ =gOamData
 	str r0, [r1, #4]
 	ldr r0, _08032128  @ =0x85000100
 	str r0, [r1, #8]
@@ -48369,7 +48369,7 @@ sub_080320E4: @ 0x080320E4
 _08032120:
 	.4byte 0x040000D4
 _08032124:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _08032128:
 	.4byte 0x85000100
 _0803212C:
@@ -48397,7 +48397,7 @@ _08032156:
 	add r0, r4, #0
 	bl sub_08035108
 	ldr r1, _08032180  @ =0x040000D4
-	ldr r0, _08032184  @ =gUnknown_03000EA0
+	ldr r0, _08032184  @ =gOamData
 	str r0, [r1]
 	mov r0, #224
 	lsl r0, r0, #19
@@ -48418,7 +48418,7 @@ _0803217C:
 _08032180:
 	.4byte 0x040000D4
 _08032184:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _08032188:
 	.4byte 0x80000200
 	THUMB_FUNC_END sub_080320E4
@@ -48594,7 +48594,7 @@ sub_080322A8: @ 0x080322A8
 	str r1, [r3]
 	ldrh r1, [r6]
 	lsl r1, r1, #3
-	ldr r5, _0803235C  @ =gUnknown_03000EA0
+	ldr r5, _0803235C  @ =gOamData
 	add r1, r1, r5
 	str r1, [r3, #4]
 	ldr r1, _08032360  @ =0x84000002
@@ -48664,7 +48664,7 @@ _08032354:
 _08032358:
 	.4byte gUnknown_082E8900
 _0803235C:
-	.4byte gUnknown_03000EA0
+	.4byte gOamData
 _08032360:
 	.4byte 0x84000002
 _08032364:

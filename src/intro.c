@@ -2,23 +2,9 @@
 #include "global.h"
 #include "main.h"
 
-extern u32 gUnknown_03000BE0;
-extern u8 gUnknown_03000BD0;
-extern u8 gUnknown_030000AC;
-
-extern struct UnknownStruct14 gUnknown_08866A48;
-
-struct UnknownStruct14
+void intro_init_callback(void)
 {
-    u8 filler0[0x30];
-    u16 bldCnt;
-    u16 bldAlpha;
-    u16 bldY;
-};
-
-void cb_init_intro(void)
-{
-    void *arr[4];
+    const void *arr[4];
 
     gUnknown_03000BE0 = 0;
     gUnknown_03000BD0 = 0;
@@ -45,14 +31,14 @@ void sub_0801BA6C(void)
     gUnknown_030000AC = 1;
 }
 
-void sub_0801BA88(void)
+void intro_main(void)
 {
     sub_08029C20();
     gUnknown_03000BE0++;
     if (gUnknown_03000BE0 > 180)
     {
         sub_0802D468(3, 23, 7, 0);
-        gUnknown_030009C4 = MAIN_STATE_MOVIE;
+        gNextMainState = MAIN_STATE_MOVIE;
     }
     sub_08008238();
     gUnknown_03000BE0 &= 0xFFFF;

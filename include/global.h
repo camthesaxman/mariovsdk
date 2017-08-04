@@ -72,7 +72,8 @@ struct UnknownStruct6
 
 struct UnknownStruct5
 {
-    u8 filler0[8];
+    u8 filler0[4];
+    u32 unk4;
     u16 unk8;
 };
 
@@ -129,6 +130,32 @@ struct UnknownStruct9
     u16 unk28;
 };
 
+struct UnknownStruct14
+{
+    u8 filler0[0x30];
+    u16 bldCnt;
+    u16 bldAlpha;
+    u16 bldY;
+};
+
+struct UnknownStruct15
+{
+    u8 unk0[0x108];
+    u32 unk108[0];
+};
+
+struct UnknownStruct16
+{
+    u8 filler0[0x48];
+    u32 unk48;
+};
+
+struct UnknownStruct17
+{
+    u8 unk0;
+    u8 unk1;
+};
+
 //------------------------------------------------------------------------------
 // Variables
 //------------------------------------------------------------------------------
@@ -145,6 +172,12 @@ extern u8 gUnknown_03000033;
 extern u32 gUnknown_03000034;
 extern u32 gUnknown_03000038;
 extern u32 gUnknown_0300003C;
+extern struct UnknownStruct15 *gUnknown_030000A4;
+extern u8 gPressStartFadeDir;
+extern u8 gTitleScreenFrameCounter;
+extern u16 gPressStartOpacity;
+extern u8 gUnknown_030000AC;
+extern s32 gUnknown_030000B0;
 extern u8 gUnknown_030002A0[];
 extern u16 gUnknown_030002AA;
 extern struct Struct30002B8 gUnknown_030002B0;
@@ -153,7 +186,7 @@ extern struct Struct30002B8 gUnknown_030002C0;
 extern struct Struct30002B8 gUnknown_030002C8;
 extern int (*gUnknown_03000964)(u32 *, int, int, int);
 extern struct Struct30009B0 gUnknown_030009B0;
-extern u32 gUnknown_030009C4;
+extern u32 gNextMainState;
 extern u32 gUnknown_030009C8;
 extern u32 gUnknown_030009CC;
 extern u8 gUnknown_030009D0;
@@ -170,7 +203,7 @@ extern s32 gUnknown_03000B54;
 extern s8 gUnknown_03000B58;
 extern u8 gUnknown_03000B5C;
 extern u8 gUnknown_03000B60;
-extern u8 gUnknown_03000B64;
+extern s8 gUnknown_03000B64;
 extern u8 gUnknown_03000B68;
 extern u32 gUnknown_03000B6C;
 extern u32 gUnknown_03000B70;
@@ -181,9 +214,13 @@ extern struct UnknownStruct4 gUnknown_03000B90;
 extern s8 gUnknown_03000BB4;
 extern u32 gUnknown_03000BB8;
 extern s8 gUnknown_03000BBC;
+extern u8 gUnknown_03000BD0;
+extern u32 gUnknown_03000BE0;
+extern u16 gUnknown_03000BE4;
+extern u16 gUnknown_03000BE8;
 extern u8 gUnknown_03000C28;
 extern u32 gUnknown_030009DC;
-extern struct OamData gUnknown_03000EA0[];
+extern struct OamData gOamData[];
 extern s16 gUnknown_030012A0;
 extern void (*gUnknown_030012A8)(void);
 extern u8 gUnknown_030012B0[];
@@ -225,13 +262,19 @@ extern void *gUnknown_03007FFC;
 
 extern const u8 gUnknown_08076D94[];
 extern u8 *const gUnknown_0807820C;
-extern void (*const gUnknown_0807823C[])(void);
-extern void (*const gUnknown_080782C8[])(void);
+extern void (*const gMainStateInitCallbacks[])(void);
+extern void (*const gMainStateMainCallbacks[])(void);
 extern void (*const gUnknown_08078354[])(void);
 extern void (*const gUnknown_080783E0[])(void);
 extern const u32 gUnknown_0807846C[];
+extern const struct UnknownStruct17 gUnknown_0807954C[];
+extern const u8 gUnknown_0807956C[];
+extern const u8 gUnknown_08079698[];
 extern u16 *const gUnknown_0807DD94;
-
+extern const struct UnknownStruct14 gUnknown_08866A48;
+extern const struct UnknownStruct14 gUnknown_08867560;
+extern const u8 gUnknown_0886A328[];
+extern struct UnknownStruct16 gUnknown_0886CFCC;  // non-const (likely in .data instead of .rodata)
 
 //------------------------------------------------------------------------------
 // Functions
@@ -242,17 +285,21 @@ void irq_enable_t(void);
 void irq_disable_t(void);
 void interrupt_main(void);
 
+void sub_08004428();
 void sub_08004634();
+void sub_080064D4();
 int sub_080066FC(u32 *, int, int, int);
-void sub_08006968();
+struct UnknownStruct15 *sub_08006968();
 void sub_08006D44(void);
 void sub_080070E8(s32, s32);
 void sub_08007170(void);
 void sub_08008238(void);
 void sub_0800EE70(void);
+void sub_0800F744();
 void sub_08011428();
 void sub_08014A58();
 void sub_0801500C();
+void sub_0801B88C(void);
 void sub_0802919C();
 void sub_08029C20(void);
 void sub_08029CDC();
@@ -282,12 +329,14 @@ void sub_0803109C(void);
 void sub_080317F8(void);
 void sub_08031BF0();
 int sub_08031E04(void);
+void sub_08032788();
 void sub_08032F24();
 void sub_08032F68(void);
 void load_some_oam(void);
 void sub_080331FC(void);
 void sub_08033440(void);
 void init_timer_regs(void);
+void sub_08033C74(void);
 void clear_ram(void);
 void sub_08033D1C(void);
 void sub_08033D30(void);
@@ -298,6 +347,7 @@ void sub_08033EC8(void);
 void sub_08033EE0(void);
 void sub_08033FAC(s16, s16);
 void sub_08033FC8(void);
+extern u8 sub_08034004(void);
 void sub_08034138(void);
 void sub_0803482C();
 void *sub_08034854();
@@ -317,15 +367,17 @@ void sub_080714A8(void);
 void sub_0807166C();
 void sub_08071800(void);
 void sub_0807194C(void);
-void sub_08071990();
+int sub_08071990();
 void sub_08071C24(void);
 void sub_08071CD4(void);
+void sub_08071E14();
 void sub_08071FA0();
 int sub_08071FE4(void);
 int sub_08072038(void);
 void sub_0807204C();
 void sub_080720AC(void);
 int sub_08072144(void);
+int sub_080721A8();
 void sub_0807220C();
 
 #endif  // GUARD_GLOBAL_H

@@ -157,12 +157,12 @@ void sub_08032708(void)
 {
     u16 val = 0;
 
-    DmaFill32(3, 0xA0, gUnknown_03000EA0, 0x400);
+    DmaFill32(3, 0xA0, gOamData, 0x400);
     sub_080351E0();
     if (gUnknown_0300029C->unk1008 != NULL)
         sub_08034CCC(gUnknown_0300029C->unk1008->unk0, -32767, -32767, -1, 16);
     sub_08035108(&val);
-    DmaCopy32(3, gUnknown_03000EA0, (void *)OAM, 0x400);
+    DmaCopy32(3, gOamData, (void *)OAM, 0x400);
 }
 
 void sub_08032784(void)

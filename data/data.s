@@ -216,16 +216,16 @@ gUnknown_0807822C:
 gUnknown_08078234:
 	.INCBIN "baserom.gba", 0x78234, 0x7823C-0x78234
 
-	.GLOBAL gUnknown_0807823C
-gUnknown_0807823C:
-	.4byte cb_init_intro
+	.GLOBAL gMainStateInitCallbacks
+gMainStateInitCallbacks:
+	.4byte intro_init_callback
 	.4byte sub_080347DC
 	.4byte sub_08008B8C
 	.4byte sub_080114D4
 	.4byte sub_0802895C
 	.4byte sub_08008B8C
 	.4byte sub_0800748C
-	.4byte sub_0801B55C
+	.4byte title_init_callback
 	.4byte sub_08015280
 	.4byte sub_08035388
 	.4byte sub_08008C34
@@ -254,16 +254,16 @@ gUnknown_0807823C:
 	.4byte sub_08032370
 	.4byte sub_08032408
 
-	.GLOBAL gUnknown_080782C8
-gUnknown_080782C8:
-	.4byte sub_0801BA88
+	.GLOBAL gMainStateMainCallbacks
+gMainStateMainCallbacks:
+	.4byte intro_main
 	.4byte sub_08034820
 	.4byte sub_080080F8
 	.4byte sub_080123B8
 	.4byte sub_08028C08
 	.4byte sub_080080F8
 	.4byte sub_080080F8
-	.4byte sub_0801B64C
+	.4byte title_main
 	.4byte sub_08016BEC
 	.4byte sub_08035908
 	.4byte sub_08008CF0

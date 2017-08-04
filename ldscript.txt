@@ -13,6 +13,7 @@ SECTIONS
 		src/main.o(.text);
 		src/rom1.o(.text);
 		asm/rom1.o(.text);
+		src/title.o(.text);
 		src/intro.o(.text);
 		asm/rom_801BAD8.o(.text);
 		src/rom_8032408.o(.text);
@@ -64,7 +65,12 @@ SECTIONS
 		. = 0x34;		gUnknown_03000034 = .;
 		. = 0x38;		gUnknown_03000038 = .;
 		. = 0x3C;		gUnknown_0300003C = .;
+		. = 0xA4;		gUnknown_030000A4 = .;
+		. = 0xA8;		gPressStartFadeDir = .;
+		. = 0xA9;		gTitleScreenFrameCounter = .;
+		. = 0xAA;		gPressStartOpacity = .;
 		. = 0xAC;		gUnknown_030000AC = .;
+		. = 0xB0;		gUnknown_030000B0 = .;
 		. = 0x29C;		gUnknown_0300029C = .;
 		. = 0x2A0;		gUnknown_030002A0 = .;
 		. = 0x2AA;		gUnknown_030002AA = .;
@@ -81,7 +87,7 @@ SECTIONS
 		. = 0x964;		gUnknown_03000964 = .;
 		. = 0x9B0;		gUnknown_030009B0 = .;
 		. = 0x9C0;		gMainState = .;
-		. = 0x9C4;		gUnknown_030009C4 = .;
+		. = 0x9C4;		gNextMainState = .;
 		. = 0x9C8;		gUnknown_030009C8 = .;
 		. = 0x9CC;		gUnknown_030009CC = .;
 		. = 0x9D0;		gUnknown_030009D0 = .;
@@ -112,8 +118,10 @@ SECTIONS
 		. = 0xBBC;		gUnknown_03000BBC = .;
 		. = 0xBD0;		gUnknown_03000BD0 = .;
 		. = 0xBE0;		gUnknown_03000BE0 = .;
+		. = 0xBE4;		gUnknown_03000BE4 = .;
+		. = 0xBE8;		gUnknown_03000BE8 = .;
 		. = 0xC28;		gUnknown_03000C28 = .;
-		. = 0xEA0;		gUnknown_03000EA0 = .;
+		. = 0xEA0;		gOamData = .;
 		. = 0x12A0;		gUnknown_030012A0 = .;
 		. = 0x12A8;		gUnknown_030012A8 = .;
 		. = 0x12B0;		gUnknown_030012B0 = .;

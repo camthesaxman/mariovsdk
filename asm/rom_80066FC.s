@@ -879,21 +879,21 @@ _08006DD4:
 
 	THUMB_FUNC_START sub_08006DD8
 sub_08006DD8: @ 0x08006DD8
-	ldr r0, _08006DEC  @ =0x03000B64
+	ldr r0, _08006DEC  @ =gUnknown_03000B64
 	mov r1, #0
 	strb r1, [r0]
 	ldr r0, _08006DF0  @ =0x03000B78
 	strb r1, [r0]
-	ldr r1, _08006DF4  @ =gUnknown_030009C4
+	ldr r1, _08006DF4  @ =gNextMainState
 	mov r0, #34
 	str r0, [r1]
 	bx lr
 	.byte 0x00
 	.byte 0x00
 _08006DEC:
-	.4byte 0x03000B64
+	.4byte gUnknown_03000B64
 _08006DF0:
 	.4byte 0x03000B78
 _08006DF4:
-	.4byte gUnknown_030009C4
+	.4byte gNextMainState
 	THUMB_FUNC_END sub_08006DD8

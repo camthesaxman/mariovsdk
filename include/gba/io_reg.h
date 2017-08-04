@@ -539,7 +539,22 @@
 #define BGCNT_AFF1024x1024      0xC000
 
 // BLDCNT
-
+#define BLDCNT_BG0_FIRST    (1 << 0)
+#define BLDCNT_BG1_FIRST    (1 << 1)
+#define BLDCNT_BG2_FIRST    (1 << 2)
+#define BLDCNT_BG3_FIRST    (1 << 3)
+#define BLDCNT_OBJ_FIRST    (1 << 4)
+#define BLDCNT_BD_FIRST     (1 << 5)
+#define BLDCNT_EFF_NONE     (0 << 6)
+#define BLDCNT_EFF_ALPHA    (1 << 6)
+#define BLDCNT_EFF_BRIGHTEN (2 << 6)
+#define BLDCNT_EFF_DARKEN   (3 << 6)
+#define BLDCNT_BG0_SECOND   (1 << 8)
+#define BLDCNT_BG1_SECOND   (1 << 9)
+#define BLDCNT_BG2_SECOND   (1 << 10)
+#define BLDCNT_BG3_SECOND   (1 << 11)
+#define BLDCNT_BG4_SECOND   (1 << 12)
+#define BLDCNT_BD_SECOND    (1 << 13)
 
 // SOUNDCNT_H
 #define SOUND_CGB_MIX_QUARTER 0x0000

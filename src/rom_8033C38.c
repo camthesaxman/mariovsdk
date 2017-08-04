@@ -214,7 +214,7 @@ void sub_08033FC8(void)
         gUnknown_030012B0[i] = 20;
 }
 
-int sub_08034004(void)
+u8 sub_08034004(void)
 {
     if (gUnknown_03001740 != 0 && (gUnknown_030012E8 & 9))
         return TRUE;

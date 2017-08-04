@@ -5,7 +5,7 @@
 void load_some_oam(void)
 {
     int i;
-    struct OamData *oam = gUnknown_03000EA0;
+    struct OamData *oam = gOamData;
     u16 *ptr = (u16 *)oam;
 
     for (i = 0; i < 32; i++)

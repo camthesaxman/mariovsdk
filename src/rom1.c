@@ -4,7 +4,7 @@
 
 void sub_08007154(void)
 {
-    gUnknown_030009C4 = gUnknown_030009CC;
+    gNextMainState = gUnknown_030009CC;
     gUnknown_03000024 = 1;
 }
 
