@@ -151,8 +151,6 @@ void sub_0801B908(void)
     DmaFill32(3, 0xA0, gOamData, 0x400);
     if (gUnknown_03000C28 == 0 && sub_080721A8(gUnknown_030000B0) != 0)
     {
-        u8 var;
-
         DmaCopy32(3, gUnknown_085F49D0, gOamData, 8);
         DmaCopy32(3, gUnknown_085F49D8, (void *)(VRAM + 0x10000), 0x200);
         gOamData[0].tileNum = 0;
