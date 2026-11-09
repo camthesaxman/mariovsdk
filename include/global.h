@@ -41,6 +41,14 @@ struct Struct30009B0
     s16 unk12;
 };
 
+struct Struct3000A10
+{
+    u8 pad[0x120];
+    u8 unk120;
+    u8 unk121;
+    u8 unk122;
+};
+
 struct UnknownStruct3
 {
     void *unk0;
@@ -195,6 +203,7 @@ extern u16 gUnknown_030009D8;
 extern u8 gUnknown_030009E4[];  // unknown type
 extern u8 gUnknown_030009E8;
 extern u8 gUnknown_030009EC;
+extern struct Struct3000A10 gUnknown_03000A10;
 extern s32 gUnknown_03000B44;
 extern u32 gUnknown_03000B48;
 extern u32 gUnknown_03000B4C;
@@ -296,6 +305,7 @@ void sub_08007170(void);
 void sub_08008238(void);
 void sub_0800EE70(void);
 void sub_0800F744();
+void sub_0800F070(u8 param_1);
 void sub_08011428();
 void sub_08014A58();
 void sub_0801500C();

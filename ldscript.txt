@@ -97,6 +97,7 @@ SECTIONS
 		. = 0x9E4;		gUnknown_030009E4 = .;
 		. = 0x9E8;		gUnknown_030009E8 = .;
 		. = 0x9EC;		gUnknown_030009EC = .;
+		. = 0xA10;		gUnknown_03000A10 = .;
 		. = 0xB44;		gUnknown_03000B44 = .;
 		. = 0xB48;		gUnknown_03000B48 = .;
 		. = 0xB4C;		gUnknown_03000B4C = .;
