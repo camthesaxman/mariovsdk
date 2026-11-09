@@ -397,3 +397,13 @@ void sub_08007544(void)
     }
     sub_08006D44();
 }
+
+void sub_0800F070(u8 param_1)
+{
+    if (param_1 != gUnknown_03000A10.unk122)
+    {
+        gUnknown_03000A10.unk120 = 0;
+        gUnknown_03000A10.unk121 = 0;
+    }
+    gUnknown_03000A10.unk122 = param_1;
+}

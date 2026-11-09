@@ -15566,40 +15566,6 @@ _0800F06C:
 	.4byte 0x03000A10
 	THUMB_FUNC_END sub_0800F060
 
-	THUMB_FUNC_START sub_0800F070
-sub_0800F070: @ 0x0800F070
-	push {r4,lr}
-	lsl r0, r0, #24
-	lsr r0, r0, #24
-	add r3, r0, #0
-	ldr r2, _0800F0A4  @ =0x03000A10
-	mov r0, #145
-	lsl r0, r0, #1
-	add r0, r0, r2
-	mov r12, r0
-	ldrb r1, [r0]
-	cmp r3, r1
-	beq _0800F098
-	mov r4, #144
-	lsl r4, r4, #1
-	add r0, r2, r4
-	mov r1, #0
-	strb r1, [r0]
-	add r4, r4, #1
-	add r0, r2, r4
-	strb r1, [r0]
-_0800F098:
-	mov r0, r12
-	strb r3, [r0]
-	pop {r4}
-	pop {r0}
-	bx r0
-	.byte 0x00
-	.byte 0x00
-_0800F0A4:
-	.4byte 0x03000A10
-	THUMB_FUNC_END sub_0800F070
-
 	THUMB_FUNC_START sub_0800F0A8
 sub_0800F0A8: @ 0x0800F0A8
 	push {lr}
