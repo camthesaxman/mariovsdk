@@ -397,3 +397,113 @@ void sub_08007544(void)
     }
     sub_08006D44();
 }
+
+struct SaveFile_subC
+{
+    u16 unk0;
+    u8 filler2[2];
+    u8 unk4;
+    u8 unk5;
+    u8 unk6;
+    u8 unk7;
+};
+
+struct SaveFile
+{
+    u8 lives;
+    u8 filler1[3];
+    u32 unk4;
+    u8 unk8;
+    u8 unk9;
+    struct SaveFile_subC unkC[8];
+    u8 filler4C[0x18B - 0x4C];
+    u8 unk18B;
+    struct SaveFile_subC unk18C[7];
+    u8 filler1C4[0x2FB - 0x1C4];
+    u8 unk2FB;
+    u8 filler2FC[0x313 - 0x2FC];
+    u8 unk313;
+    u8 filler314[0x31B - 0x314];
+    u8 unk31B;
+    struct SaveFile_subC unk31C[6];
+    struct SaveFile_subC unk34C[6];
+};
+
+extern u8 *gUnknown_080788F4;
+extern struct SaveFile *gSaveFilesPtr;
+extern s8 gUnknown_03000BB4;
+
+int sub_0800FCE4(u8 arg0, u8 arg1, u8 arg2)
+{
+    struct SaveFile *r6 = &gSaveFilesPtr[*gUnknown_080788F4];
+    u8 r1;
+
+    if (gUnknown_03000BB4 != 0)
+        return 0;
+    if (arg0 == 0)
+    {
+        if (arg2 > 7)
+            arg2 = 7;
+        if (arg1 > 5)
+            arg1 = 5;
+        if (r6->unkC[arg1 * 8 + arg2].unk7 & 0x80)
+        {
+            if (arg2 == 6)
+            {
+                if ((r6->unkC[arg1 * 8 + arg2].unk7 & 7) <= 5)
+                    return 0;
+                if (r6->unkC[arg1 * 8 + arg2].unk7 & 0x40)
+                    return 1;
+                return 0;
+            }
+            else if (arg2 == 7)
+            {
+                if ((r6->unkC[arg1 * 8 + arg2].unk7 & 7) <= 5)
+                    return 0;
+                if (r6->unkC[arg1 * 8 + arg2].unk7 & 0x40)
+                    return 1;
+            }
+            else
+            {
+                r1 = r6->unkC[arg1 * 8 + arg2].unk4;
+                r1 += r6->unkC[arg1 * 8 + arg2].unk5 * 2;
+                r1 += r6->unkC[arg1 * 8 + arg2].unk6 * 4;
+                if (r1 <= 6)
+                    return 0;
+                if (r6->unkC[arg1 * 8 + arg2].unk7 & 0x40)
+                    return 1;
+            }
+        }
+        return 0;
+    }
+    else if (arg0 == 4)
+        return 0;
+    else if (arg0 == 1)
+    {
+        if (arg2 > 6)
+            arg2 = 6;
+        if (arg1 > 5)
+            arg1 = 5;
+        if ((r6->unk18C[arg1 * 8 + arg2].unk7 & 0x80))
+        {
+            if (arg2 == 6)
+            {
+                if ((r6->unk18C[arg1 * 8 + arg2].unk7 & 7) <= 5)
+                    return 0;
+            }
+            else
+            {
+                r1 = r6->unk18C[arg1 * 8 + arg2].unk4;
+                r1 += r6->unk18C[arg1 * 8 + arg2].unk5 * 2;
+                r1 += r6->unk18C[arg1 * 8 + arg2].unk6 * 4;
+                if (r1 <= 6)
+                    return 0;
+            }
+            if ((r6->unk18C[arg1 * 8 + arg2].unk7 & 0x40) != 0)
+                return 1;
+        }
+    }
+    else if (arg0 == 2)
+        return 0;
+    return 0;
+}
